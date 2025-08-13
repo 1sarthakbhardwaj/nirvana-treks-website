@@ -62,27 +62,46 @@ export default function Home() {
     <main>
       <Hero />
       
-      {/* Featured Tours Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-secondary">
+      {/* Enhanced Featured Tours Section */}
+      <section className="py-32 bg-gradient-to-b from-background via-secondary/50 to-muted relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float"></div>
+        </div>
+        
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Featured Adventures</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Handpicked journeys that showcase the incredible diversity of India
+          <div className="text-center mb-24 animate-fade-in-up">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-6 py-3 text-sm text-emerald-400 border border-emerald-500/20 backdrop-blur-sm">
+              <Star className="w-4 h-4 animate-twinkle" />
+              <span className="font-medium">Handpicked Experiences</span>
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-foreground via-emerald-500 to-blue-500 bg-clip-text text-transparent">
+              Featured Adventures
+            </h2>
+            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Handpicked journeys that showcase the <span className="text-emerald-400 font-semibold">incredible diversity</span> of India
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredTours.map((tour) => (
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+            {featuredTours.map((tour, index) => (
               <Link 
                 key={tour.href} 
                 href={tour.href} 
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-card/50 to-secondary/50 border border-border backdrop-blur-sm hover:border-emerald-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20"
+                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/60 to-secondary/60 border border-border backdrop-blur-lg hover:border-emerald-500/70 transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:shadow-emerald-500/30 animate-fade-in-up"
+                style={{animationDelay: `${index * 200}ms`}}
               >
-                <div className="p-6">
-                  {/* Image placeholder with emoji */}
-                  <div className="w-full h-48 bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-xl mb-6 flex items-center justify-center text-6xl">
-                    {tour.image}
+                {/* Glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <div className="relative p-8">
+                  {/* Enhanced Image placeholder with animation */}
+                  <div className="w-full h-56 bg-gradient-to-br from-emerald-500/30 to-blue-500/30 rounded-2xl mb-8 flex items-center justify-center text-7xl relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-purple-400/20 animate-pulse"></div>
+                    <span className="relative z-10 group-hover:animate-bounce">{tour.image}</span>
+                    <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
                   
                   {/* Tour Info */}
@@ -145,22 +164,45 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-muted">
+      {/* Enhanced Features Section */}
+      <section className="py-32 bg-gradient-to-br from-muted via-background to-secondary relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 right-20 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-float delay-1000"></div>
+        </div>
+        
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Nirvana?</h2>
-            <p className="text-xl text-muted-foreground">What makes our adventures special</p>
+          <div className="text-center mb-24 animate-fade-in-up">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-purple-500/10 px-6 py-3 text-sm text-purple-400 border border-purple-500/20 backdrop-blur-sm">
+              <Heart className="w-4 h-4 animate-pulse" />
+              <span className="font-medium">Exceptional Experiences</span>
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-purple-400 via-emerald-500 to-blue-500 bg-clip-text text-transparent">
+              Why Choose Nirvana?
+            </h2>
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
+              What makes our adventures <span className="text-purple-400 font-semibold">truly special</span>
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {features.map((feature, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-8 h-8 text-emerald-500" />
+              <div 
+                key={i} 
+                className="text-center group relative p-8 rounded-3xl bg-gradient-to-br from-background/50 to-secondary/30 border border-border backdrop-blur-sm hover:scale-105 transition-all duration-500 animate-fade-in-up"
+                style={{animationDelay: `${i * 200}ms`}}
+              >
+                {/* Glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-emerald-500/20 to-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative">
+                  <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-emerald-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                    <feature.icon className="w-12 h-12 text-emerald-500 drop-shadow-lg group-hover:animate-pulse" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-emerald-400 transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>

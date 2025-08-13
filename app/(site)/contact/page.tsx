@@ -32,7 +32,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 09816780973", "+91 98765 43210"],
       subtitle: "Available 9 AM - 7 PM"
     },
     {
@@ -124,7 +124,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 09816780973"
                   />
                 </div>
                 
