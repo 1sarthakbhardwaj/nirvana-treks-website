@@ -2,8 +2,7 @@ import Container from "@/components/ui/container";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { 
-  MapPin, Clock, Users, Star, Calendar, Camera, Mountain, 
-  Wifi, Car, Utensils, Bed, Shield, Heart, ArrowRight,
+  MapPin, Clock, Users, Star, Calendar, Heart, ArrowRight,
   CheckCircle, XCircle, AlertTriangle
 } from "lucide-react";
 
@@ -149,14 +148,17 @@ const tours = {
   }
 } as const;
 
-type Params = { params: { slug: keyof typeof tours } };
+type Params = { 
+  params: Promise<{ slug: keyof typeof tours }>;
+};
 
 export function generateStaticParams() {
   return Object.keys(tours).map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: Params) {
-  const tour = tours[params.slug];
+export async function generateMetadata({ params }: Params) {
+  const { slug } = await params;
+  const tour = tours[slug];
   if (!tour) return {};
   
   return {
@@ -165,8 +167,9 @@ export function generateMetadata({ params }: Params) {
   };
 }
 
-export default function TourDetailPage({ params }: Params) {
-  const tour = tours[params.slug];
+export default async function TourDetailPage({ params }: Params) {
+  const { slug } = await params;
+  const tour = tours[slug];
   if (!tour) return notFound();
 
   const difficultyColor = tour.difficulty.includes('Easy') ? 'text-green-400 bg-green-500/20' :
@@ -276,7 +279,7 @@ export default function TourDetailPage({ params }: Params) {
           <div>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
               <CheckCircle className="w-6 h-6 text-emerald-400" />
-              What's Included
+              What&apos;s Included
             </h3>
             <div className="space-y-3">
               {tour.included.map((item, i) => (
@@ -291,7 +294,7 @@ export default function TourDetailPage({ params }: Params) {
           <div>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
               <XCircle className="w-6 h-6 text-red-400" />
-              What's Not Included
+              What&apos;s Not Included
             </h3>
             <div className="space-y-3">
               {tour.excluded.map((item, i) => (

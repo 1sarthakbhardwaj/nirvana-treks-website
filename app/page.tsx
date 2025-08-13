@@ -1,7 +1,7 @@
 import Hero from "@/components/hero";
 import Container from "@/components/ui/container";
 import Link from "next/link";
-import { MapPin, Clock, Users, Star, Calendar, Camera, Heart, ArrowRight } from "lucide-react";
+import { MapPin, Clock, Star, Camera, Heart, ArrowRight } from "lucide-react";
 
 export default function Home() {
   const featuredTours = [

@@ -172,7 +172,7 @@ export default function ToursPage() {
 
         {/* CTA Section */}
         <div className="mt-20 text-center p-8 bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border border-emerald-500/20 rounded-2xl">
-          <h2 className="text-2xl font-semibold text-white mb-4">Can't Find What You're Looking For?</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">Can&apos;t Find What You&apos;re Looking For?</h2>
           <p className="text-white/70 mb-6 max-w-2xl mx-auto">
             We specialize in creating custom adventures tailored to your interests, fitness level, and schedule. Let us design the perfect journey for you.
           </p>

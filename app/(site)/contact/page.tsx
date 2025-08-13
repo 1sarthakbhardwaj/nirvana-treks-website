@@ -63,7 +63,7 @@ export default function ContactPage() {
       <Container>
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">Let's Plan Your Adventure</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">Let&apos;s Plan Your Adventure</h1>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
             Ready to explore incredible India? Get in touch with our expert team to create your perfect journey.
           </p>
@@ -178,7 +178,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-semibold text-white mb-6">Get in Touch</h2>
               <p className="text-white/70 mb-8">
-                We're here to help you plan the adventure of a lifetime. Reach out to us through any of the following channels.
+                We&apos;re here to help you plan the adventure of a lifetime. Reach out to us through any of the following channels.
               </p>
             </div>
 
