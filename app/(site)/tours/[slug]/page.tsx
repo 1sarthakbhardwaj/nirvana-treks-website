@@ -7,145 +7,127 @@ import {
 } from "lucide-react";
 
 const tours = {
-  "kashmir-great-lakes": {
-    title: "Kashmir Great Lakes Trek",
-    subtitle: "Seven Pristine Alpine Lakes Adventure",
-    description: "Embark on one of India's most spectacular high-altitude treks through the heart of the Kashmir Himalayas. This challenging yet rewarding journey takes you through seven stunning alpine lakes, each more beautiful than the last.",
-    image: "🏔️",
-    price: "₹25,000",
-    originalPrice: "₹30,000",
-    duration: "7 Days / 6 Nights",
-    difficulty: "Moderate to Challenging",
-    location: "Sonamarg, Jammu & Kashmir",
-    maxGroupSize: 12,
-    rating: 4.8,
-    reviews: 124,
-    highlights: [
-      "Seven pristine alpine lakes including Vishansar and Krishansar",
-      "Spectacular views of snow-capped peaks",
-      "Diverse flora and fauna of the Kashmir Valley",
-      "Traditional Kashmiri camping experience",
-      "Professional mountain guides and safety equipment"
-    ],
-    itinerary: [
-      { day: 1, title: "Arrival in Srinagar", description: "Pick-up from airport, briefing, and overnight in houseboat" },
-      { day: 2, title: "Srinagar to Sonamarg", description: "Drive to Sonamarg base camp, equipment check" },
-      { day: 3, title: "Sonamarg to Nichnai", description: "First day of trekking through pine forests" },
-      { day: 4, title: "Nichnai to Vishansar Lake", description: "Trek to the first spectacular lake" },
-      { day: 5, title: "Vishansar to Krishansar Lake", description: "Visit multiple lakes in one day" },
-      { day: 6, title: "Krishansar to Gadsar Lake", description: "The most challenging and rewarding day" },
-      { day: 7, title: "Return to Srinagar", description: "Trek back and drive to Srinagar for departure" }
-    ],
-    included: [
-      "Professional trek leader and local guides",
-      "All camping equipment (tents, sleeping bags, mats)",
-      "All meals during the trek",
-      "Transportation from Srinagar",
-      "First aid kit and safety equipment",
-      "Permits and entry fees"
-    ],
-    excluded: [
-      "Flights to/from Srinagar",
-      "Personal trekking gear",
-      "Travel insurance",
-      "Tips for guides and support staff",
-      "Any personal expenses"
-    ],
-    bestTime: "June to September",
-    fitnessLevel: "Good fitness required with prior trekking experience"
-  },
-  "spiti-valley": {
-    title: "Spiti Valley Road Trip",
-    subtitle: "Cold Desert Adventure",
-    description: "Journey through the mystical Spiti Valley, often called 'Little Tibet'. This incredible road trip takes you through ancient monasteries, traditional villages, and some of the most dramatic landscapes in the Indian Himalayas.",
-    image: "🏜️",
-    price: "₹18,000",
-    originalPrice: "₹22,000",
-    duration: "8 Days / 7 Nights",
+  "kasol-trip": {
+    title: "Kasol Weekend Trip",
+    subtitle: "2 Nights / 3 Days | From ₹4,999",
+    description:
+      "Weekend escape: Chandigarh to Kasol, Katagla & Chalal sightseeing, Kheerganga trek (camp stay), Kasol market, and return to Chandigarh.",
+    image: "🏞️",
+    price: "₹4,999",
+    originalPrice: "₹6,499",
+    duration: "3 Days / 2 Nights",
     difficulty: "Easy to Moderate",
-    location: "Shimla to Manali via Spiti",
-    maxGroupSize: 8,
-    rating: 4.9,
-    reviews: 89,
+    location: "Parvati Valley, Himachal Pradesh",
+    maxGroupSize: 14,
+    rating: 4.8,
+    reviews: 92,
     highlights: [
-      "Visit ancient monasteries like Key and Tashigang",
-      "Drive through the world's highest village - Komic",
-      "Stunning landscapes of the cold desert",
-      "Traditional Spitian culture and cuisine",
-      "Comfortable vehicle with experienced driver"
+      "Chandigarh pickup Friday evening, overnight journey",
+      "Local sightseeing: Katagla & Chalal villages",
+      "Kheerganga trek with camp stay",
+      "Kasol market exploration",
+      "Comfortable travel and friendly crew"
     ],
     itinerary: [
-      { day: 1, title: "Delhi to Shimla", description: "Scenic drive to the hill station" },
-      { day: 2, title: "Shimla to Kalpa", description: "Beautiful drive through Kinnaur valley" },
-      { day: 3, title: "Kalpa to Tabo", description: "Enter Spiti valley, visit Tabo monastery" },
-      { day: 4, title: "Tabo to Kaza", description: "Explore the capital of Spiti" },
-      { day: 5, title: "Kaza Sightseeing", description: "Visit Key monastery, Komic, and Langza" },
-      { day: 6, title: "Kaza to Chandrataal", description: "Drive to the moon lake" },
-      { day: 7, title: "Chandrataal to Manali", description: "Cross Rohtang Pass to reach Manali" },
-      { day: 8, title: "Manali to Delhi", description: "Return journey with memories" }
+      { day: 1, title: "Friday: Pickup & Overnight Journey", description: "Evening pickup from Chandigarh, overnight journey to Kasol." },
+      { day: 2, title: "Saturday: Katagla & Chalal + Kasol Stay", description: "Arrive Kasol. Local sightseeing of Katagla and Chalal village. Hotel stay in Kasol." },
+      { day: 3, title: "Sunday: Kheerganga Trek (Camp)", description: "Trek to Kheerganga. Camp stay under the stars." },
+      { day: 4, title: "Monday: Kasol Market + Departure", description: "Local Kasol market exploration. Evening departure to Chandigarh." },
+      { day: 5, title: "Tuesday: Chandigarh Drop", description: "Morning drop at Chandigarh." }
     ],
     included: [
-      "Comfortable SUV/Tempo Traveller",
-      "Experienced driver cum guide",
-      "Hotel accommodation (twin sharing)",
-      "All permits and entry fees", 
-      "Sightseeing as per itinerary",
-      "Basic first aid kit"
+      "Chandigarh pickup & drop",
+      "Hotel (Kasol) + Camp stay (Kheerganga)",
+      "Trek guide & basic first aid",
+      "All permits",
+      "Local sightseeing assistance"
     ],
     excluded: [
-      "Meals (allows you to try local cuisine)",
-      "Personal expenses and shopping",
-      "Camera fees at monasteries",
-      "Travel insurance",
-      "Tips for driver and guide"
+      "Meals",
+      "Personal expenses",
+      "Any activities not mentioned",
+      "Travel insurance"
     ],
-    bestTime: "May to October",
-    fitnessLevel: "Basic fitness sufficient"
+    bestTime: "Year-round (best: Mar–Jun, Sep–Nov)",
+    fitnessLevel: "Basic fitness sufficient",
   },
-  "kerala-backwaters": {
-    title: "Kerala Backwaters Retreat",
-    subtitle: "Houseboat & Cultural Immersion",
-    description: "Experience the tranquil beauty of Kerala's famous backwaters aboard traditional houseboats. This peaceful retreat combines relaxation with cultural exploration through the heart of 'God's Own Country'.",
-    image: "🛶",
-    price: "₹12,000",
-    originalPrice: "₹15,000",
-    duration: "4 Days / 3 Nights",
+  "bir-billing": {
+    title: "Bir Billing Trip",
+    subtitle: "Paragliding Capital of India",
+    description:
+      "Experience paragliding from Billing to Bir, visit monasteries, explore cafes, and enjoy stunning sunsets over the Kangra valley.",
+    image: "🪂",
+    price: "₹6,999",
+    originalPrice: "₹8,499",
+    duration: "3 Days / 2 Nights",
     difficulty: "Easy",
-    location: "Alleppey & Kumarakom, Kerala",
-    maxGroupSize: 6,
-    rating: 4.7,
-    reviews: 156,
+    location: "Kangra Valley, Himachal Pradesh",
+    maxGroupSize: 12,
+    rating: 4.9,
+    reviews: 76,
     highlights: [
-      "Stay in traditional Kerala houseboats",
-      "Serene cruise through palm-fringed canals",
-      "Authentic Kerala cuisine and culture",
-      "Visit spice plantations and local villages",
-      "Ayurvedic spa treatments available"
+      "Paragliding tandem flight (optional)",
+      "Monastery visits & village walks",
+      "Sunset points and cafe hopping",
+      "Comfortable stays"
     ],
     itinerary: [
-      { day: 1, title: "Arrival in Kochi", description: "Airport pickup, drive to Alleppey, board houseboat" },
-      { day: 2, title: "Backwater Cruise", description: "Full day cruising through canals and lakes" },
-      { day: 3, title: "Kumarakom Exploration", description: "Visit bird sanctuary and spice plantations" },
-      { day: 4, title: "Departure", description: "Morning leisure time, transfer to Kochi airport" }
+      { day: 1, title: "Arrival & Local Explorations", description: "Reach Bir, check-in, explore cafes and monasteries." },
+      { day: 2, title: "Billing Paragliding", description: "Drive to Billing, tandem flight to Bir (optional), sunset point." },
+      { day: 3, title: "Leisure & Departure", description: "Leisure morning, local shopping, depart with memories." }
     ],
     included: [
-      "Traditional houseboat accommodation",
-      "All meals (Kerala cuisine)",
-      "Backwater cruising",
-      "Local sightseeing",
-      "Airport transfers",
-      "English speaking guide"
+      "Accommodation (twin sharing)",
+      "Local assistance & permits",
+      "Transport for local sightseeing",
     ],
     excluded: [
-      "Flights to/from Kochi",
-      "Alcoholic beverages",
-      "Ayurvedic treatments",
+      "Paragliding fee",
+      "Meals",
       "Personal expenses",
       "Travel insurance"
     ],
-    bestTime: "October to March",
-    fitnessLevel: "No fitness requirements"
-  }
+    bestTime: "Mar–Jun, Sep–Nov",
+    fitnessLevel: "No specific fitness required",
+  },
+  "triund-trek": {
+    title: "Triund Trek",
+    subtitle: "Classic Dharamkot Ridge | From ₹3,999",
+    description:
+      "A short, scenic hike to Triund with grand views of the Dhauladhar range and the Kangra valley—perfect weekend adventure.",
+    image: "⛰️",
+    price: "₹3,999",
+    originalPrice: "₹4,999",
+    duration: "2 Days / 1 Night",
+    difficulty: "Easy to Moderate",
+    location: "McLeod Ganj, Himachal Pradesh",
+    maxGroupSize: 18,
+    rating: 4.7,
+    reviews: 143,
+    highlights: [
+      "Panoramic Dhauladhar views",
+      "Camp under starry skies",
+      "Beginner-friendly trail",
+    ],
+    itinerary: [
+      { day: 1, title: "McLeod Ganj to Triund", description: "Start trek from Dharamkot/Bhagsu. Reach Triund. Sunset & camp stay." },
+      { day: 2, title: "Sunrise & Return", description: "Enjoy sunrise. Descend to McLeod Ganj. Trip ends post lunch." }
+    ],
+    included: [
+      "Camp stay",
+      "Trek guide",
+      "Permits",
+      "Basic first aid"
+    ],
+    excluded: [
+      "Meals",
+      "Transport to base",
+      "Personal expenses",
+      "Travel insurance"
+    ],
+    bestTime: "Year-round (avoid heavy snow/rains)",
+    fitnessLevel: "Basic fitness sufficient",
+  },
 } as const;
 
 type Params = { 

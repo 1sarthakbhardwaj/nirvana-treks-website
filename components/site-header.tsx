@@ -17,8 +17,8 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-800/50 glass-effect luxury-shadow">
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 font-bold tracking-tight text-foreground hover:text-yellow-400 transition-colors">
-          <Mountain className="w-8 h-8 text-yellow-400 drop-shadow-lg" />
+        <Link href="/" className="flex items-center gap-3 font-bold tracking-tight text-foreground hover:text-green-400 transition-colors">
+          <Mountain className="w-8 h-8 text-green-400 drop-shadow-lg animate-mountain-breeze" />
           <span className="hidden sm:block text-xl">Nirvana Treks & Tours</span>
           <span className="sm:hidden text-xl">Nirvana</span>
         </Link>
@@ -29,10 +29,10 @@ export default function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative text-lg font-medium text-gray-300 transition-all hover:text-yellow-400 group"
+              className="relative text-lg font-medium text-gray-300 transition-all hover:text-green-400 group"
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-500 transition-all group-hover:w-full"></span>
             </Link>
           ))}
         </nav>
@@ -40,7 +40,7 @@ export default function SiteHeader() {
         <div className="flex items-center gap-3">
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-3 text-gray-300 hover:text-yellow-400 transition-colors rounded-lg glass-effect"
+            className="md:hidden p-3 text-gray-300 hover:text-green-400 transition-colors rounded-lg glass-effect"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -62,7 +62,7 @@ export default function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-300 hover:text-yellow-400 transition-colors py-3 text-lg font-medium border-b border-gray-800/30 last:border-b-0"
+                  className="text-gray-300 hover:text-green-400 transition-colors py-3 text-lg font-medium border-b border-gray-800/30 last:border-b-0"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -70,7 +70,7 @@ export default function SiteHeader() {
               ))}
               <Link
                 href="/contact"
-                className="mt-6 inline-flex items-center justify-center px-8 py-4 gold-gradient text-black font-bold rounded-xl luxury-shadow hover:scale-105 transition-all duration-300"
+                className="mt-6 inline-flex items-center justify-center px-8 py-4 forest-gradient text-white font-bold rounded-xl luxury-shadow hover:scale-105 transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Plan Your Journey

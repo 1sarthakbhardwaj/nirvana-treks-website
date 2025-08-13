@@ -1,161 +1,169 @@
-import Hero from "@/components/hero";
 import Container from "@/components/ui/container";
 import Link from "next/link";
-import { MapPin, Clock, Star, Camera, Heart, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Clock, Star, Heart, ArrowRight } from "lucide-react";
 
 export default function Home() {
   const featuredTours = [
-    { 
-      title: "Kashmir Great Lakes Trek", 
-      href: "/tours/kashmir-great-lakes",
-      duration: "7 Days",
-      difficulty: "Moderate",
-      location: "Jammu & Kashmir",
-      price: "₹25,000",
+    {
+      title: "Kasol Weekend Trip",
+      href: "/tours/kasol-trip",
+      duration: "2 Nights / 3 Days",
+      difficulty: "Easy to Moderate",
+      location: "Parvati Valley, Himachal Pradesh",
+      price: "₹4,999",
       rating: 4.8,
-      image: "🏔️",
-      description: "Seven pristine alpine lakes surrounded by snow-capped peaks"
+      image:
+        "https://images.unsplash.com/photo-1500634245200-e5245c7574ef?q=80&w=1600&auto=format&fit=crop",
+      description:
+        "Kasol, Katagla & Chalal with Kheerganga trek and camp stay",
     },
-    { 
-      title: "Spiti Valley Road Trip", 
-      href: "/tours/spiti-valley",
-      duration: "8 Days", 
+    {
+      title: "Bir Billing Trip",
+      href: "/tours/bir-billing",
+      duration: "3 Days",
       difficulty: "Easy",
-      location: "Himachal Pradesh",
-      price: "₹18,000",
+      location: "Kangra Valley, Himachal Pradesh",
+      price: "₹6,999",
       rating: 4.9,
-      image: "🏜️",
-      description: "Cold desert landscapes and ancient monasteries"
+      image:
+        "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1600&auto=format&fit=crop",
+      description: "Paragliding, cafes, monasteries and sunsets",
     },
-    { 
-      title: "Kerala Backwaters Retreat", 
-      href: "/tours/kerala-backwaters",
-      duration: "4 Days",
-      difficulty: "Easy", 
-      location: "Kerala",
-      price: "₹12,000",
+    {
+      title: "Triund Trek",
+      href: "/tours/triund-trek",
+      duration: "2 Days / 1 Night",
+      difficulty: "Easy to Moderate",
+      location: "McLeod Ganj, Himachal Pradesh",
+      price: "₹3,999",
       rating: 4.7,
-      image: "🛶",
-      description: "Serene houseboats through tropical waterways"
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+      description: "Classic ridge trek with Dhauladhar views",
     },
   ];
 
-  const features = [
-    {
-      icon: Camera,
-      title: "Expert Photography",
-      description: "Professional guides who know the best spots and lighting"
-    },
-    {
-      icon: Heart,
-      title: "Small Groups",
-      description: "Maximum 12 travelers for personalized experiences"
-    },
-    {
-      icon: Star,
-      title: "Local Experiences",
-      description: "Authentic cultural immersion with local communities"
-    }
-  ];
+  // Intentionally left blank: feature cards are defined inline below for clarity
 
   return (
     <main>
-      <Hero />
-      
-      {/* Enhanced Featured Tours Section */}
-      <section className="py-32 bg-gradient-to-b from-background via-secondary/50 to-muted relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float"></div>
+      {/* Refined, Image-led Hero */}
+      <section className="relative min-h-[85vh] overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2000&auto=format&fit=crop"
+            alt="Himalayan landscape"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
+          {/* Subtle ambient glows */}
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-float" />
         </div>
-        
+
         <Container>
-          <div className="text-center mb-24 animate-fade-in-up">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-6 py-3 text-sm text-orange-600 dark:text-orange-400 border border-orange-500/20 backdrop-blur-sm">
-              <Star className="w-4 h-4 animate-twinkle" />
-              <span className="font-medium">Handpicked Experiences</span>
+          <div className="pt-32 pb-24 md:pt-40 md:pb-32">
+            <div className="max-w-3xl">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-5 py-2.5 text-sm text-emerald-300 border border-emerald-500/20 backdrop-blur-sm animate-fade-in-up">
+                <Star className="w-4 h-4" />
+                Trusted Mountain Experiences
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white animate-fade-in-up delay-200">
+                Discover Incredible India
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed animate-fade-in-up delay-400">
+                Treks, tours and curated journeys across mountains, deserts and coasts. Crafted with care, led by locals.
+              </p>
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
+                <Link
+                  href="/tours"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white forest-gradient shadow-lg hover:scale-105 transition-all"
+                >
+                  Explore Tours
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white/90 border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 transition-all"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
-            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-foreground via-orange-500 to-teal-500 bg-clip-text text-transparent">
-              Featured Adventures
-            </h2>
-            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Handpicked journeys that showcase the <span className="text-orange-500 font-semibold">incredible diversity</span> of India
-            </p>
           </div>
-          
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        </Container>
+      </section>
+
+      {/* Featured Tours */}
+      <section className="py-24 bg-gradient-to-b from-background via-secondary/40 to-background relative overflow-hidden">
+        <Container>
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">Featured Adventures</h2>
+            <p className="mt-3 text-lg text-gray-400">Handpicked journeys that showcase India’s diversity</p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {featuredTours.map((tour, index) => (
-              <Link 
-                key={tour.href} 
-                href={tour.href} 
-                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/60 to-secondary/60 border border-border backdrop-blur-lg hover:border-emerald-500/70 transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:shadow-emerald-500/30 animate-fade-in-up"
-                style={{animationDelay: `${index * 200}ms`}}
+              <Link
+                key={tour.href}
+                href={tour.href}
+                className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-emerald-500/50 transition-all hover:shadow-2xl hover:shadow-emerald-500/10"
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-purple-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                <div className="relative p-8">
-                  {/* Enhanced Image placeholder with animation */}
-                  <div className="w-full h-56 bg-gradient-to-br from-emerald-500/30 to-blue-500/30 rounded-2xl mb-8 flex items-center justify-center text-7xl relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-purple-400/20 animate-pulse"></div>
-                    <span className="relative z-10 group-hover:animate-bounce">{tour.image}</span>
-                    <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={tour.image}
+                    alt={tour.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                  <div className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
+                    <Star className="w-3 h-3" /> {tour.rating}
                   </div>
-                  
-                  {/* Tour Info */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium">
-                        <Star className="w-3 h-3" />
-                        {tour.rating}
-                      </span>
-                      <span className="text-2xl font-bold text-emerald-400">{tour.price}</span>
-                    </div>
-                    
-                    <h3 className="text-xl font-semibold text-card-foreground group-hover:text-emerald-500 transition-colors">
-                      {tour.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {tour.description}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {tour.location}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {tour.duration}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between pt-4 border-t border-border">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        tour.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
-                        tour.difficulty === 'Moderate' ? 'bg-yellow-500/20 text-yellow-400' :
-                        'bg-red-500/20 text-red-400'
-                      }`}>
-                        {tour.difficulty}
-                      </span>
-                      <div className="flex items-center gap-1 text-emerald-400 group-hover:gap-2 transition-all">
-                        <span className="text-sm font-medium">View Details</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-white">{tour.title}</h3>
+                    <span className="text-emerald-400 font-bold">{tour.price}</span>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-400">{tour.description}</p>
+                  <div className="mt-4 flex items-center justify-between text-sm text-gray-400">
+                    <span className="inline-flex items-center gap-1">
+                      <MapPin className="w-4 h-4" /> {tour.location}
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <Clock className="w-4 h-4" /> {tour.duration}
+                    </span>
+                  </div>
+                  <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
+                      tour.difficulty === "Easy"
+                        ? "bg-emerald-500/15 text-emerald-300"
+                        : tour.difficulty === "Moderate"
+                        ? "bg-yellow-500/15 text-yellow-300"
+                        : "bg-red-500/15 text-red-300"
+                    }`}>
+                      {tour.difficulty}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-emerald-400 group-hover:gap-2 transition-all">
+                      View Tour <ArrowRight className="w-4 h-4" />
+                    </span>
                   </div>
                 </div>
               </Link>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <Link 
+            <Link
               href="/tours"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg forest-gradient text-white font-semibold shadow-lg hover:scale-105 transition-all"
             >
               View All Adventures
               <ArrowRight className="w-5 h-5" />
@@ -164,45 +172,28 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Enhanced Features Section */}
-      <section className="py-32 bg-gradient-to-br from-muted via-background to-secondary relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-20 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-10 left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-float delay-1000"></div>
-        </div>
-        
+      {/* Why Choose Us */}
+      <section className="py-24 bg-gradient-to-br from-muted/30 via-background to-secondary/30 relative overflow-hidden">
         <Container>
-          <div className="text-center mb-24 animate-fade-in-up">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-6 py-3 text-sm text-teal-600 dark:text-teal-400 border border-teal-500/20 backdrop-blur-sm">
-              <Heart className="w-4 h-4 animate-pulse" />
-              <span className="font-medium">Exceptional Experiences</span>
-            </div>
-            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-teal-500 via-orange-500 to-blue-500 bg-clip-text text-transparent">
-              Why Choose Nirvana?
-            </h2>
-            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
-              What makes our adventures <span className="text-teal-500 font-semibold">truly special</span>
-            </p>
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">Why Choose Nirvana?</h2>
+            <p className="mt-3 text-lg text-gray-400">Thoughtful details that make your trip seamless</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {features.map((feature, i) => (
-              <div 
-                key={i} 
-                className="text-center group relative p-8 rounded-3xl bg-gradient-to-br from-background/50 to-secondary/30 border border-border backdrop-blur-sm hover:scale-105 transition-all duration-500 animate-fade-in-up"
-                style={{animationDelay: `${i * 200}ms`}}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: MapPin, title: "Local Guides", desc: "Led by experts who belong to the mountains" },
+              { icon: Heart, title: "Small Groups", desc: "Personal attention, authentic connections" },
+              { icon: Star, title: "Safety First", desc: "Reliable logistics and well-planned itineraries" },
+            ].map((f, i) => (
+              <div
+                key={i}
+                className="relative rounded-2xl border border-border bg-card/60 backdrop-blur p-6 hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
               >
-                {/* Glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 via-teal-500/20 to-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="relative">
-                  <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-orange-500/20 via-teal-500/20 to-blue-500/20 rounded-3xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                    <feature.icon className="w-12 h-12 text-orange-600 dark:text-orange-500 drop-shadow-lg group-hover:animate-pulse" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-orange-500 transition-colors duration-300">{feature.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-300 flex items-center justify-center mb-4">
+                  <f.icon className="w-6 h-6" />
                 </div>
+                <h3 className="text-xl font-semibold text-white">{f.title}</h3>
+                <p className="mt-2 text-gray-400">{f.desc}</p>
               </div>
             ))}
           </div>

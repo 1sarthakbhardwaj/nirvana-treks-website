@@ -8,49 +8,49 @@ export const metadata = {
 };
 
 const tours = [
-  { 
-    slug: "kashmir-great-lakes", 
-    title: "Kashmir Great Lakes Trek", 
-    subtitle: "Seven Pristine Alpine Lakes",
-    days: 7, 
-    region: "Jammu & Kashmir",
-    difficulty: "Moderate",
-    price: "₹25,000",
+  {
+    slug: "kasol-trip",
+    title: "Kasol Weekend Trip",
+    subtitle: "2 Nights / 3 Days | From ₹4,999",
+    days: 3,
+    region: "Parvati Valley, Himachal Pradesh",
+    difficulty: "Easy to Moderate",
+    price: "₹4,999",
     rating: 4.8,
-    image: "🏔️",
-    description: "Trek through seven stunning alpine lakes in the heart of Kashmir Himalayas"
+    image: "🏞️",
+    description: "Weekend escape to Kasol, Katagla & Chalal with Kheerganga trek and camp stay"
   },
-  { 
-    slug: "spiti-valley", 
-    title: "Spiti Valley Road Trip", 
-    subtitle: "Cold Desert Adventure",
-    days: 8, 
-    region: "Himachal Pradesh",
+  {
+    slug: "bir-billing",
+    title: "Bir Billing Trip",
+    subtitle: "Paragliding Capital of India",
+    days: 3,
+    region: "Kangra Valley, Himachal Pradesh",
     difficulty: "Easy",
-    price: "₹18,000", 
+    price: "₹6,999",
     rating: 4.9,
-    image: "🏜️",
-    description: "Journey through the mystical landscapes of Little Tibet"
+    image: "🪂",
+    description: "Cafe hopping in Bir, paragliding from Billing to Bir, monasteries and sunsets"
   },
-  { 
-    slug: "kerala-backwaters", 
-    title: "Kerala Backwaters Retreat", 
-    subtitle: "Houseboat Experience",
-    days: 4, 
-    region: "Kerala",
-    difficulty: "Easy",
-    price: "₹12,000",
+  {
+    slug: "triund-trek",
+    title: "Triund Trek",
+    subtitle: "Classic Dharamkot Ridge | From ₹3,999",
+    days: 2,
+    region: "McLeod Ganj, Himachal Pradesh",
+    difficulty: "Easy to Moderate",
+    price: "₹3,999",
     rating: 4.7,
-    image: "🛶",
-    description: "Serene cruise through palm-fringed waterways and traditional villages"
+    image: "⛰️",
+    description: "Short, scenic ridge trek with panoramic views of the Dhauladhar range"
   },
 ];
 
 const categories = [
   { name: "All Adventures", count: tours.length },
-  { name: "Trekking", count: 1 },
-  { name: "Road Trips", count: 1 },
-  { name: "Cultural Tours", count: 1 },
+  { name: "Trekking", count: 2 },
+  { name: "Paragliding", count: 1 },
+  { name: "Weekend", count: 3 },
 ];
 
 export default function ToursPage() {

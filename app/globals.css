@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 :root, .dark {
-  /* Ultra-Classy Dark Theme - Luxury Palette */
-  --background: 8 8 11;         /* Rich charcoal black */
-  --foreground: 250 250 250;    /* Pure white */
-  --card: 24 24 27;            /* Deep charcoal card */
-  --card-foreground: 244 244 245;
-  --primary: 251 191 36;        /* Luxurious gold */
-  --primary-foreground: 8 8 11;
-  --secondary: 39 39 42;        /* Rich dark gray */
-  --secondary-foreground: 212 212 216;
-  --muted: 63 63 70;           /* Sophisticated gray */
-  --muted-foreground: 161 161 170;
-  --accent: 99 102 241;         /* Royal purple */
-  --accent-foreground: 250 250 250;
-  --border: 63 63 70;          /* Subtle border */
-  --input: 39 39 42;
-  --ring: 251 191 36;
-  --gold: 251 191 36;          /* Luxury gold */
-  --platinum: 229 231 235;     /* Platinum silver */
-  --emerald: 16 185 129;       /* Premium emerald */
-  --rose: 244 63 94;           /* Elegant rose */
-  --indigo: 99 102 241;        /* Royal indigo */
-  --amber: 245 158 11;         /* Rich amber */
+  /* Mountain Greenery Theme - Natural Palette */
+  --background: 15 23 31;       /* Deep forest night */
+  --foreground: 248 250 252;    /* Mountain snow white */
+  --card: 22 40 46;            /* Pine shadow */
+  --card-foreground: 240 245 247;
+  --primary: 34 197 94;         /* Fresh mountain green */
+  --primary-foreground: 15 23 31;
+  --secondary: 30 58 48;        /* Deep forest */
+  --secondary-foreground: 200 230 201;
+  --muted: 52 73 85;           /* Misty mountain */
+  --muted-foreground: 148 180 159;
+  --accent: 16 185 129;         /* Emerald lake */
+  --accent-foreground: 248 250 252;
+  --border: 52 73 85;          /* Rocky border */
+  --input: 30 58 48;
+  --ring: 34 197 94;
+  --forest: 21 128 61;         /* Deep forest green */
+  --moss: 34 197 94;           /* Bright moss green */
+  --sage: 132 204 22;          /* Mountain sage */
+  --pine: 22 163 74;           /* Pine green */
+  --meadow: 74 222 128;        /* Alpine meadow */
+  --earth: 120 113 108;        /* Mountain earth */
 }
 
 @theme inline {
@@ -54,7 +54,10 @@ html {
 }
 
 body {
-  background: radial-gradient(ellipse at top, rgb(var(--secondary)) 0%, rgb(var(--background)) 50%);
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(21, 128, 61, 0.08) 0%, transparent 40%),
+    linear-gradient(135deg, rgb(var(--secondary)) 0%, rgb(var(--background)) 50%, rgb(var(--secondary)) 100%);
   background-attachment: fixed;
   color: rgb(var(--foreground));
   font-family: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -84,13 +87,17 @@ h1, h2, h3, h4, h5, h6 {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Premium Gradients */
-.gold-gradient {
-  background: linear-gradient(135deg, rgb(var(--gold)) 0%, rgb(var(--amber)) 100%);
+/* Mountain Greenery Gradients */
+.forest-gradient {
+  background: linear-gradient(135deg, rgb(var(--forest)) 0%, rgb(var(--moss)) 100%);
 }
 
-.premium-gradient {
-  background: linear-gradient(135deg, rgb(var(--indigo)) 0%, rgb(var(--rose)) 50%, rgb(var(--gold)) 100%);
+.nature-gradient {
+  background: linear-gradient(135deg, rgb(var(--pine)) 0%, rgb(var(--sage)) 50%, rgb(var(--meadow)) 100%);
+}
+
+.mountain-gradient {
+  background: linear-gradient(135deg, rgb(var(--moss)) 0%, rgb(var(--forest)) 100%);
 }
 
 /* Elegant Shadows */
@@ -199,6 +206,60 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Nature-specific animations */
+@keyframes nature-flow {
+  0%, 100% {
+    transform: translateX(0%) rotate(0deg);
+  }
+  33% {
+    transform: translateX(-20%) rotate(2deg);
+  }
+  66% {
+    transform: translateX(20%) rotate(-1deg);
+  }
+}
+
+@keyframes gentle-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+  }
+}
+
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(2deg) translateY(-5px);
+  }
+  75% {
+    transform: rotate(-2deg) translateY(5px);
+  }
+}
+
+@keyframes mountain-breeze {
+  0%, 100% {
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(10px) scale(1.05);
+  }
+}
+
+@keyframes forest-whisper {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
 /* Animation Classes */
 .animate-blob {
   animation: blob 7s infinite;
@@ -234,6 +295,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
+}
+
+.animate-nature-flow {
+  animation: nature-flow 6s ease-in-out infinite;
+}
+
+.animate-gentle-glow {
+  animation: gentle-glow 3s ease-in-out infinite;
+}
+
+.animate-leaf-sway {
+  animation: leaf-sway 4s ease-in-out infinite;
+}
+
+.animate-mountain-breeze {
+  animation: mountain-breeze 5s ease-in-out infinite;
+}
+
+.animate-forest-whisper {
+  animation: forest-whisper 4s ease-in-out infinite;
 }
 
 /* Animation Delays */
