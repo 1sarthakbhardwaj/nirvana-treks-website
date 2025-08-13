@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import ThemeToggle from "@/components/theme-toggle";
 import { Menu, X, Mountain } from "lucide-react";
 import { useState } from "react";
 
@@ -16,41 +15,39 @@ export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur-xl bg-background/80">
-      <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-foreground hover:text-emerald-500 transition-colors">
-          <Mountain className="w-6 h-6 text-emerald-500" />
-          <span className="hidden sm:block">Nirvana Treks & Tours</span>
-          <span className="sm:hidden">Nirvana</span>
+    <header className="sticky top-0 z-50 w-full border-b border-gray-800/50 glass-effect luxury-shadow">
+      <Container className="flex h-20 items-center justify-between">
+        <Link href="/" className="flex items-center gap-3 font-bold tracking-tight text-foreground hover:text-yellow-400 transition-colors">
+          <Mountain className="w-8 h-8 text-yellow-400 drop-shadow-lg" />
+          <span className="hidden sm:block text-xl">Nirvana Treks & Tours</span>
+          <span className="sm:hidden text-xl">Nirvana</span>
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden gap-8 md:flex">
+        <nav className="hidden gap-10 md:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="relative text-sm text-muted-foreground transition-all hover:text-foreground group"
+              className="relative text-lg font-medium text-gray-300 transition-all hover:text-yellow-400 group"
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all group-hover:w-full"></span>
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
-          
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="md:hidden p-3 text-gray-300 hover:text-yellow-400 transition-colors rounded-lg glass-effect"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             ) : (
-              <Menu className="w-5 h-5" />
+              <Menu className="w-6 h-6" />
             )}
           </button>
         </div>
@@ -58,14 +55,14 @@ export default function SiteHeader() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
-          <Container className="py-4">
-            <nav className="flex flex-col space-y-4">
+        <div className="md:hidden border-t border-gray-800/50 glass-effect">
+          <Container className="py-6">
+            <nav className="flex flex-col space-y-6">
               {nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-muted-foreground hover:text-emerald-500 transition-colors py-2 border-b border-border last:border-b-0"
+                  className="text-gray-300 hover:text-yellow-400 transition-colors py-3 text-lg font-medium border-b border-gray-800/30 last:border-b-0"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -73,7 +70,7 @@ export default function SiteHeader() {
               ))}
               <Link
                 href="/contact"
-                className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-emerald-500 text-emerald-50 font-semibold rounded-lg hover:bg-emerald-600 transition-colors"
+                className="mt-6 inline-flex items-center justify-center px-8 py-4 gold-gradient text-black font-bold rounded-xl luxury-shadow hover:scale-105 transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Plan Your Journey

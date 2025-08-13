@@ -73,15 +73,15 @@ export default function Home() {
         
         <Container>
           <div className="text-center mb-24 animate-fade-in-up">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-6 py-3 text-sm text-emerald-400 border border-emerald-500/20 backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-6 py-3 text-sm text-orange-600 dark:text-orange-400 border border-orange-500/20 backdrop-blur-sm">
               <Star className="w-4 h-4 animate-twinkle" />
               <span className="font-medium">Handpicked Experiences</span>
             </div>
-            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-foreground via-emerald-500 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-foreground via-orange-500 to-teal-500 bg-clip-text text-transparent">
               Featured Adventures
             </h2>
             <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Handpicked journeys that showcase the <span className="text-emerald-400 font-semibold">incredible diversity</span> of India
+              Handpicked journeys that showcase the <span className="text-orange-500 font-semibold">incredible diversity</span> of India
             </p>
           </div>
           
@@ -155,7 +155,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link 
               href="/tours"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-black font-semibold rounded-lg hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-300 hover:scale-105"
             >
               View All Adventures
               <ArrowRight className="w-5 h-5" />
@@ -174,15 +174,15 @@ export default function Home() {
         
         <Container>
           <div className="text-center mb-24 animate-fade-in-up">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-purple-500/10 px-6 py-3 text-sm text-purple-400 border border-purple-500/20 backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-6 py-3 text-sm text-teal-600 dark:text-teal-400 border border-teal-500/20 backdrop-blur-sm">
               <Heart className="w-4 h-4 animate-pulse" />
               <span className="font-medium">Exceptional Experiences</span>
             </div>
-            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-purple-400 via-emerald-500 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-8 bg-gradient-to-r from-teal-500 via-orange-500 to-blue-500 bg-clip-text text-transparent">
               Why Choose Nirvana?
             </h2>
             <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
-              What makes our adventures <span className="text-purple-400 font-semibold">truly special</span>
+              What makes our adventures <span className="text-teal-500 font-semibold">truly special</span>
             </p>
           </div>
           
@@ -194,13 +194,13 @@ export default function Home() {
                 style={{animationDelay: `${i * 200}ms`}}
               >
                 {/* Glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-emerald-500/20 to-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 via-teal-500/20 to-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative">
-                  <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-emerald-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                    <feature.icon className="w-12 h-12 text-emerald-500 drop-shadow-lg group-hover:animate-pulse" />
+                  <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-orange-500/20 via-teal-500/20 to-blue-500/20 rounded-3xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                    <feature.icon className="w-12 h-12 text-orange-600 dark:text-orange-500 drop-shadow-lg group-hover:animate-pulse" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-emerald-400 transition-colors duration-300">{feature.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-orange-500 transition-colors duration-300">{feature.title}</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               </div>

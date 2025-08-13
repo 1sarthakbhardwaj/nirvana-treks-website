@@ -1,39 +1,28 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --card: #ffffff;
-  --card-foreground: #171717;
-  --primary: #10b981;
-  --primary-foreground: #000000;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #10b981;
-}
-
-.dark {
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #0a0a0a;
-  --card-foreground: #ffffff;
-  --primary: #10b981;
-  --primary-foreground: #000000;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --border: #334155;
-  --input: #334155;
-  --ring: #10b981;
+:root, .dark {
+  /* Ultra-Classy Dark Theme - Luxury Palette */
+  --background: 8 8 11;         /* Rich charcoal black */
+  --foreground: 250 250 250;    /* Pure white */
+  --card: 24 24 27;            /* Deep charcoal card */
+  --card-foreground: 244 244 245;
+  --primary: 251 191 36;        /* Luxurious gold */
+  --primary-foreground: 8 8 11;
+  --secondary: 39 39 42;        /* Rich dark gray */
+  --secondary-foreground: 212 212 216;
+  --muted: 63 63 70;           /* Sophisticated gray */
+  --muted-foreground: 161 161 170;
+  --accent: 99 102 241;         /* Royal purple */
+  --accent-foreground: 250 250 250;
+  --border: 63 63 70;          /* Subtle border */
+  --input: 39 39 42;
+  --ring: 251 191 36;
+  --gold: 251 191 36;          /* Luxury gold */
+  --platinum: 229 231 235;     /* Platinum silver */
+  --emerald: 16 185 129;       /* Premium emerald */
+  --rose: 244 63 94;           /* Elegant rose */
+  --indigo: 99 102 241;        /* Royal indigo */
+  --amber: 245 158 11;         /* Rich amber */
 }
 
 @theme inline {
@@ -60,11 +49,59 @@
   border-color: hsl(var(--border));
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background: radial-gradient(ellipse at top, rgb(var(--secondary)) 0%, rgb(var(--background)) 50%);
+  background-attachment: fixed;
+  color: rgb(var(--foreground));
+  font-family: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+/* Premium Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.text-foreground {
+  color: rgb(var(--foreground)) !important;
+}
+
+/* Luxury Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Premium Gradients */
+.gold-gradient {
+  background: linear-gradient(135deg, rgb(var(--gold)) 0%, rgb(var(--amber)) 100%);
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, rgb(var(--indigo)) 0%, rgb(var(--rose)) 50%, rgb(var(--gold)) 100%);
+}
+
+/* Elegant Shadows */
+.luxury-shadow {
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.text-shadow-luxury {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Custom Animations */
