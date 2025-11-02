@@ -8,48 +8,52 @@ import {
 
 const tours = {
   "kasol-trip": {
-    title: "Kasol Weekend Trip",
-    subtitle: "2 Nights / 3 Days | From ₹4,999",
+    title: "Kasol–Kheerganga Trek & Sightseeing",
+    subtitle: "2 Nights / 3 Days | Delhi Pickup & Drop",
     description:
-      "Weekend escape: Chandigarh to Kasol, Katagla & Chalal sightseeing, Kheerganga trek (camp stay), Kasol market, and return to Chandigarh.",
+      "Adventure + Nature + Relaxation: Kasol exploration, Chalal village trek, Manikaran Sahib visit, and the epic Kheerganga trek with natural hot springs.",
     image: "🏞️",
     price: "₹4,999",
     originalPrice: "₹6,499",
-    duration: "3 Days / 2 Nights",
+    duration: "2 Nights / 3 Days",
     difficulty: "Easy to Moderate",
     location: "Parvati Valley, Himachal Pradesh",
     maxGroupSize: 14,
     rating: 4.8,
     reviews: 92,
     highlights: [
-      "Chandigarh pickup Friday evening, overnight journey",
-      "Local sightseeing: Katagla & Chalal villages",
-      "Kheerganga trek with camp stay",
-      "Kasol market exploration",
-      "Comfortable travel and friendly crew"
+      "Delhi pickup & drop by comfortable tempo traveller/bus",
+      "Riverside stay in Kasol with stunning views",
+      "Café hopping & local market exploration",
+      "Chalal village mini-trek adventure",
+      "Manikaran Sahib visit & natural hot springs experience",
+      "Guided Kheerganga trek through pine forests",
+      "Bonfire night with music under the stars",
+      "All meals included (breakfast, lunch, dinner)"
     ],
     itinerary: [
-      { day: 1, title: "Friday: Pickup & Overnight Journey", description: "Evening pickup from Chandigarh, overnight journey to Kasol." },
-      { day: 2, title: "Saturday: Katagla & Chalal + Kasol Stay", description: "Arrive Kasol. Local sightseeing of Katagla and Chalal village. Hotel stay in Kasol." },
-      { day: 3, title: "Sunday: Kheerganga Trek (Camp)", description: "Trek to Kheerganga. Camp stay under the stars." },
-      { day: 4, title: "Monday: Kasol Market + Departure", description: "Local Kasol market exploration. Evening departure to Chandigarh." },
-      { day: 5, title: "Tuesday: Chandigarh Drop", description: "Morning drop at Chandigarh." }
+      { day: 1, title: "Day 1 – Departure from Delhi", description: "Evening departure from Delhi in a comfortable tempo traveller / bus. Overnight journey through beautiful mountain roads. Arrival in Kasol by morning." },
+      { day: 2, title: "Day 2 – Kasol Exploration & Local Sightseeing", description: "Check-in at campsite or riverside stay. Breakfast amidst the mountains. Visit Kasol Market, enjoy Café Hopping (Moon Dance Café, Evergreen Café). Explore Chalal Village Trek or relax by the Parvati River. Visit Manikaran Sahib Gurudwara & experience the natural hot springs. Evening bonfire with light music and dinner under the stars. Overnight stay at Kasol." },
+      { day: 3, title: "Day 3 – Kheerganga Trek & Return Journey", description: "Early morning breakfast, drive to Barshaini (trek start point). Begin the scenic Kheerganga Trek through pine forests, waterfalls, and villages. Reach Kheerganga top, relax in the natural hot water springs and soak in mountain views. Descend to Barshaini by evening and start the return journey to Delhi. Overnight travel, reach Delhi the next morning." }
     ],
     included: [
-      "Chandigarh pickup & drop",
-      "Hotel (Kasol) + Camp stay (Kheerganga)",
+      "Delhi pickup & drop in comfortable tempo traveller/bus",
+      "Accommodation: Camp stay in Kasol & overnight journey",
+      "All meals: Breakfast, lunch, and dinner included",
       "Trek guide & basic first aid",
-      "All permits",
+      "All permits and entry fees",
+      "Manikaran Gurudwara visit",
+      "Bonfire & group activities",
       "Local sightseeing assistance"
     ],
     excluded: [
-      "Meals",
-      "Personal expenses",
+      "Personal expenses & shopping",
       "Any activities not mentioned",
-      "Travel insurance"
+      "Travel insurance",
+      "Additional snacks & beverages"
     ],
     bestTime: "Year-round (best: Mar–Jun, Sep–Nov)",
-    fitnessLevel: "Basic fitness sufficient",
+    fitnessLevel: "Basic fitness sufficient for Kheerganga trek",
   },
   "bir-billing": {
     title: "Bir Billing Trip",

@@ -15,9 +15,25 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    alert("Thank you for your inquiry! We'll get back to you within 24 hours.");
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `Hi! I'm interested in booking a tour.\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      (formData.phone ? `Phone: ${formData.phone}\n` : '') +
+      (formData.destination ? `Destination: ${formData.destination}\n` : '') +
+      `Message: ${formData.message}`;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/919211946444?text=${encodedMessage}`;
+    
+    // Open WhatsApp in a new tab/window
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
     setFormData({ name: "", email: "", phone: "", destination: "", message: "" });
   };
 
@@ -32,7 +48,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 09816780973", "+91 98765 43210"],
+      details: ["+91 9211946444", "+91 9816780973"],
       subtitle: "Available 9 AM - 7 PM"
     },
     {

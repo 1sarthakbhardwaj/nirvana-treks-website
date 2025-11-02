@@ -6,17 +6,17 @@ import { MapPin, Clock, Star, Heart, ArrowRight } from "lucide-react";
 export default function Home() {
   const featuredTours = [
     {
-      title: "Kasol Weekend Trip",
+      title: "Kasol–Kheerganga Trek",
       href: "/tours/kasol-trip",
       duration: "2 Nights / 3 Days",
       difficulty: "Easy to Moderate",
       location: "Parvati Valley, Himachal Pradesh",
-      price: "₹4,999",
+      price: "₹6,499",
       rating: 4.8,
       image:
         "https://images.unsplash.com/photo-1500634245200-e5245c7574ef?q=80&w=1600&auto=format&fit=crop",
       description:
-        "Kasol, Katagla & Chalal with Kheerganga trek and camp stay",
+        "Adventure + Nature + Relaxation: Kasol exploration, Chalal village, Manikaran Sahib & epic Kheerganga trek",
     },
     {
       title: "Bir Billing Trip",

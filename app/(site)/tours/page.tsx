@@ -10,15 +10,15 @@ export const metadata = {
 const tours = [
   {
     slug: "kasol-trip",
-    title: "Kasol Weekend Trip",
+    title: "Kasol–Kheerganga Trek",
     subtitle: "2 Nights / 3 Days | From ₹4,999",
     days: 3,
     region: "Parvati Valley, Himachal Pradesh",
     difficulty: "Easy to Moderate",
-    price: "₹4,999",
+    price: "₹6,499",
     rating: 4.8,
     image: "🏞️",
-    description: "Weekend escape to Kasol, Katagla & Chalal with Kheerganga trek and camp stay"
+    description: "Adventure + Nature + Relaxation: Kasol exploration, Chalal village trek, Manikaran Sahib visit, and epic Kheerganga trek with natural hot springs"
   },
   {
     slug: "bir-billing",
