@@ -11,7 +11,7 @@ const tours = [
   {
     slug: "kasol-trip",
     title: "Kasol–Kheerganga Trek",
-    subtitle: "2 Nights / 3 Days | From ₹4,999",
+    subtitle: "2 Nights / 3 Days | From ₹6,499",
     days: 3,
     region: "Parvati Valley, Himachal Pradesh",
     difficulty: "Easy to Moderate",

@@ -13,8 +13,8 @@ const tours = {
     description:
       "Adventure + Nature + Relaxation: Kasol exploration, Chalal village trek, Manikaran Sahib visit, and the epic Kheerganga trek with natural hot springs.",
     image: "🏞️",
-    price: "₹4,999",
-    originalPrice: "₹6,499",
+    price: "₹6,499",
+    originalPrice: "₹8,499",
     duration: "2 Nights / 3 Days",
     difficulty: "Easy to Moderate",
     location: "Parvati Valley, Himachal Pradesh",
