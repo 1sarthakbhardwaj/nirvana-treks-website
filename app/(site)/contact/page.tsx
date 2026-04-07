@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "@/components/ui/container";
+import DestinationSelect from "@/components/destination-select";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
@@ -37,7 +38,7 @@ export default function ContactPage() {
     setFormData({ name: "", email: "", phone: "", destination: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -144,23 +145,14 @@ export default function ContactPage() {
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="destination" className="block text-sm font-medium text-white/80 mb-2">
-                    Interested Destination
-                  </label>
-                  <select
-                    id="destination"
-                    name="destination"
-                    value={formData.destination}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all"
-                  >
-                    <option value="" className="bg-black">Select a destination</option>
-                    {popularDestinations.map((dest) => (
-                      <option key={dest} value={dest} className="bg-black">{dest}</option>
-                    ))}
-                  </select>
-                </div>
+                <DestinationSelect
+                  id="destination"
+                  label="Interested Destination"
+                  value={formData.destination}
+                  onChange={(destination) => setFormData((prev) => ({ ...prev, destination }))}
+                  options={popularDestinations}
+                  placeholder="Select a destination"
+                />
               </div>
 
               <div>

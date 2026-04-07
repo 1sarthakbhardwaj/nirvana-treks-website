@@ -1,4 +1,5 @@
 import Container from "@/components/ui/container";
+import TrailGallery from "@/components/trail-gallery";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Star, Heart, ArrowRight } from "lucide-react";
@@ -171,6 +172,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <TrailGallery />
 
       {/* Why Choose Us */}
       <section className="py-24 bg-gradient-to-br from-muted/30 via-background to-secondary/30 relative overflow-hidden">
