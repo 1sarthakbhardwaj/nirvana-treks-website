@@ -361,3 +361,51 @@ h1, h2, h3, h4, h5, h6 {
 .delay-3000 {
   animation-delay: 3000ms;
 }
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+/* Mountain silhouette divider between hero and content */
+.mountain-divider {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin-top: -80px;
+  background: linear-gradient(to bottom, transparent, rgb(var(--background)));
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mountain-divider::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120L100 80 250 100 400 40 550 90 700 30 850 70 1000 20 1100 60 1200 40V120H0Z' fill='rgb(15,23,31)'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: 100% 100%;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.5);
+}

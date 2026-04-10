@@ -58,10 +58,10 @@ export default function Hero() {
             
             {/* Simple, Natural Title */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in-up delay-200 mb-6">
-              <span className="block animate-slide-in-left text-foreground">Discover</span>
+              <span className="block animate-slide-in-left text-foreground">Discover the</span>
               <span className="block animate-slide-in-right delay-300 text-foreground">Incredible</span>
               <span className="block animate-slide-in-left delay-500 nature-gradient bg-clip-text text-transparent font-bold">
-                India
+                Himalayan Ranges
               </span>
             </h1>
             

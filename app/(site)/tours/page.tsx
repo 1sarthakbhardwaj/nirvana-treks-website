@@ -4,7 +4,7 @@ import { MapPin, Clock, Star, ArrowRight, Filter, Search } from "lucide-react";
 
 export const metadata = {
   title: "Tours & Adventures | Nirvana Treks & Tours",
-  description: "Discover our curated collection of treks, tours, and adventures across incredible India.",
+  description: "Discover our curated collection of treks, tours, and adventures across the incredible Himalayan ranges.",
 };
 
 const tours = [
@@ -35,22 +35,59 @@ const tours = [
   {
     slug: "triund-trek",
     title: "Triund Trek",
-    subtitle: "Classic Dharamkot Ridge | From ₹3,999",
+    subtitle: "Classic Dharamkot Ridge | From ₹5,999",
     days: 2,
     region: "McLeod Ganj, Himachal Pradesh",
     difficulty: "Easy to Moderate",
-    price: "₹3,999",
+    price: "₹5,999",
     rating: 4.7,
     image: "⛰️",
     description: "Short, scenic ridge trek with panoramic views of the Dhauladhar range"
+  },
+  {
+    slug: "bir-rajgundha",
+    title: "Bir, Barot to Rajgundha Trek",
+    subtitle: "3 Days / 2 Nights | From ₹5,999",
+    days: 3,
+    region: "Kangra Valley, Himachal Pradesh",
+    difficulty: "Easy to Moderate",
+    price: "₹5,999",
+    rating: 4.8,
+    image: "🏕️",
+    description: "Hidden valley trek through Bir & Barot with lush meadows, Dhauladhar views, and nights under the stars"
+  },
+  {
+    slug: "kareri-lake",
+    title: "Kareri Lake Trek",
+    subtitle: "3 Days / 2 Nights | From ₹5,999",
+    days: 3,
+    region: "Kangra Valley, Himachal Pradesh",
+    difficulty: "Moderate",
+    price: "₹5,999",
+    rating: 4.8,
+    image: "💎",
+    description: "Trek to a pristine glacial lake at 2,934m surrounded by snow-capped Dhauladhar peaks"
+  },
+  {
+    slug: "hampta-pass",
+    title: "Hampta Pass Trek",
+    subtitle: "5 Nights / 6 Days | From ₹12,999",
+    days: 6,
+    region: "Kullu–Spiti, Himachal Pradesh",
+    difficulty: "Moderate to Difficult",
+    price: "₹12,999",
+    rating: 4.9,
+    image: "🏔️",
+    description: "Dramatic crossover trek from green Kullu valley to barren Spiti, with Chandratal Lake visit"
   },
 ];
 
 const categories = [
   { name: "All Adventures", count: tours.length },
-  { name: "Trekking", count: 2 },
+  { name: "Trekking", count: 5 },
   { name: "Paragliding", count: 1 },
-  { name: "Weekend", count: 3 },
+  { name: "Weekend", count: 4 },
+  { name: "Multi-day", count: 2 },
 ];
 
 export default function ToursPage() {
@@ -61,7 +98,7 @@ export default function ToursPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">Our Adventures</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            From challenging Himalayan treks to peaceful backwater cruises, discover handpicked journeys that showcase the incredible diversity of India.
+            From scenic ridge treks to dramatic high-altitude crossover passes, discover handpicked journeys across the incredible Himalayan ranges.
           </p>
         </div>
 
@@ -102,8 +139,9 @@ export default function ToursPage() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {tours.map((tour) => {
             const difficultyColor = tour.difficulty === 'Easy' ? 'text-green-400 bg-green-500/20' :
-                                  tour.difficulty === 'Moderate' ? 'text-yellow-400 bg-yellow-500/20' :
-                                  'text-red-400 bg-red-500/20';
+                                  tour.difficulty.includes('Difficult') ? 'text-red-400 bg-red-500/20' :
+                                  tour.difficulty.includes('Moderate') ? 'text-yellow-400 bg-yellow-500/20' :
+                                  'text-green-400 bg-green-500/20';
 
             return (
               <Link 

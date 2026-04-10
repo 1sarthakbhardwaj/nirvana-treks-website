@@ -96,12 +96,12 @@ const tours = {
   },
   "triund-trek": {
     title: "Triund Trek",
-    subtitle: "Classic Dharamkot Ridge | From ₹3,999",
+    subtitle: "Classic Dharamkot Ridge | From ₹5,999",
     description:
       "A short, scenic hike to Triund with grand views of the Dhauladhar range and the Kangra valley—perfect weekend adventure.",
     image: "⛰️",
-    price: "₹3,999",
-    originalPrice: "₹4,999",
+    price: "₹5,999",
+    originalPrice: "₹7,499",
     duration: "2 Days / 1 Night",
     difficulty: "Easy to Moderate",
     location: "McLeod Ganj, Himachal Pradesh",
@@ -131,6 +131,144 @@ const tours = {
     ],
     bestTime: "Year-round (avoid heavy snow/rains)",
     fitnessLevel: "Basic fitness sufficient",
+  },
+  "bir-rajgundha": {
+    title: "Bir, Barot to Rajgundha Trek",
+    subtitle: "3 Days / 2 Nights | From ₹5,999",
+    description:
+      "Trek from the paragliding capital through Barot into the hidden Rajgundha valley—lush meadows, stunning mountain views, and nights under an ocean of stars.",
+    image: "🏕️",
+    price: "₹5,999",
+    originalPrice: "₹7,999",
+    duration: "3 Days / 2 Nights",
+    difficulty: "Easy to Moderate",
+    location: "Kangra Valley, Himachal Pradesh",
+    maxGroupSize: 14,
+    rating: 4.8,
+    reviews: 64,
+    highlights: [
+      "Trek through pine and deodar forests from Bir",
+      "Camp in the pristine Rajgundha valley meadow",
+      "360-degree views of the Dhauladhar range",
+      "Bonfire under unpolluted starry skies",
+      "Visit the ancient Rajgundha village",
+      "Optional paragliding in Bir before/after trek"
+    ],
+    itinerary: [
+      { day: 1, title: "Day 1 – Bir & Barot to Rajgundha", description: "Arrive in Bir, meet the group and trek lead. Drive to Barot and begin the trek through dense forests and open ridges. Reach Rajgundha valley by evening. Set up camp, bonfire and dinner under the stars." },
+      { day: 2, title: "Day 2 – Rajgundha Exploration", description: "Wake up to valley views. After breakfast, explore Rajgundha village and nearby meadows. Optional hike to higher ridges for panoramic Dhauladhar views. Evening at leisure, bonfire with music." },
+      { day: 3, title: "Day 3 – Descent & Departure", description: "Early morning sunrise point visit. Breakfast and descend back to Bir via an alternate route through Palachak. Reach Bir by afternoon. Trip ends." }
+    ],
+    included: [
+      "Camping accommodation (tents, sleeping bags, mats)",
+      "All meals during the trek (breakfast, lunch, dinner)",
+      "Experienced trek guide & support staff",
+      "Permits and forest entry fees",
+      "Bonfire & group activities",
+      "Basic first aid kit"
+    ],
+    excluded: [
+      "Transport to/from Bir",
+      "Paragliding fee (optional)",
+      "Personal expenses",
+      "Travel insurance"
+    ],
+    bestTime: "Mar–Jun, Sep–Nov",
+    fitnessLevel: "Basic fitness sufficient; regular walks recommended",
+  },
+  "kareri-lake": {
+    title: "Kareri Lake Trek",
+    subtitle: "3 Days / 2 Nights | From ₹5,999",
+    description:
+      "Trek to the glacial Kareri Lake nestled at 2,934m in the Dhauladhar range—alpine meadows, dense forests, and a pristine high-altitude lake.",
+    image: "💎",
+    price: "₹5,999",
+    originalPrice: "₹7,999",
+    duration: "3 Days / 2 Nights",
+    difficulty: "Moderate",
+    location: "Kangra Valley, Himachal Pradesh",
+    maxGroupSize: 12,
+    rating: 4.8,
+    reviews: 58,
+    highlights: [
+      "Pristine glacial lake at 2,934m altitude",
+      "Camp beside the crystal-clear Kareri Lake",
+      "Dense oak, pine and rhododendron forests",
+      "Rich birdlife and Himalayan flora",
+      "Panoramic views of snow-capped Dhauladhar peaks",
+      "Authentic Gaddi shepherd village encounters"
+    ],
+    itinerary: [
+      { day: 1, title: "Day 1 – Dharamshala to Kareri Village", description: "Drive from Dharamshala to Kareri village (the trek base). Begin the trek through terraced fields and oak forests to the midway campsite at Rioti. Set up camp, dinner and bonfire." },
+      { day: 2, title: "Day 2 – Rioti to Kareri Lake", description: "Post breakfast, continue the ascent through dense forest, crossing streams. Reach Kareri Lake by afternoon. Explore the glacial lake, enjoy the reflections of Dhauladhar peaks. Camp beside the lake. Evening bonfire." },
+      { day: 3, title: "Day 3 – Kareri Lake to Dharamshala", description: "Sunrise at the lake. Breakfast and begin descent. Trek back to Kareri village, drive to Dharamshala. Trip ends by evening." }
+    ],
+    included: [
+      "Camping accommodation (tents, sleeping bags, mats)",
+      "All meals during the trek",
+      "Certified trek guide & support staff",
+      "Permits and forest entry fees",
+      "Transport: Dharamshala – Kareri village – Dharamshala",
+      "Basic first aid & emergency oxygen"
+    ],
+    excluded: [
+      "Transport to/from Dharamshala",
+      "Personal expenses",
+      "Travel insurance",
+      "Any item not mentioned in inclusions"
+    ],
+    bestTime: "Apr–Jun, Sep–Nov",
+    fitnessLevel: "Moderate fitness required; ability to walk 6-8 hours a day on mountain trails",
+  },
+  "hampta-pass": {
+    title: "Hampta Pass Trek",
+    subtitle: "5 Nights / 6 Days | From ₹12,999",
+    description:
+      "Cross the dramatic Hampta Pass at 4,270m—from the lush green Kullu valley to the stark, arid landscapes of Spiti. One of the most rewarding crossover treks in the Himalayas.",
+    image: "🏔️",
+    price: "₹12,999",
+    originalPrice: "₹15,999",
+    duration: "5 Nights / 6 Days",
+    difficulty: "Moderate to Difficult",
+    location: "Kullu–Spiti, Himachal Pradesh",
+    maxGroupSize: 12,
+    rating: 4.9,
+    reviews: 87,
+    highlights: [
+      "Cross the legendary Hampta Pass at 4,270m",
+      "Dramatic landscape shift: green Kullu to barren Spiti",
+      "Camp at stunning Balu Ka Ghera & Shea Goru",
+      "Visit the mesmerizing Chandratal (Moon Lake)",
+      "River crossings, glacial moraines & alpine meadows",
+      "Professional mountaineering guides & full support team"
+    ],
+    itinerary: [
+      { day: 1, title: "Day 1 – Manali to Jobra to Chika", description: "Drive from Manali to Jobra (trek starting point at 3,100m). Trek to Chika campsite through lush apple orchards and pine forests. Set up camp at Chika (3,050m). Evening orientation and bonfire." },
+      { day: 2, title: "Day 2 – Chika to Balu Ka Ghera", description: "Trek through dense forests opening into vast meadows. Cross streams and reach Balu Ka Ghera (3,600m), a stunning campsite in a wide valley surrounded by towering peaks. Acclimatisation walk." },
+      { day: 3, title: "Day 3 – Balu Ka Ghera to Shea Goru (Pass Day)", description: "The big day. Early start for the Hampta Pass ascent (4,270m). Navigate glacial moraines and snowfields. Witness the dramatic landscape change at the pass—green to barren. Descend to Shea Goru (3,900m) on the Spiti side. Camp." },
+      { day: 4, title: "Day 4 – Shea Goru to Chatru", description: "Descend along the Shea Nala river through the stark Spiti terrain. Reach Chatru (3,360m). Rest day at camp. Optional drive to explore the area." },
+      { day: 5, title: "Day 5 – Chatru to Chandratal to Sissu", description: "Drive to Chandratal Lake (4,300m)—the breathtaking crescent-shaped Moon Lake. Spend time at the lake. Drive to Sissu in the Lahaul valley. Celebrate trek completion!" },
+      { day: 6, title: "Day 6 – Sissu to Manali", description: "Drive back to Manali via the Atal Tunnel. Trip ends in Manali by afternoon. Departure with unforgettable memories." }
+    ],
+    included: [
+      "Camping accommodation (quality tents, sleeping bags, mats)",
+      "All meals during the trek (veg & non-veg options)",
+      "Certified mountaineering guide & support staff",
+      "Cook, helpers and pack mules/porters",
+      "All permits, forest entry fees & camping charges",
+      "Transport: Manali–Jobra, Chatru–Chandratal–Sissu–Manali",
+      "First aid kit, emergency oxygen cylinder & oximeter",
+      "Chandratal Lake visit"
+    ],
+    excluded: [
+      "Transport to/from Manali",
+      "Personal expenses & gear",
+      "Travel insurance",
+      "Accommodation in Manali before/after trek",
+      "Any item not mentioned in inclusions"
+    ],
+    bestTime: "Jun–Sep (post-snowmelt, pre-winter)",
+    fitnessLevel: "Good fitness required; regular cardio and strength training recommended. Must be comfortable walking 6-8 hours on steep terrain at high altitude.",
   },
 } as const;
 

@@ -55,24 +55,25 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@nirvanatreks.com", "bookings@nirvanatreks.com"],
+      details: ["nirvanatreks.team@gmail.com"],
       subtitle: "We respond within 24 hours"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Adventure Street", "Manali, Himachal Pradesh 175131"],
+      details: ["T2-1002, Tata Eureka Park", "Greater Noida, Uttar Pradesh"],
       subtitle: "Monday - Saturday, 10 AM - 6 PM"
     }
   ];
 
   const popularDestinations = [
-    "Kashmir Great Lakes Trek",
-    "Spiti Valley Road Trip", 
-    "Kerala Backwaters",
-    "Ladakh Expedition",
-    "Rajasthan Cultural Tour",
-    "Custom Adventure"
+    "Kasol–Kheerganga Trek",
+    "Triund Trek",
+    "Bir, Barot to Rajgundha Trek",
+    "Kareri Lake Trek",
+    "Hampta Pass Trek",
+    "Bir Billing Trip",
+    "Custom Adventure",
   ];
 
   return (

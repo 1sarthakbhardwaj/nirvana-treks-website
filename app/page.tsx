@@ -1,5 +1,7 @@
 import Container from "@/components/ui/container";
 import TrailGallery from "@/components/trail-gallery";
+import TripFinder from "@/components/trip-finder";
+import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/animate-on-scroll";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Star, Heart, ArrowRight } from "lucide-react";
@@ -14,22 +16,9 @@ export default function Home() {
       location: "Parvati Valley, Himachal Pradesh",
       price: "₹6,499",
       rating: 4.8,
-      image:
-        "https://images.unsplash.com/photo-1500634245200-e5245c7574ef?q=80&w=1600&auto=format&fit=crop",
+      image: "/gallery/kasol-kheerganga.webp",
       description:
         "Adventure + Nature + Relaxation: Kasol exploration, Chalal village, Manikaran Sahib & epic Kheerganga trek",
-    },
-    {
-      title: "Bir Billing Trip",
-      href: "/tours/bir-billing",
-      duration: "3 Days",
-      difficulty: "Easy",
-      location: "Kangra Valley, Himachal Pradesh",
-      price: "₹6,999",
-      rating: 4.9,
-      image:
-        "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1600&auto=format&fit=crop",
-      description: "Paragliding, cafes, monasteries and sunsets",
     },
     {
       title: "Triund Trek",
@@ -37,11 +26,45 @@ export default function Home() {
       duration: "2 Days / 1 Night",
       difficulty: "Easy to Moderate",
       location: "McLeod Ganj, Himachal Pradesh",
-      price: "₹3,999",
+      price: "₹5,999",
       rating: 4.7,
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1600&auto=format&fit=crop",
       description: "Classic ridge trek with Dhauladhar views",
+    },
+    {
+      title: "Bir, Barot to Rajgundha Trek",
+      href: "/tours/bir-rajgundha",
+      duration: "3 Days / 2 Nights",
+      difficulty: "Easy to Moderate",
+      location: "Kangra Valley, Himachal Pradesh",
+      price: "₹5,999",
+      rating: 4.8,
+      image: "/gallery/barot-bir-rajgundha.webp",
+      description: "Hidden valley trek through Bir & Barot with lush meadows and starry nights",
+    },
+    {
+      title: "Kareri Lake Trek",
+      href: "/tours/kareri-lake",
+      duration: "3 Days / 2 Nights",
+      difficulty: "Moderate",
+      location: "Kangra Valley, Himachal Pradesh",
+      price: "₹5,999",
+      rating: 4.8,
+      image: "/gallery/kareri-lake.webp",
+      description: "Glacial lake trek at 2,934m with Dhauladhar panoramas",
+    },
+    {
+      title: "Hampta Pass Trek",
+      href: "/tours/hampta-pass",
+      duration: "5 Nights / 6 Days",
+      difficulty: "Moderate to Difficult",
+      location: "Kullu–Spiti, Himachal Pradesh",
+      price: "₹12,999",
+      rating: 4.9,
+      image:
+        "https://images.unsplash.com/photo-1486911278844-a81c5267e227?q=80&w=1600&auto=format&fit=crop",
+      description: "Epic crossover from green Kullu to barren Spiti + Chandratal",
     },
   ];
 
@@ -53,8 +76,8 @@ export default function Home() {
       <section className="relative min-h-[85vh] overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2000&auto=format&fit=crop"
-            alt="Himalayan landscape"
+            src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2000&auto=format&fit=crop"
+            alt="Kasol Kheerganga valley in the Himalayas"
             fill
             priority
             sizes="100vw"
@@ -74,10 +97,10 @@ export default function Home() {
                 Trusted Mountain Experiences
               </div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white animate-fade-in-up delay-200">
-                Discover Incredible India
+                Discover the Incredible Himalayan Ranges
               </h1>
               <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed animate-fade-in-up delay-400">
-                Treks, tours and curated journeys across mountains, deserts and coasts. Crafted with care, led by locals.
+                Treks, tours and curated journeys across the mighty Himalayan ranges. Crafted with care, led by locals.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
                 <Link
@@ -99,21 +122,23 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Mountain silhouette divider */}
+      <div className="mountain-divider" />
+
       {/* Featured Tours */}
       <section className="py-24 bg-gradient-to-b from-background via-secondary/40 to-background relative overflow-hidden">
         <Container>
-          <div className="text-center mb-14">
+          <AnimateOnScroll animation="fade-up" className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Featured Adventures</h2>
-            <p className="mt-3 text-lg text-gray-400">Handpicked journeys that showcase India’s diversity</p>
-          </div>
+            <p className="mt-3 text-lg text-gray-400">Handpicked journeys across the Himalayan ranges</p>
+          </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {featuredTours.map((tour, index) => (
+          <StaggerContainer className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.12}>
+            {featuredTours.map((tour) => (
+              <StaggerItem key={tour.href}>
               <Link
-                key={tour.href}
                 href={tour.href}
-                className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-emerald-500/50 transition-all hover:shadow-2xl hover:shadow-emerald-500/10"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-emerald-500/50 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 block"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -146,9 +171,11 @@ export default function Home() {
                     <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
                       tour.difficulty === "Easy"
                         ? "bg-emerald-500/15 text-emerald-300"
-                        : tour.difficulty === "Moderate"
+                        : tour.difficulty.includes("Difficult")
+                        ? "bg-red-500/15 text-red-300"
+                        : tour.difficulty.includes("Moderate")
                         ? "bg-yellow-500/15 text-yellow-300"
-                        : "bg-red-500/15 text-red-300"
+                        : "bg-emerald-500/15 text-emerald-300"
                     }`}>
                       {tour.difficulty}
                     </span>
@@ -158,10 +185,11 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
-          <div className="text-center mt-12">
+          <AnimateOnScroll animation="fade-up" delay={0.3} className="text-center mt-12">
             <Link
               href="/tours"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg forest-gradient text-white font-semibold shadow-lg hover:scale-105 transition-all"
@@ -169,27 +197,29 @@ export default function Home() {
               View All Adventures
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </div>
+          </AnimateOnScroll>
         </Container>
       </section>
 
       <TrailGallery />
 
+      <TripFinder />
+
       {/* Why Choose Us */}
       <section className="py-24 bg-gradient-to-br from-muted/30 via-background to-secondary/30 relative overflow-hidden">
         <Container>
-          <div className="text-center mb-14">
+          <AnimateOnScroll animation="fade-up" className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Why Choose Nirvana?</h2>
             <p className="mt-3 text-lg text-gray-400">Thoughtful details that make your trip seamless</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </AnimateOnScroll>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.15}>
             {[
               { icon: MapPin, title: "Local Guides", desc: "Led by experts who belong to the mountains" },
               { icon: Heart, title: "Small Groups", desc: "Personal attention, authentic connections" },
               { icon: Star, title: "Safety First", desc: "Reliable logistics and well-planned itineraries" },
             ].map((f, i) => (
+              <StaggerItem key={i} animation="fade-left">
               <div
-                key={i}
                 className="relative rounded-2xl border border-border bg-card/60 backdrop-blur p-6 hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-300 flex items-center justify-center mb-4">
@@ -198,8 +228,9 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-white">{f.title}</h3>
                 <p className="mt-2 text-gray-400">{f.desc}</p>
               </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </Container>
       </section>
     </main>
