@@ -61,7 +61,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["T2-1002, Tata Eureka Park", "Greater Noida, Uttar Pradesh"],
+      details: ["Cottage #304, Naggar village", "Manali, Himachal Pradesh"],
       subtitle: "Monday - Saturday, 10 AM - 6 PM"
     }
   ];
@@ -215,26 +215,15 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-white">Business Hours</h3>
               </div>
               <div className="space-y-2 text-white/80">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 7:00 PM</span>
+                <div className="flex justify-between gap-4">
+                  <span>Monday - Saturday</span>
+                  <span>10 AM - 6 PM</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-4">
                   <span>Sunday</span>
-                  <span>By Appointment</span>
+                  <span>By appointment</span>
                 </div>
               </div>
-            </div>
-
-            {/* Emergency Contact */}
-            <div className="p-6 bg-gradient-to-br from-red-500/10 to-red-600/10 border border-red-500/20 rounded-xl">
-              <h3 className="font-semibold text-white mb-2">Emergency Contact</h3>
-              <p className="text-white/80 mb-2">24/7 Support during your adventure</p>
-              <p className="text-red-400 font-semibold">+91 99999 00000</p>
             </div>
           </div>
         </div>

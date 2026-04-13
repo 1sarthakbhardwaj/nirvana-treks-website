@@ -184,7 +184,6 @@ For questions about the website or Nirvana Treks & Tours:
 - **Website**: [Live Demo](https://nirvana-treks-website.vercel.app)
 - **Email**: info@nirvanatreks.com
 - **Phone**: +91 98765 43210
-- **Emergency**: +91 99999 00000 (24/7 during tours)
 
 ## 📄 License
 

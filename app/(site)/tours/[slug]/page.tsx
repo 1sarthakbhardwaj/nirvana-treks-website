@@ -1,4 +1,5 @@
 import Container from "@/components/ui/container";
+import TourDetailHeroVisual from "@/components/tour-detail-hero-visual";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { 
@@ -32,9 +33,14 @@ const tours = {
       "All meals included (breakfast, lunch, dinner)"
     ],
     itinerary: [
-      { day: 1, title: "Day 1 – Departure from Delhi", description: "Evening departure from Delhi in a comfortable tempo traveller / bus. Overnight journey through beautiful mountain roads. Arrival in Kasol by morning." },
-      { day: 2, title: "Day 2 – Kasol Exploration & Local Sightseeing", description: "Check-in at campsite or riverside stay. Breakfast amidst the mountains. Visit Kasol Market, enjoy Café Hopping (Moon Dance Café, Evergreen Café). Explore Chalal Village Trek or relax by the Parvati River. Visit Manikaran Sahib Gurudwara & experience the natural hot springs. Evening bonfire with light music and dinner under the stars. Overnight stay at Kasol." },
-      { day: 3, title: "Day 3 – Kheerganga Trek & Return Journey", description: "Early morning breakfast, drive to Barshaini (trek start point). Begin the scenic Kheerganga Trek through pine forests, waterfalls, and villages. Reach Kheerganga top, relax in the natural hot water springs and soak in mountain views. Descend to Barshaini by evening and start the return journey to Delhi. Overnight travel, reach Delhi the next morning." }
+      { day: 1, title: "Day 1 – Departure from Delhi", timeHint: "Evening 6:30–8:00 PM pickup", description: "Evening departure from Delhi in a comfortable tempo traveller / bus. Overnight journey through beautiful mountain roads. Arrival in Kasol by morning." },
+      { day: 2, title: "Day 2 – Kasol Exploration & Local Sightseeing", timeHint: "Full day on trail & town", description: "Check-in at campsite or riverside stay. Breakfast amidst the mountains. Visit Kasol Market, enjoy Café Hopping (Moon Dance Café, Evergreen Café). Explore Chalal Village Trek or relax by the Parvati River. Visit Manikaran Sahib Gurudwara & experience the natural hot springs. Evening bonfire with light music and dinner under the stars. Overnight stay at Kasol." },
+      { day: 3, title: "Day 3 – Kheerganga Trek & Return Journey", timeHint: "Early start ~6:00 AM", description: "Early morning breakfast, drive to Barshaini (trek start point). Begin the scenic Kheerganga Trek through pine forests, waterfalls, and villages. Reach Kheerganga top, relax in the natural hot water springs and soak in mountain views. Descend to Barshaini by evening and start the return journey to Delhi. Overnight travel, reach Delhi the next morning." }
+    ],
+    departures: [
+      { label: "Fri batch", detail: "6:30 PM, Delhi pickup (RK Ashram / Majnu Ka Tila)" },
+      { label: "Sat", detail: "~2:00 PM, Kasol check-in & local time" },
+      { label: "Mon return", detail: "Morning, Delhi arrival (traffic dependent)" },
     ],
     included: [
       "Delhi pickup & drop in comfortable tempo traveller/bus",
@@ -93,12 +99,14 @@ const tours = {
     ],
     bestTime: "Mar–Jun, Sep–Nov",
     fitnessLevel: "No specific fitness required",
+    itineraryAvailability: "coming_soon",
+    itineraryNotice: "Itinerary coming soon, please wait. Dates and hour-by-hour timings will be posted here shortly. WhatsApp us for early details.",
   },
   "triund-trek": {
     title: "Triund Trek",
     subtitle: "Classic Dharamkot Ridge | From ₹5,999",
     description:
-      "A short, scenic hike to Triund with grand views of the Dhauladhar range and the Kangra valley—perfect weekend adventure.",
+      "A short, scenic hike to Triund with grand views of the Dhauladhar range and the Kangra valley: perfect weekend adventure.",
     image: "⛰️",
     price: "₹5,999",
     originalPrice: "₹7,499",
@@ -131,12 +139,17 @@ const tours = {
     ],
     bestTime: "Year-round (avoid heavy snow/rains)",
     fitnessLevel: "Basic fitness sufficient",
+    itineraryAvailability: "sold_out",
+    itineraryNotice: "Sold out for this time, please try next time.",
+    departures: [
+      { label: "Next season", detail: "Weekend departures from McLeod Ganj; new slots open soon" },
+    ],
   },
   "bir-rajgundha": {
     title: "Bir, Barot to Rajgundha Trek",
     subtitle: "3 Days / 2 Nights | From ₹5,999",
     description:
-      "Trek from the paragliding capital through Barot into the hidden Rajgundha valley—lush meadows, stunning mountain views, and nights under an ocean of stars.",
+      "Trek from the paragliding capital through Barot into the hidden Rajgundha valley: lush meadows, stunning mountain views, and nights under an ocean of stars.",
     image: "🏕️",
     price: "₹5,999",
     originalPrice: "₹7,999",
@@ -180,7 +193,7 @@ const tours = {
     title: "Kareri Lake Trek",
     subtitle: "3 Days / 2 Nights | From ₹5,999",
     description:
-      "Trek to the glacial Kareri Lake nestled at 2,934m in the Dhauladhar range—alpine meadows, dense forests, and a pristine high-altitude lake.",
+      "Trek to the glacial Kareri Lake nestled at 2,934m in the Dhauladhar range: alpine meadows, dense forests, and a pristine high-altitude lake.",
     image: "💎",
     price: "₹5,999",
     originalPrice: "₹7,999",
@@ -224,7 +237,7 @@ const tours = {
     title: "Hampta Pass Trek",
     subtitle: "5 Nights / 6 Days | From ₹12,999",
     description:
-      "Cross the dramatic Hampta Pass at 4,270m—from the lush green Kullu valley to the stark, arid landscapes of Spiti. One of the most rewarding crossover treks in the Himalayas.",
+      "Cross the dramatic Hampta Pass at 4,270m, from the lush green Kullu valley to the stark, arid landscapes of Spiti. One of the most rewarding crossover treks in the Himalayas.",
     image: "🏔️",
     price: "₹12,999",
     originalPrice: "₹15,999",
@@ -245,9 +258,9 @@ const tours = {
     itinerary: [
       { day: 1, title: "Day 1 – Manali to Jobra to Chika", description: "Drive from Manali to Jobra (trek starting point at 3,100m). Trek to Chika campsite through lush apple orchards and pine forests. Set up camp at Chika (3,050m). Evening orientation and bonfire." },
       { day: 2, title: "Day 2 – Chika to Balu Ka Ghera", description: "Trek through dense forests opening into vast meadows. Cross streams and reach Balu Ka Ghera (3,600m), a stunning campsite in a wide valley surrounded by towering peaks. Acclimatisation walk." },
-      { day: 3, title: "Day 3 – Balu Ka Ghera to Shea Goru (Pass Day)", description: "The big day. Early start for the Hampta Pass ascent (4,270m). Navigate glacial moraines and snowfields. Witness the dramatic landscape change at the pass—green to barren. Descend to Shea Goru (3,900m) on the Spiti side. Camp." },
+      { day: 3, title: "Day 3 – Balu Ka Ghera to Shea Goru (Pass Day)", description: "The big day. Early start for the Hampta Pass ascent (4,270m). Navigate glacial moraines and snowfields. Witness the dramatic landscape change at the pass (green to barren). Descend to Shea Goru (3,900m) on the Spiti side. Camp." },
       { day: 4, title: "Day 4 – Shea Goru to Chatru", description: "Descend along the Shea Nala river through the stark Spiti terrain. Reach Chatru (3,360m). Rest day at camp. Optional drive to explore the area." },
-      { day: 5, title: "Day 5 – Chatru to Chandratal to Sissu", description: "Drive to Chandratal Lake (4,300m)—the breathtaking crescent-shaped Moon Lake. Spend time at the lake. Drive to Sissu in the Lahaul valley. Celebrate trek completion!" },
+      { day: 5, title: "Day 5 – Chatru to Chandratal to Sissu", description: "Drive to Chandratal Lake (4,300m), the breathtaking crescent-shaped Moon Lake. Spend time at the lake. Drive to Sissu in the Lahaul valley. Celebrate trek completion!" },
       { day: 6, title: "Day 6 – Sissu to Manali", description: "Drive back to Manali via the Atal Tunnel. Trip ends in Manali by afternoon. Departure with unforgettable memories." }
     ],
     included: [
@@ -291,10 +304,28 @@ export async function generateMetadata({ params }: Params) {
   };
 }
 
+type ItineraryAvailability = "open" | "coming_soon" | "sold_out";
+
+function itineraryAvailabilityOf(
+  tour: (typeof tours)[keyof typeof tours]
+): ItineraryAvailability {
+  const a =
+    "itineraryAvailability" in tour ? tour.itineraryAvailability : undefined;
+  if (a === "coming_soon" || a === "sold_out") return a;
+  return "open";
+}
+
 export default async function TourDetailPage({ params }: Params) {
   const { slug } = await params;
   const tour = tours[slug];
   if (!tour) return notFound();
+
+  const itineraryAvailability = itineraryAvailabilityOf(tour);
+  const itineraryNotice =
+    "itineraryNotice" in tour && tour.itineraryNotice ? tour.itineraryNotice : null;
+  const departures = (
+    "departures" in tour && Array.isArray(tour.departures) ? tour.departures : []
+  ) as { label: string; detail?: string }[];
 
   const difficultyColor = tour.difficulty.includes('Easy') ? 'text-green-400 bg-green-500/20' :
                          tour.difficulty.includes('Moderate') ? 'text-yellow-400 bg-yellow-500/20' :
@@ -334,11 +365,24 @@ export default async function TourDetailPage({ params }: Params) {
                   Download Itinerary
                 </button>
               </div>
+              <p className="mt-4 text-sm text-white/55">
+                Refer friends and earn credit on your next trip.{" "}
+                <Link href="/#referral-program" className="text-emerald-400 underline-offset-2 hover:underline">
+                  see Refer &amp; earn
+                </Link>
+                .
+              </p>
             </div>
             
             <div className="relative">
-              <div className="w-full h-80 bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center text-8xl">
-                {tour.image}
+              <div className="relative isolate h-80 w-full overflow-hidden rounded-2xl border border-white/10 shadow-lg">
+                <TourDetailHeroVisual />
+                <span
+                  className="pointer-events-none absolute bottom-4 right-4 text-6xl drop-shadow-lg md:text-7xl"
+                  aria-hidden
+                >
+                  {tour.image}
+                </span>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                 <div className="text-center">
@@ -383,19 +427,70 @@ export default async function TourDetailPage({ params }: Params) {
         {/* Itinerary */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-white mb-8">Detailed Itinerary</h3>
-          <div className="space-y-4">
-            {tour.itinerary.map((item, i) => (
-              <div key={i} className="flex gap-6 p-6 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl backdrop-blur-sm">
-                <div className="flex-shrink-0 w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                  <span className="text-emerald-400 font-bold">{item.day}</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">{item.title}</h4>
-                  <p className="text-white/70">{item.description}</p>
-                </div>
+
+          {itineraryAvailability !== "open" && itineraryNotice && (
+            <div
+              className={`mb-8 rounded-xl border p-5 backdrop-blur-sm ${
+                itineraryAvailability === "sold_out"
+                  ? "border-red-500/35 bg-red-500/10"
+                  : "border-amber-500/35 bg-amber-500/10"
+              }`}
+            >
+              <p className="font-medium text-white/95">{itineraryNotice}</p>
+            </div>
+          )}
+
+          {departures.length > 0 && (
+            <div className="mb-8">
+              <h4 className="mb-3 text-lg font-semibold text-white/90">
+                Typical timings & departures
+              </h4>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {departures.map((d, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg border border-white/10 bg-white/5 px-4 py-3"
+                  >
+                    <div className="text-sm font-medium text-emerald-400">{d.label}</div>
+                    {d.detail ? (
+                      <p className="mt-1 text-sm text-white/75">{d.detail}</p>
+                    ) : null}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+
+          {itineraryAvailability !== "sold_out" ? (
+            <div
+              className={`space-y-4 ${
+                itineraryAvailability === "coming_soon" ? "opacity-80" : ""
+              }`}
+            >
+              {tour.itinerary.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex gap-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-sm"
+                >
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/20">
+                    <span className="font-bold text-emerald-400">{item.day}</span>
+                  </div>
+                  <div>
+                    <h4 className="mb-1 font-semibold text-white">{item.title}</h4>
+                    {"timeHint" in item && item.timeHint ? (
+                      <p className="mb-2 text-sm text-emerald-300/90">{item.timeHint}</p>
+                    ) : null}
+                    <p className="text-white/70">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-white/60 text-sm">
+              Day-by-day plan is hidden while this batch is full. Message us for the next
+              departure window.
+            </p>
+          )}
         </div>
 
         {/* Included/Excluded */}

@@ -649,7 +649,7 @@ export default function TripFinder() {
                 </div>
               )}
 
-              {/* STEP: AI Analyzing — Slot Reel */}
+              {/* STEP: AI Analyzing, slot reel */}
               {step === "analyzing" && (
                 <SlotReel tours={results} onDone={onAnalysisDone} />
               )}

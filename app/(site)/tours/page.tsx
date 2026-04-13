@@ -1,5 +1,7 @@
 import Container from "@/components/ui/container";
+import ToursPageHero from "@/components/tours-page-hero";
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Clock, Star, ArrowRight, Filter, Search } from "lucide-react";
 
 export const metadata = {
@@ -18,7 +20,9 @@ const tours = [
     price: "₹6,499",
     rating: 4.8,
     image: "🏞️",
-    description: "Adventure + Nature + Relaxation: Kasol exploration, Chalal village trek, Manikaran Sahib visit, and epic Kheerganga trek with natural hot springs"
+    coverSrc: "/gallery/kasol-kheerganga.webp",
+    description: "Adventure + Nature + Relaxation: Kasol exploration, Chalal village trek, Manikaran Sahib visit, and epic Kheerganga trek with natural hot springs",
+    soldOut: true,
   },
   {
     slug: "bir-billing",
@@ -30,6 +34,8 @@ const tours = [
     price: "₹6,999",
     rating: 4.9,
     image: "🪂",
+    coverSrc:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
     description: "Cafe hopping in Bir, paragliding from Billing to Bir, monasteries and sunsets"
   },
   {
@@ -42,6 +48,8 @@ const tours = [
     price: "₹5,999",
     rating: 4.7,
     image: "⛰️",
+    coverSrc:
+      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1200&auto=format&fit=crop",
     description: "Short, scenic ridge trek with panoramic views of the Dhauladhar range"
   },
   {
@@ -54,6 +62,7 @@ const tours = [
     price: "₹5,999",
     rating: 4.8,
     image: "🏕️",
+    coverSrc: "/gallery/barot-bir-rajgundha.webp",
     description: "Hidden valley trek through Bir & Barot with lush meadows, Dhauladhar views, and nights under the stars"
   },
   {
@@ -66,6 +75,7 @@ const tours = [
     price: "₹5,999",
     rating: 4.8,
     image: "💎",
+    coverSrc: "/gallery/kareri-lake.webp",
     description: "Trek to a pristine glacial lake at 2,934m surrounded by snow-capped Dhauladhar peaks"
   },
   {
@@ -78,6 +88,8 @@ const tours = [
     price: "₹12,999",
     rating: 4.9,
     image: "🏔️",
+    coverSrc:
+      "https://images.unsplash.com/photo-1486911278844-a81c5267e227?q=80&w=1200&auto=format&fit=crop",
     description: "Dramatic crossover trek from green Kullu valley to barren Spiti, with Chandratal Lake visit"
   },
 ];
@@ -92,16 +104,9 @@ const categories = [
 
 export default function ToursPage() {
   return (
-    <main className="py-16">
-      <Container>
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">Our Adventures</h1>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            From scenic ridge treks to dramatic high-altitude crossover passes, discover handpicked journeys across the incredible Himalayan ranges.
-          </p>
-        </div>
-
+    <main>
+      <ToursPageHero />
+      <Container className="py-16">
         {/* Filters and Search */}
         <div className="mb-12">
           <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
@@ -150,9 +155,31 @@ export default function ToursPage() {
                 className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-sm hover:border-emerald-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20"
               >
                 <div className="p-6">
-                  {/* Image placeholder */}
-                  <div className="w-full h-48 bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-xl mb-6 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
-                    {tour.image}
+                  <div className="relative mb-6 h-48 w-full overflow-hidden rounded-xl">
+                    <Image
+                      src={tour.coverSrc}
+                      alt={`${tour.title} (photo)`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    {"soldOut" in tour && tour.soldOut ? (
+                      <div className="sold-out-scrim absolute inset-0" aria-hidden />
+                    ) : null}
+                    {"soldOut" in tour && tour.soldOut ? (
+                      <div className="absolute left-3 top-3">
+                        <span className="sold-out-badge">
+                          <span className="sold-out-badge__text">Sold out</span>
+                        </span>
+                      </div>
+                    ) : null}
+                    <span
+                      className="absolute bottom-2 right-2 text-4xl drop-shadow-md opacity-90"
+                      aria-hidden
+                    >
+                      {tour.image}
+                    </span>
                   </div>
                   
                   {/* Tour Info */}

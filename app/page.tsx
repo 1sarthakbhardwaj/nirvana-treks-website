@@ -1,4 +1,7 @@
 import Container from "@/components/ui/container";
+import HomeHeroBackground from "@/components/home-hero-background";
+import SuggestionToWhatsApp from "@/components/suggestion-to-whatsapp";
+import ReferralSection from "@/components/referral-section";
 import TrailGallery from "@/components/trail-gallery";
 import TripFinder from "@/components/trip-finder";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/animate-on-scroll";
@@ -19,6 +22,7 @@ export default function Home() {
       image: "/gallery/kasol-kheerganga.webp",
       description:
         "Adventure + Nature + Relaxation: Kasol exploration, Chalal village, Manikaran Sahib & epic Kheerganga trek",
+      soldOut: true,
     },
     {
       title: "Triund Trek",
@@ -75,18 +79,7 @@ export default function Home() {
       {/* Refined, Image-led Hero */}
       <section className="relative min-h-[85vh] overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2000&auto=format&fit=crop"
-            alt="Kasol Kheerganga valley in the Himalayas"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
-          {/* Subtle ambient glows */}
-          <div className="absolute -top-24 -left-24 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-blob" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-float" />
+          <HomeHeroBackground />
         </div>
 
         <Container>
@@ -149,9 +142,19 @@ export default function Home() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                  {"soldOut" in tour && tour.soldOut ? (
+                    <div className="sold-out-scrim absolute inset-0" aria-hidden />
+                  ) : null}
                   <div className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
                     <Star className="w-3 h-3" /> {tour.rating}
                   </div>
+                  {"soldOut" in tour && tour.soldOut ? (
+                    <div className="absolute top-3 right-3">
+                      <span className="sold-out-badge">
+                        <span className="sold-out-badge__text">Sold out</span>
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between">
@@ -233,6 +236,22 @@ export default function Home() {
           </StaggerContainer>
         </Container>
       </section>
+
+      <section className="border-t border-border py-20 bg-gradient-to-b from-background to-muted/20">
+        <Container>
+          <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">We read every message</h2>
+            <p className="mt-3 text-lg text-gray-400">
+              Help us shape better batches: routes, food, pacing, communication, anything.
+            </p>
+          </AnimateOnScroll>
+          <div className="mx-auto max-w-xl">
+            <SuggestionToWhatsApp />
+          </div>
+        </Container>
+      </section>
+
+      <ReferralSection />
     </main>
   );
 }

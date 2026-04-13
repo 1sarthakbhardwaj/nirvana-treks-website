@@ -27,7 +27,7 @@ export default function TrailGallery() {
           </div>
           <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">Gallery</h2>
           <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-400">
-            Scenes from our 2nd April trip—real trails, real peaks, and the views that stay with you.
+            Scenes from our 2nd April trip: real trails, real peaks, and the views that stay with you.
           </p>
         </div>
 
