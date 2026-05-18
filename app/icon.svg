@@ -1,5 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0f172a"/>
-  <!-- Snow-capped mountain: U+1F3D4 + emoji VS U+FE0F (ASCII-safe entities for Next image pipeline) -->
-  <text x="16" y="23" font-size="18" text-anchor="middle" font-family="system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif">&#x1F3D4;&#xFE0F;</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="n-bg" x1="16" y1="32" x2="16" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="n-mt" x1="16" y1="33" x2="16" y2="11" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#047857"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#n-bg)"/>
+  <!-- Background ridge -->
+  <path d="M0 32 V28l8-11 6 11 4-7 6 7 8-9V32H0z" fill="#064e3b" opacity="0.9"/>
+  <!-- Main summit -->
+  <path d="M4 32h24L18 13 13 26 9 20 4 32z" fill="url(#n-mt)"/>
+  <!-- Snow -->
+  <path d="M18 13l-2.8 7H21L18 13z" fill="#ecfdf5"/>
 </svg>
