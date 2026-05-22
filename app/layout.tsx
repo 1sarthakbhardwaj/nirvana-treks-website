@@ -23,16 +23,6 @@ export const metadata: Metadata = {
   title: "Nirvana Treks & Tours | Authentic Himalayan Adventures & Cultural Tours",
   description: "Government authorized travel company specializing in bespoke treks, tours, and cultural journeys across the incredible Himalayan ranges. Expert guides, safe adventures, unforgettable experiences.",
   keywords: "himalayan treks, himalayan ranges, himachal treks, bir billing, hampta pass, triund trek, adventure travel, cultural tours, government authorized",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: "/favicon.ico",
-  },
   manifest: "/site.webmanifest",
   openGraph: {
     title: "Nirvana Treks & Tours",
