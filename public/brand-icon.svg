@@ -10,10 +10,7 @@
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="7" fill="url(#n-bg)"/>
-  <!-- Background ridge -->
   <path d="M0 32 V28l8-11 6 11 4-7 6 7 8-9V32H0z" fill="#064e3b" opacity="0.9"/>
-  <!-- Main summit -->
   <path d="M4 32h24L18 13 13 26 9 20 4 32z" fill="url(#n-mt)"/>
-  <!-- Snow -->
   <path d="M18 13l-2.8 7H21L18 13z" fill="#ecfdf5"/>
 </svg>

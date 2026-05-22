@@ -504,38 +504,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Featurable Google reviews embed */
-.featurable-embed-shell {
-  overflow: visible;
-  touch-action: pan-x pan-y;
+/* Homepage Google reviews — slow marquee (right to left) */
+.reviews-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
 }
 
-.featurable-embed-target {
-  display: block;
-  width: 100%;
-  overflow: visible;
+.reviews-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: reviews-marquee-scroll var(--marquee-duration, 140s) linear infinite;
+  will-change: transform;
 }
 
-.featurable-embed-target > * {
-  width: 100% !important;
-  max-width: 100% !important;
+.reviews-marquee:hover .reviews-marquee-track {
+  animation-play-state: paused;
 }
 
-.featurable-embed-shell [class*="featurable"],
-.featurable-embed-shell iframe {
-  border-radius: 1rem;
+@keyframes reviews-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-/* Lenis: keep embed interactive; allow horizontal carousel scroll */
-.lenis.lenis-smooth .featurable-embed-shell,
-.lenis.lenis-smooth .featurable-embed-shell iframe,
-.lenis.lenis-smooth .featurable-embed-shell [data-featurable-styles],
-.lenis.lenis-smooth .featurable-embed-target,
-.lenis.lenis-smooth .featurable-embed-target * {
-  pointer-events: auto !important;
-}
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee {
+    mask-image: none;
+    overflow-x: auto;
+  }
 
-.featurable-embed-shell .slick-list,
-.featurable-embed-shell .slick-track {
-  touch-action: pan-x !important;
+  .reviews-marquee-track {
+    animation: none;
+  }
 }
