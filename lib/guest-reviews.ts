@@ -1,18 +1,6 @@
-/** Curated guest lines. Replace with quotes from your Google profile when you like. */
+/** Google Maps / reviews listing for Nirvana Treks & Tours */
 export const GOOGLE_REVIEWS_URL =
-  "https://share.google/bO3HwcxtgxD8Odq0o" as const;
+  "https://www.google.com/maps?cid=11382492844148021873" as const;
 
-export const guestReviewQuotes = [
-  {
-    quote: "Well organised, friendly guides, and the views were unreal. Already planning our next trip with them.",
-    author: "Guest review",
-  },
-  {
-    quote: "Felt safe the whole time: clear communication, good food on the trail, and a proper mountain vibe.",
-    author: "Weekend batch",
-  },
-  {
-    quote: "Small group, no rush, and they actually know the trails. Highly recommend for first-time trekkers too.",
-    author: "First trek",
-  },
-] as const;
+/** Featurable embed widget ID */
+export const FEATURABLE_WIDGET_ID = "4db6ecce-dcd5-4c8b-b745-10625e80b17a" as const;

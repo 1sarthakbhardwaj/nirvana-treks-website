@@ -14,8 +14,7 @@ export default function ReferralSection() {
 
   return (
     <section
-      id="referral-program"
-      className="relative overflow-hidden border-y border-emerald-500/15 bg-gradient-to-br from-emerald-950/40 via-background to-secondary/30 py-20"
+      className="relative overflow-hidden border-b border-emerald-500/15 bg-gradient-to-br from-emerald-950/40 via-background to-secondary/30 py-16 md:py-24"
     >
       <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl" />
       <Container>

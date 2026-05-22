@@ -53,7 +53,7 @@ export function RotatingHeroBackground({
         {ROTATING_HERO_SLIDES.map((slide, i) => (
           <div
             key={slide.src}
-            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            className="absolute inset-0 transition-opacity duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ opacity: i === index ? 1 : 0 }}
             aria-hidden={i !== index}
           >

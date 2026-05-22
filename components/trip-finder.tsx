@@ -414,7 +414,7 @@ export default function TripFinder() {
   }, [showConfetti]);
 
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-16 md:py-20">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-emerald-950/15 to-background" />
       <div className="pointer-events-none absolute -right-40 top-1/3 h-80 w-80 rounded-full bg-emerald-500/8 blur-3xl" />
       <div className="pointer-events-none absolute -left-40 bottom-1/3 h-80 w-80 rounded-full bg-teal-500/8 blur-3xl" />

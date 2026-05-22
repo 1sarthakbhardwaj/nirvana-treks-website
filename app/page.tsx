@@ -1,7 +1,6 @@
 import Container from "@/components/ui/container";
 import HomeHeroBackground from "@/components/home-hero-background";
-import SuggestionToWhatsApp from "@/components/suggestion-to-whatsapp";
-import ReferralSection from "@/components/referral-section";
+import HomeHeroContent from "@/components/home-hero-content";
 import TrailGallery from "@/components/trail-gallery";
 import TripFinder from "@/components/trip-finder";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/animate-on-scroll";
@@ -82,46 +81,16 @@ export default function Home() {
           <HomeHeroBackground />
         </div>
 
-        <Container>
-          <div className="pt-32 pb-24 md:pt-40 md:pb-32">
-            <div className="max-w-3xl">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-5 py-2.5 text-sm text-emerald-300 border border-emerald-500/20 backdrop-blur-sm animate-fade-in-up">
-                <Star className="w-4 h-4" />
-                Trusted Mountain Experiences
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white animate-fade-in-up delay-200">
-                Discover the Incredible Himalayan Ranges
-              </h1>
-              <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed animate-fade-in-up delay-400">
-                Treks, tours and curated journeys across the mighty Himalayan ranges. Crafted with care, led by locals.
-              </p>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
-                <Link
-                  href="/tours"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white forest-gradient shadow-lg hover:scale-105 transition-all"
-                >
-                  Explore Tours
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold text-white/90 border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 transition-all"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
+        <HomeHeroContent />
       </section>
 
       {/* Mountain silhouette divider */}
       <div className="mountain-divider" />
 
       {/* Featured Tours */}
-      <section className="py-24 bg-gradient-to-b from-background via-secondary/40 to-background relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background pt-16 pb-10 md:pt-20 md:pb-12">
         <Container>
-          <AnimateOnScroll animation="fade-up" className="text-center mb-14">
+          <AnimateOnScroll animation="fade-up" className="mb-10 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Featured Adventures</h2>
             <p className="mt-3 text-lg text-gray-400">Handpicked journeys across the Himalayan ranges</p>
           </AnimateOnScroll>
@@ -192,7 +161,7 @@ export default function Home() {
             ))}
           </StaggerContainer>
 
-          <AnimateOnScroll animation="fade-up" delay={0.3} className="text-center mt-12">
+          <AnimateOnScroll animation="fade-up" delay={0.3} className="mt-8 text-center">
             <Link
               href="/tours"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg forest-gradient text-white font-semibold shadow-lg hover:scale-105 transition-all"
@@ -209,9 +178,9 @@ export default function Home() {
       <TripFinder />
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-gradient-to-br from-muted/30 via-background to-secondary/30 relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-br from-muted/30 via-background to-secondary/30 py-16 md:py-20">
         <Container>
-          <AnimateOnScroll animation="fade-up" className="text-center mb-14">
+          <AnimateOnScroll animation="fade-up" className="mb-10 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Why Choose Nirvana?</h2>
             <p className="mt-3 text-lg text-gray-400">Thoughtful details that make your trip seamless</p>
           </AnimateOnScroll>
@@ -236,22 +205,6 @@ export default function Home() {
           </StaggerContainer>
         </Container>
       </section>
-
-      <section className="border-t border-border py-20 bg-gradient-to-b from-background to-muted/20">
-        <Container>
-          <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">We read every message</h2>
-            <p className="mt-3 text-lg text-gray-400">
-              Help us shape better batches: routes, food, pacing, communication, anything.
-            </p>
-          </AnimateOnScroll>
-          <div className="mx-auto max-w-xl">
-            <SuggestionToWhatsApp />
-          </div>
-        </Container>
-      </section>
-
-      <ReferralSection />
     </main>
   );
 }

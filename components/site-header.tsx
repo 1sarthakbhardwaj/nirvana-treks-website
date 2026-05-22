@@ -8,6 +8,7 @@ import { useState } from "react";
 const nav = [
   { href: "/tours", label: "Tours" },
   { href: "/about", label: "About" },
+  { href: "/refer", label: "Refer & Earn" },
   { href: "/contact", label: "Contact" },
 ];
 

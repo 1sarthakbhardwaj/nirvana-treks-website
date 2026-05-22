@@ -367,7 +367,7 @@ export default async function TourDetailPage({ params }: Params) {
               </div>
               <p className="mt-4 text-sm text-white/55">
                 Refer friends and earn credit on your next trip.{" "}
-                <Link href="/#referral-program" className="text-emerald-400 underline-offset-2 hover:underline">
+                <Link href="/refer" className="text-emerald-400 underline-offset-2 hover:underline">
                   see Refer &amp; earn
                 </Link>
                 .

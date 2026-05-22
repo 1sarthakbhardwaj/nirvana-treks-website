@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import ThemeProvider from "@/components/theme-provider";
+import LenisProvider from "@/components/lenis-provider";
 import SiteHeader from "@/components/site-header";
 import Footer from "@/components/footer";
 import Chatbot from "@/components/chatbot";
@@ -35,12 +37,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground transition-colors duration-300`}>
-        <ThemeProvider>
-          <SiteHeader />
-          {children}
-          <Footer />
-          <Chatbot />
-        </ThemeProvider>
+        <LenisProvider>
+          <ThemeProvider>
+            <SiteHeader />
+            {children}
+            <Footer />
+            <Chatbot />
+          </ThemeProvider>
+        </LenisProvider>
       </body>
     </html>
   );

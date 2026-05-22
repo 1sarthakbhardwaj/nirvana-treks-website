@@ -1,7 +1,10 @@
 "use client";
 
 import { motion, type Variant } from "framer-motion";
+import { useLenis } from "lenis/react";
 import { type ReactNode } from "react";
+
+const easeSmooth = [0.22, 1, 0.36, 1] as const;
 
 type AnimationPreset = "fade-up" | "fade-left" | "fade-right" | "scale-in" | "slide-up";
 
@@ -46,16 +49,19 @@ export default function AnimateOnScroll({
   once = true,
 }: Props) {
   const preset = presets[animation];
+  // Keep scroll-linked reveals in sync with Lenis smooth scroll
+  useLenis();
+
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: 0.15 }}
+      viewport={{ once, amount: 0.12, margin: "0px 0px -8% 0px" }}
       variants={{
         hidden: preset.hidden,
         visible: {
           ...preset.visible,
-          transition: { duration, delay, ease: [0.25, 0.1, 0.25, 1] },
+          transition: { duration, delay, ease: easeSmooth },
         },
       }}
       className={className}
@@ -106,7 +112,7 @@ export function StaggerItem({
         hidden: preset.hidden,
         visible: {
           ...preset.visible,
-          transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+          transition: { duration: 0.65, ease: easeSmooth },
         },
       }}
       className={className}
