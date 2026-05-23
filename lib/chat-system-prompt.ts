@@ -59,16 +59,16 @@ CATALOGUE (authoritative: all slugs under /tours/[slug])
 - Best time: Mar–Jun, Sep–Nov | Fitness: No specific requirement.
 
 ## triund-trek: Triund Trek
-- Subtitle: Classic Dharamkot Ridge | From ₹5,999
-- Price: ₹5,999 (was ₹7,499) | Duration: 2 Days / 1 Night | Easy to Moderate | McLeod Ganj, HP
-- Max group: 18 | Rating: 4.7 (143 reviews)
-- Summary: Ridge hike, Dhauladhar & Kangra views, weekend-friendly.
-- Highlights: Dhauladhar views; camping; beginner-friendly trail.
-- Day 1: Trek Dharamkot/Bhagsu to Triund, sunset & camp.
-- Day 2: Sunrise, descend, trip ends post lunch.
-- Included: Camp; guide; permits; basic first aid.
-- Excluded: Meals; transport to base; personal; insurance.
-- Best time: Year-round (avoid heavy snow/rain) | Fitness: Basic.
+- Subtitle: Dharamshala · Dhauladhar Ridge | From ₹7,499
+- Price: Quad/triple ₹7,499 · Double ₹7,999 | Duration: 2 days / 3 nights (Fri 9 PM out, Mon AM back) | Easy to Moderate | Dharamshala, HP
+- Summary: Weekend ridge camp at 2,875 m. Hotel freshen-up, Bhagsu & McLeodganj, trek from Gallu Devi, sunrise on the snow wall.
+- Fri night: Delhi/Chandigarh bus, intro rounds, Mafia/Imposter, playlists.
+- Sat: Hotel breakfast, Bhagsu waterfall & McLeod, trek to Triund camp, bonfire & dinner.
+- Sun: Sunrise, trek down, coffee in McLeod, Himachali dish + Team Nirvana gift, evening bus.
+- Mon: Early Delhi drop.
+- Included: Transport; hotel freshen-up + camp; camping gear; 2 breakfasts + 1 dinner; sightseeing; guide & permits; Himachali dish; gift.
+- Excluded: Lunches; personal; pony/porter for personal bags; unlisted items.
+- Best time: Mar–Jun, Sep–Nov | Fitness: Basic.
 
 ## bir-rajgundha: Bir, Barot to Rajgundha Trek
 - Subtitle: 3 Days / 2 Nights | From ₹5,999
@@ -84,17 +84,28 @@ CATALOGUE (authoritative: all slugs under /tours/[slug])
 - Best time: Mar–Jun, Sep–Nov | Fitness: Basic; walks recommended.
 
 ## kareri-lake: Kareri Lake Trek
-- Subtitle: 3 Days / 2 Nights | From ₹5,999
-- Price: ₹5,999 (was ₹7,999) | Moderate | Kangra Valley, HP
-- Max group: 12 | Rating: 4.8 (58 reviews)
-- Summary: Glacial lake ~2,934m; forests & meadows.
-- Highlights: Lake altitude; camp by lake; oak/pine/rhododendron; birds & flora; Dhauladhar views; Gaddi villages.
-- Day 1: Dharamshala → Kareri village → trek to Rioti camp, bonfire.
-- Day 2: Rioti → Kareri Lake, explore, camp, bonfire.
-- Day 3: Sunrise, descend to village, drive Dharamshala, evening end.
-- Included: Camping gear; all trek meals; certified guide & staff; permits; Dharamshala–Kareri–Dharamshala transport; first aid & emergency oxygen.
-- Excluded: Travel to/from Dharamshala; personal; insurance; unlisted items.
-- Best time: Apr–Jun, Sep–Nov | Fitness: Moderate; 6–8 h/day on trails.
+- Subtitle: Dhauladhar glacial lake | From ₹7,499
+- Price: Quad/triple ₹7,499 · Double ₹7,999 | Duration: 2 days / 3 nights (Fri 9 PM out, Mon AM back) | Moderate | Dhauladhar, HP
+- Summary: Glacial lake ~3,000 m with Shiva shrine on the bank. Forest trek, lakeside camp, mirror reflections at dawn. Slightly tougher than Triund.
+- Fri night: Bus from Delhi/Chandigarh, intro rounds, Mafia/Imposter, playlists.
+- Sat: Hotel freshen-up, trek from Kareri village via Nyund stream to lakeside camp, bonfire & stargazing.
+- Sun: Early Kareri Lake visit, descent, Himachali dish + gift, evening bus.
+- Mon: Early Delhi drop.
+- Included: Transport; hotel + lakeside camp; camping gear; 2 breakfasts + 1 dinner; guide & permits; first aid; Himachali dish; gift.
+- Excluded: Lunches; personal; pony/porter; unlisted items.
+- Best time: Apr–Jun, Sep–Nov | Fitness: Moderate; basic fitness recommended.
+
+## churdhar-trek: Churdhar Peak Trek
+- Subtitle: Sirmaur summit weekend | From ₹7,499
+- Price: Quad/triple ₹7,499 · Double ₹7,999 | Duration: 2 days / 3 nights (Fri 9 PM out, Mon AM back) | Moderate to Difficult | Sirmaur, HP
+- Summary: Highest summit in the outer Himalayas at 3,647 m. Shirgul Maharaj (Shiva) temple, deodar forest camp above Sarahan, pre-dawn summit, 360° views Kinnaur to Shimla hills.
+- Fri night: Bus from Delhi/Chandigarh, intro rounds, Mafia/Imposter, playlists.
+- Sat: Sarahan arrival, freshen up, trek through deodar/oak to mountain camp, bonfire and stargazing.
+- Sun: Pre-dawn summit push, temple darshan, descent, Himachali dish + gift, evening bus.
+- Mon: Early Delhi drop.
+- Included: Transport; freshen-up + camp; camping gear; 2 breakfasts + 1 dinner; guide & permits; first aid; Himachali dish; gift.
+- Excluded: Lunches; personal; pony/porter; unlisted items.
+- Best time: Apr–Jun, Sep–Nov | Fitness: Reasonable fitness; warm layers essential.
 
 ## hampta-pass: Hampta Pass Trek
 - Subtitle: 5 Nights / 6 Days | From ₹12,999

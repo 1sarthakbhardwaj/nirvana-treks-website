@@ -41,16 +41,17 @@ const tours = [
   {
     slug: "triund-trek",
     title: "Triund Trek",
-    subtitle: "Classic Dharamkot Ridge | From ₹5,999",
-    days: 2,
-    region: "McLeod Ganj, Himachal Pradesh",
+    subtitle: "Weekend ridge camp | From ₹7,499",
+    days: 3,
+    region: "Dharamshala, Himachal Pradesh",
     difficulty: "Easy to Moderate",
-    price: "₹5,999",
+    price: "From ₹7,499",
     rating: 4.7,
     image: "⛰️",
     coverSrc:
       "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1200&auto=format&fit=crop",
-    description: "Short, scenic ridge trek with panoramic views of the Dhauladhar range"
+    description:
+      "Fri night bus, hotel freshen-up, trek to the ridge, sunrise on the Dhauladhar wall, back Monday AM"
   },
   {
     slug: "bir-rajgundha",
@@ -68,15 +69,32 @@ const tours = [
   {
     slug: "kareri-lake",
     title: "Kareri Lake Trek",
-    subtitle: "3 Days / 2 Nights | From ₹5,999",
+    subtitle: "Glacial lake weekend | From ₹7,499",
     days: 3,
-    region: "Kangra Valley, Himachal Pradesh",
+    region: "Dhauladhar, Himachal Pradesh",
     difficulty: "Moderate",
-    price: "₹5,999",
+    price: "From ₹7,499",
     rating: 4.8,
     image: "💎",
     coverSrc: "/gallery/kareri-lake.webp",
-    description: "Trek to a pristine glacial lake at 2,934m surrounded by snow-capped Dhauladhar peaks"
+    description:
+      "Forest climb to lakeside camp, Kareri Lake at dawn with peak reflections, back Monday AM"
+  },
+  {
+    slug: "churdhar-trek",
+    title: "Churdhar Peak Trek",
+    subtitle: "Summit weekend | From ₹7,499",
+    days: 3,
+    region: "Sirmaur, Himachal Pradesh",
+    difficulty: "Moderate to Difficult",
+    price: "From ₹7,499",
+    rating: 4.9,
+    image: "🛕",
+    badge: "New",
+    coverSrc:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "3,647 m summit, Shirgul Maharaj temple, deodar camp, pre-dawn push and 360° panorama"
   },
   {
     slug: "hampta-pass",
@@ -171,6 +189,13 @@ export default function ToursPage() {
                       <div className="absolute left-3 top-3">
                         <span className="sold-out-badge">
                           <span className="sold-out-badge__text">Sold out</span>
+                        </span>
+                      </div>
+                    ) : null}
+                    {"badge" in tour && tour.badge ? (
+                      <div className="absolute left-3 top-3">
+                        <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
+                          {tour.badge}
                         </span>
                       </div>
                     ) : null}

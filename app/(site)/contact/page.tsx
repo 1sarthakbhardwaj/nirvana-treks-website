@@ -71,6 +71,7 @@ export default function ContactPage() {
     "Triund Trek",
     "Bir, Barot to Rajgundha Trek",
     "Kareri Lake Trek",
+    "Churdhar Peak Trek",
     "Hampta Pass Trek",
     "Bir Billing Trip",
     "Custom Adventure",

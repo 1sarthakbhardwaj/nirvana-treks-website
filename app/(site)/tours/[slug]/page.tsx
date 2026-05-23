@@ -4,6 +4,9 @@ import TourPackageTabs from "@/components/tour-package-tabs";
 import TourHighlights from "@/components/tour-highlights";
 import BirBillingTour from "@/components/bir-billing/bir-billing-tour";
 import KasolKheergangaTour from "@/components/kasol-kheerganga/kasol-kheerganga-tour";
+import TriundTour from "@/components/triund-trek/triund-tour";
+import KareriTour from "@/components/kareri-lake/kareri-tour";
+import ChurdharTour from "@/components/churdhar-trek/churdhar-tour";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { 
@@ -259,13 +262,13 @@ const tours = {
   },
   "triund-trek": {
     title: "Triund Trek",
-    subtitle: "Classic Dharamkot Ridge | From ₹5,999",
+    subtitle: "Weekend ridge camp | From ₹7,499",
     description:
-      "A short, scenic hike to Triund with grand views of the Dhauladhar range and the Kangra valley: perfect weekend adventure.",
+      "A short, sharp weekend climb to the most famous ridge in the Dhauladhars. Camp at 2,875 m, wake up to the snow wall at sunrise. Hotel freshen-up before the trail.",
     image: "⛰️",
-    price: "₹5,999",
-    originalPrice: "₹7,499",
-    duration: "2 Days / 1 Night",
+    price: "₹7,499",
+    originalPrice: "₹7,999",
+    duration: "2 Days / 3 Nights",
     difficulty: "Easy to Moderate",
     location: "McLeod Ganj, Himachal Pradesh",
     maxGroupSize: 18,
@@ -292,13 +295,8 @@ const tours = {
       "Personal expenses",
       "Travel insurance"
     ],
-    bestTime: "Year-round (avoid heavy snow/rains)",
+    bestTime: "Mar to Jun, Sep to Nov",
     fitnessLevel: "Basic fitness sufficient",
-    itineraryAvailability: "sold_out",
-    itineraryNotice: "Sold out for this time, please try next time.",
-    departures: [
-      { label: "Next season", detail: "Weekend departures from McLeod Ganj; new slots open soon" },
-    ],
   },
   "bir-rajgundha": {
     title: "Bir, Barot to Rajgundha Trek",
@@ -346,13 +344,13 @@ const tours = {
   },
   "kareri-lake": {
     title: "Kareri Lake Trek",
-    subtitle: "3 Days / 2 Nights | From ₹5,999",
+    subtitle: "Glacial lake weekend | From ₹7,499",
     description:
-      "Trek to the glacial Kareri Lake nestled at 2,934m in the Dhauladhar range: alpine meadows, dense forests, and a pristine high-altitude lake.",
+      "A crystal glacial lake fed by Dhauladhar snowmelt at around 3,000 m. Trek through forest and meadow, camp by the water, catch the peaks mirrored on a still morning.",
     image: "💎",
-    price: "₹5,999",
+    price: "₹7,499",
     originalPrice: "₹7,999",
-    duration: "3 Days / 2 Nights",
+    duration: "2 Days / 3 Nights",
     difficulty: "Moderate",
     location: "Kangra Valley, Himachal Pradesh",
     maxGroupSize: 12,
@@ -387,6 +385,68 @@ const tours = {
     ],
     bestTime: "Apr–Jun, Sep–Nov",
     fitnessLevel: "Moderate fitness required; ability to walk 6-8 hours a day on mountain trails",
+  },
+  "churdhar-trek": {
+    title: "Churdhar Peak Trek",
+    subtitle: "Summit weekend | From ₹7,499",
+    description:
+      "The highest summit in the outer Himalayas at 3,647 m, crowned by the Shirgul Maharaj temple. Forest camp above Sarahan, pre-dawn summit push, 360° views from Kinnaur to the Shimla hills.",
+    image: "🏔️",
+    price: "₹7,499",
+    originalPrice: "₹7,999",
+    duration: "2 Days / 3 Nights",
+    difficulty: "Moderate to Difficult",
+    location: "Sirmaur, Himachal Pradesh",
+    maxGroupSize: 16,
+    rating: 4.9,
+    reviews: 42,
+    highlights: [
+      "Summit at 3,647 m, highest in the outer Himalayas",
+      "Shirgul Maharaj temple darshan",
+      "Deodar forest trek from Sarahan",
+      "360° panorama on clear days",
+      "Dark-sky stargazing at camp",
+      "Special gift from Team Nirvana",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Friday night departure",
+        description: "Evening bus from Delhi or Chandigarh. Intro rounds and games on board.",
+      },
+      {
+        day: 2,
+        title: "Sarahan to mountain camp",
+        description: "Arrive Sarahan, freshen up, trek through deodar forest to camp.",
+      },
+      {
+        day: 3,
+        title: "Summit and return",
+        description: "Pre-dawn push to Churdhar peak and Shirgul temple. Descend and overnight bus.",
+      },
+      {
+        day: 4,
+        title: "Monday morning",
+        description: "Early drop in Delhi.",
+      },
+    ],
+    included: [
+      "Transport from Delhi or Chandigarh",
+      "Freshen-up stop and mountain camp",
+      "Camping gear",
+      "2 breakfasts and 1 dinner",
+      "Guide, permits, and trek leader",
+      "First aid support",
+      "Himachali dish and special gift",
+    ],
+    excluded: [
+      "Lunches",
+      "Personal expenses",
+      "Pony or porter for personal bags",
+      "Travel insurance",
+    ],
+    bestTime: "Apr to Jun, Sep to Nov",
+    fitnessLevel: "Reasonable fitness recommended. Warm layers essential.",
   },
   "hampta-pass": {
     title: "Hampta Pass Trek",
@@ -464,8 +524,10 @@ type ItineraryAvailability = "open" | "coming_soon" | "sold_out";
 function itineraryAvailabilityOf(
   tour: (typeof tours)[keyof typeof tours]
 ): ItineraryAvailability {
-  const a: string | undefined =
-    "itineraryAvailability" in tour ? tour.itineraryAvailability : undefined;
+  const a =
+    "itineraryAvailability" in tour
+      ? (tour.itineraryAvailability as ItineraryAvailability | undefined)
+      : undefined;
   if (a === "coming_soon" || a === "sold_out") return a;
   return "open";
 }
@@ -483,9 +545,23 @@ export default async function TourDetailPage({ params }: Params) {
     return <KasolKheergangaTour />;
   }
 
+  if (slug === "triund-trek") {
+    return <TriundTour />;
+  }
+
+  if (slug === "kareri-lake") {
+    return <KareriTour />;
+  }
+
+  if (slug === "churdhar-trek") {
+    return <ChurdharTour />;
+  }
+
   const itineraryAvailability = itineraryAvailabilityOf(tour);
   const itineraryNotice =
-    "itineraryNotice" in tour && tour.itineraryNotice ? tour.itineraryNotice : null;
+    "itineraryNotice" in tour && typeof tour.itineraryNotice === "string"
+      ? tour.itineraryNotice
+      : null;
   const departures = (
     "departures" in tour && Array.isArray(tour.departures) ? tour.departures : []
   ) as { label: string; detail?: string }[];

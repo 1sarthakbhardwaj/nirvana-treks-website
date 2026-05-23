@@ -25,14 +25,15 @@ export default function Home() {
     {
       title: "Triund Trek",
       href: "/tours/triund-trek",
-      duration: "2 Days / 1 Night",
+      duration: "2 Days / 3 Nights",
       difficulty: "Easy to Moderate",
-      location: "McLeod Ganj, Himachal Pradesh",
-      price: "₹5,999",
+      location: "Dharamshala, Himachal Pradesh",
+      price: "From ₹7,499",
       rating: 4.7,
       image:
         "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1600&auto=format&fit=crop",
-      description: "Classic ridge trek with Dhauladhar views",
+      description:
+        "Weekend ridge camp at 2,875 m. Hotel freshen-up, Bhagsu and McLeod, sunrise on the Dhauladhars.",
     },
     {
       title: "Bir, Barot to Rajgundha Trek",
@@ -48,13 +49,28 @@ export default function Home() {
     {
       title: "Kareri Lake Trek",
       href: "/tours/kareri-lake",
-      duration: "3 Days / 2 Nights",
+      duration: "2 Days / 3 Nights",
       difficulty: "Moderate",
-      location: "Kangra Valley, Himachal Pradesh",
-      price: "₹5,999",
+      location: "Dhauladhar, Himachal Pradesh",
+      price: "From ₹7,499",
       rating: 4.8,
       image: "/gallery/kareri-lake.webp",
-      description: "Glacial lake trek at 2,934m with Dhauladhar panoramas",
+      description:
+        "Glacial lake at ~3,000 m. Forest trek, lakeside camp, mirror reflections at dawn.",
+    },
+    {
+      title: "Churdhar Peak Trek",
+      href: "/tours/churdhar-trek",
+      duration: "2 Days / 3 Nights",
+      difficulty: "Moderate to Difficult",
+      location: "Sirmaur, Himachal Pradesh",
+      price: "From ₹7,499",
+      rating: 4.9,
+      badge: "New",
+      image:
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
+      description:
+        "3,647 m summit, Shirgul temple darshan, deodar forest camp, and a 360° roof-of-the-outer-Himalayas view.",
     },
     {
       title: "Hampta Pass Trek",
@@ -113,8 +129,15 @@ export default function Home() {
                   {"soldOut" in tour && tour.soldOut ? (
                     <div className="sold-out-scrim absolute inset-0" aria-hidden />
                   ) : null}
-                  <div className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
-                    <Star className="w-3 h-3" /> {tour.rating}
+                  <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
+                      <Star className="w-3 h-3" /> {tour.rating}
+                    </span>
+                    {"badge" in tour && tour.badge ? (
+                      <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
+                        {tour.badge}
+                      </span>
+                    ) : null}
                   </div>
                   {"soldOut" in tour && tour.soldOut ? (
                     <div className="absolute top-3 right-3">
