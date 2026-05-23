@@ -67,7 +67,7 @@ export default function ContactPage() {
   ];
 
   const popularDestinations = [
-    "Kasol–Kheerganga Trek",
+    "Kasol × Kheerganga (Full or Weekend)",
     "Triund Trek",
     "Bir, Barot to Rajgundha Trek",
     "Kareri Lake Trek",

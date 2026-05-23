@@ -1,5 +1,9 @@
 import Container from "@/components/ui/container";
 import TourDetailHeroVisual from "@/components/tour-detail-hero-visual";
+import TourPackageTabs from "@/components/tour-package-tabs";
+import TourHighlights from "@/components/tour-highlights";
+import BirBillingTour from "@/components/bir-billing/bir-billing-tour";
+import KasolKheergangaTour from "@/components/kasol-kheerganga/kasol-kheerganga-tour";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { 
@@ -7,100 +11,251 @@ import {
   CheckCircle, XCircle, AlertTriangle
 } from "lucide-react";
 
+const kasolFullItinerary = [
+  {
+    day: 1,
+    title: "Roll out of the city",
+    timeHint: "9:00 PM onboard",
+    summary:
+      "Evening departure from Delhi. Icebreakers on the bus so no one's a stranger by morning. Sleep on the highway, wake in the hills.",
+    bullets: [
+      "Two truths and a lie",
+      "Mafia, Imposter, and group deduction games",
+      "Shared playlists and late night stories",
+    ],
+  },
+  {
+    day: 2,
+    title: "Arrive Kasol and café hopping",
+    timeHint: "Overnight in Kasol",
+    summary: "Morning check-in, hot shower, mountain breakfast, then an easy day in the valley.",
+    bullets: [
+      "Café hopping along the Parvati River",
+      "Kasol market for woollens and local finds",
+      "Group dinner & music at the stay",
+      "Complimentary Himachali Siddu on us",
+    ],
+  },
+  {
+    day: 3,
+    title: "Kheerganga trek",
+    timeHint: "~12 km, 4 to 5 hrs up, camp night",
+    summary:
+      "Drive to Barshaini and trek through Rudranag, waterfalls, and pine forest to camp.",
+    bullets: [
+      "Natural hot springs at the top",
+      "Bonfire as the sun drops",
+      "Stargazing with Milky Way views on clear nights",
+      "Camp games, music & dinner under the sky",
+    ],
+    note: "If Kheerganga is closed: Manikaran Sahib (gurudwara, hot springs, langar) then Manali for the night.",
+  },
+  {
+    day: 4,
+    title: "Trek down and send off",
+    timeHint: "Evening bus to Delhi",
+    summary:
+      "Sunrise at camp, breakfast, downhill trek. Relax in Kasol, then evening departure. Team gift + best-photo contest winner announced.",
+    note: "If on Plan B: Hidimba Temple, Solang Nala & Sissu (Atal Tunnel side) instead of trek down.",
+  },
+  {
+    day: 5,
+    title: "Home",
+    timeHint: "Early morning, Delhi",
+    summary: "Overnight return. Early drop in Delhi with tired legs, a full camera roll, and new friends.",
+  },
+] as const;
+
+const kasolWeekendItinerary = [
+  {
+    day: 1,
+    title: "Friday night roll-out",
+    timeHint: "9:00 PM from Delhi",
+    summary:
+      "Hit the road to Parvati Valley. Icebreakers, playlists, and games like Mafia and Imposter turn the bus into the pre party.",
+  },
+  {
+    day: 2,
+    title: "Kasol all day",
+    timeHint: "Back Saturday night",
+    summary: "Full Saturday in the valley — no trek, just vibes. Board Saturday night; Delhi by Sunday morning.",
+    bullets: [
+      "Café hopping & riverside chill",
+      "Kasol market wander",
+      "Optional Chalal or Manikaran",
+      "Complimentary Siddu · group dinner",
+    ],
+  },
+] as const;
+
 const tours = {
   "kasol-trip": {
-    title: "Kasol–Kheerganga Trek & Sightseeing",
-    subtitle: "2 Nights / 3 Days | Delhi Pickup & Drop",
+    title: "Kasol × Kheerganga",
+    subtitle: "5 days, 4 nights | Delhi or Chandigarh pickup and drop",
     description:
-      "Adventure + Nature + Relaxation: Kasol exploration, Chalal village trek, Manikaran Sahib visit, and the epic Kheerganga trek with natural hot springs.",
+      "A Parvati Valley escape built around good people, good food, and a night under the stars at Kheerganga. Come solo or bring your crew. You will leave with new friends. Choose the full five day trek or a Kasol weekend that gets you home Saturday night.",
     image: "🏞️",
-    price: "₹6,499",
-    originalPrice: "₹8,499",
-    duration: "2 Nights / 3 Days",
+    price: "From ₹6,499",
+    originalPrice: "₹8,999",
+    duration: "5 Days / 4 Nights (or Weekend)",
     difficulty: "Easy to Moderate",
     location: "Parvati Valley, Himachal Pradesh",
     maxGroupSize: 14,
     rating: 4.8,
     reviews: 92,
-    highlights: [
-      "Delhi pickup & drop by comfortable tempo traveller/bus",
-      "Riverside stay in Kasol with stunning views",
-      "Café hopping & local market exploration",
-      "Chalal village mini-trek adventure",
-      "Manikaran Sahib visit & natural hot springs experience",
-      "Guided Kheerganga trek through pine forests",
-      "Bonfire night with music under the stars",
-      "All meals included (breakfast, lunch, dinner)"
+    highlights: [],
+    highlightCards: [
+      {
+        title: "Mountain road trip",
+        description:
+          "Round trip from Delhi with games, music, and icebreakers so the bus feels like day one of the adventure.",
+        icon: "bus",
+      },
+      {
+        title: "Kasol café culture",
+        description:
+          "Riverside coffee, market strolls, and slow mornings along the Parvati River in the heart of the valley.",
+        icon: "cafe",
+      },
+      {
+        title: "Kheerganga under the stars",
+        description:
+          "Trek through pine forest, soak in natural hot springs, and camp with bonfires and Milky Way views.",
+        icon: "trek",
+      },
+      {
+        title: "Taste of Himachal",
+        description:
+          "Complimentary Siddu at the stay. Warm, local, and fresh off the steamer.",
+        icon: "sparkles",
+      },
+      {
+        title: "Plan B built in",
+        description:
+          "If the trail is closed, we pivot to Manikaran Sahib and Manali without losing the trip energy.",
+        icon: "stars",
+      },
+      {
+        title: "Memories to take home",
+        description:
+          "Team Nirvana send off gift plus a best photo of the trip contest before you roll back to the city.",
+        icon: "gift",
+      },
     ],
-    itinerary: [
-      { day: 1, title: "Day 1 – Departure from Delhi", timeHint: "Evening 6:30–8:00 PM pickup", description: "Evening departure from Delhi in a comfortable tempo traveller / bus. Overnight journey through beautiful mountain roads. Arrival in Kasol by morning." },
-      { day: 2, title: "Day 2 – Kasol Exploration & Local Sightseeing", timeHint: "Full day on trail & town", description: "Check-in at campsite or riverside stay. Breakfast amidst the mountains. Visit Kasol Market, enjoy Café Hopping (Moon Dance Café, Evergreen Café). Explore Chalal Village Trek or relax by the Parvati River. Visit Manikaran Sahib Gurudwara & experience the natural hot springs. Evening bonfire with light music and dinner under the stars. Overnight stay at Kasol." },
-      { day: 3, title: "Day 3 – Kheerganga Trek & Return Journey", timeHint: "Early start ~6:00 AM", description: "Early morning breakfast, drive to Barshaini (trek start point). Begin the scenic Kheerganga Trek through pine forests, waterfalls, and villages. Reach Kheerganga top, relax in the natural hot water springs and soak in mountain views. Descend to Barshaini by evening and start the return journey to Delhi. Overnight travel, reach Delhi the next morning." }
+    packageVariants: [
+      {
+        id: "full",
+        name: "Full Experience: Kasol and Kheerganga",
+        shortName: "Full experience",
+        badge: "Most popular",
+        subtitle: "Trek, camp under the stars, and five days in Parvati Valley",
+        duration: "5 Days / 4 Nights",
+        pricingTiers: [
+          { label: "Quad / Triple sharing", price: "₹7,499" },
+          { label: "Double sharing", price: "₹7,999" },
+        ],
+        itinerary: kasolFullItinerary,
+        included: [
+          "Delhi to Parvati Valley transport",
+          "2 nights stay (Kasol + Kheerganga camp)",
+          "2 breakfasts + 2 dinners",
+          "Kheerganga camping with bonfire",
+          "Complimentary Himachali Siddu",
+          "Special gift + photo contest prize",
+          "Trek guide & permits",
+        ],
+      },
+      {
+        id: "weekend",
+        name: "Weekend Escape: Kasol Only",
+        shortName: "Weekend escape",
+        badge: "Quick getaway",
+        subtitle: "Friday out, Saturday in Kasol, back Saturday night",
+        duration: "Weekend, 1 night",
+        pricingTiers: [
+          { label: "Quad / Triple sharing", price: "₹6,499" },
+          { label: "Double sharing", price: "₹6,999" },
+        ],
+        itinerary: kasolWeekendItinerary,
+        included: [
+          "Delhi to Kasol transport (weekend batch)",
+          "1 night stay in Kasol",
+          "Breakfast + dinner",
+          "Café hopping & local sightseeing",
+          "Complimentary Himachali Siddu",
+          "Group activities & local assistance",
+        ],
+      },
     ],
+    itinerary: kasolFullItinerary,
     departures: [
-      { label: "Fri batch", detail: "6:30 PM, Delhi pickup (RK Ashram / Majnu Ka Tila)" },
-      { label: "Sat", detail: "~2:00 PM, Kasol check-in & local time" },
-      { label: "Mon return", detail: "Morning, Delhi arrival (traffic dependent)" },
+      { label: "Full trip", detail: "Day 1 at 9 PM from Delhi. Returns Day 5 early morning." },
+      { label: "Weekend", detail: "Friday 9 PM out. Saturday in Kasol. Saturday night back to Delhi." },
+      { label: "Pickup", detail: "Delhi by default. Chandigarh on request." },
     ],
     included: [
-      "Delhi pickup & drop in comfortable tempo traveller/bus",
-      "Accommodation: Camp stay in Kasol & overnight journey",
-      "All meals: Breakfast, lunch, and dinner included",
-      "Trek guide & basic first aid",
-      "All permits and entry fees",
-      "Manikaran Gurudwara visit",
-      "Bonfire & group activities",
-      "Local sightseeing assistance"
+      "Delhi to Parvati Valley transport (Chandigarh on request)",
+      "Accommodation as per package (Kasol + camp on full trip)",
+      "Meals as listed per package",
+      "Kheerganga camping, guide & permits (full trip)",
+      "Complimentary Himachali Siddu",
+      "Special gift & best-photo contest (full trip send-off)",
+      "Bonfire, camp games & group activities",
     ],
     excluded: [
       "Personal expenses & shopping",
-      "Any activities not mentioned",
+      "Lunches not mentioned in package",
       "Travel insurance",
-      "Additional snacks & beverages"
+      "Additional snacks & beverages",
     ],
-    bestTime: "Year-round (best: Mar–Jun, Sep–Nov)",
-    fitnessLevel: "Basic fitness sufficient for Kheerganga trek",
+    bestTime: "Year round (best Mar to Jun, Sep to Nov)",
+    fitnessLevel: "Basic fitness for Kheerganga on the full package. Weekend is easy with no trek required.",
   },
   "bir-billing": {
-    title: "Bir Billing Trip",
-    subtitle: "Paragliding Capital of India",
+    title: "Bir Billing",
+    subtitle: "The Paragliding Capital of India",
     description:
-      "Experience paragliding from Billing to Bir, visit monasteries, explore cafes, and enjoy stunning sunsets over the Kangra valley.",
+      "Fly over the Dhauladhars, chase a hidden waterfall, and watch the valley turn gold at the landing site. Pick a tight weekend or stretch it into the wild Rajgundha Valley.",
     image: "🪂",
-    price: "₹6,999",
-    originalPrice: "₹8,499",
-    duration: "3 Days / 2 Nights",
+    price: "From ₹7,499",
+    originalPrice: "₹8,999",
+    duration: "4 to 5 days",
     difficulty: "Easy",
     location: "Kangra Valley, Himachal Pradesh",
-    maxGroupSize: 12,
+    maxGroupSize: 14,
     rating: 4.9,
     reviews: 76,
     highlights: [
-      "Paragliding tandem flight (optional)",
-      "Monastery visits & village walks",
-      "Sunset points and cafe hopping",
-      "Comfortable stays"
+      "Tandem paragliding from Billing (optional add on)",
+      "Hidden Gunehar waterfall guided walk",
+      "Tibetan colony, monasteries and Bir cafés",
+      "Sunset together at the landing site",
+      "Extended option: trek into Rajgundha Valley",
+      "Camp with bonfire under Hanuman Tibba views",
     ],
     itinerary: [
-      { day: 1, title: "Arrival & Local Explorations", description: "Reach Bir, check-in, explore cafes and monasteries." },
-      { day: 2, title: "Billing Paragliding", description: "Drive to Billing, tandem flight to Bir (optional), sunset point." },
-      { day: 3, title: "Leisure & Departure", description: "Leisure morning, local shopping, depart with memories." }
+      { day: 1, title: "Day 1, Friday", description: "Evening departure from Delhi. Overnight drive with intro games on the bus." },
+      { day: 2, title: "Day 2, Saturday", description: "Morning arrival in Bir. Day splits between paragliding and the Gunehar waterfall trek. Group sunset at the landing site, bonfire and dinner." },
+      { day: 3, title: "Day 3, Sunday", description: "Café day in Bir, Tibetan colony and monasteries. Complimentary Himachali dish and gift before evening bus." },
+      { day: 4, title: "Day 4, Monday", description: "Overnight return, early morning drop in Delhi." }
     ],
     included: [
-      "Accommodation (twin sharing)",
-      "Local assistance & permits",
-      "Transport for local sightseeing",
+      "Delhi to Bir transport (luxury coach)",
+      "Stay in Bir guesthouse (and tents on Extended)",
+      "Breakfasts and dinners as per plan",
+      "Guided Gunehar waterfall trek",
+      "Trek leader, permits and first aid",
+      "Free authentic Himachali dish",
+      "Special send off gift from Team Nirvana",
     ],
     excluded: [
-      "Paragliding fee",
-      "Meals",
+      "Paragliding fee (optional add on, weather dependent)",
+      "Lunches",
       "Personal expenses",
-      "Travel insurance"
+      "Travel insurance",
     ],
-    bestTime: "Mar–Jun, Sep–Nov",
-    fitnessLevel: "No specific fitness required",
-    itineraryAvailability: "coming_soon",
-    itineraryNotice: "Itinerary coming soon, please wait. Dates and hour-by-hour timings will be posted here shortly. WhatsApp us for early details.",
+    bestTime: "Mar to Jun, Sep to Nov",
+    fitnessLevel: "No specific fitness required. Extended trek is beginner friendly with no technical sections.",
   },
   "triund-trek": {
     title: "Triund Trek",
@@ -309,7 +464,7 @@ type ItineraryAvailability = "open" | "coming_soon" | "sold_out";
 function itineraryAvailabilityOf(
   tour: (typeof tours)[keyof typeof tours]
 ): ItineraryAvailability {
-  const a =
+  const a: string | undefined =
     "itineraryAvailability" in tour ? tour.itineraryAvailability : undefined;
   if (a === "coming_soon" || a === "sold_out") return a;
   return "open";
@@ -320,13 +475,28 @@ export default async function TourDetailPage({ params }: Params) {
   const tour = tours[slug];
   if (!tour) return notFound();
 
+  if (slug === "bir-billing") {
+    return <BirBillingTour />;
+  }
+
+  if (slug === "kasol-trip") {
+    return <KasolKheergangaTour />;
+  }
+
   const itineraryAvailability = itineraryAvailabilityOf(tour);
   const itineraryNotice =
     "itineraryNotice" in tour && tour.itineraryNotice ? tour.itineraryNotice : null;
   const departures = (
     "departures" in tour && Array.isArray(tour.departures) ? tour.departures : []
   ) as { label: string; detail?: string }[];
-
+  const packageVariants =
+    "packageVariants" in tour && Array.isArray(tour.packageVariants)
+      ? tour.packageVariants
+      : null;
+  const highlightCards =
+    "highlightCards" in tour && Array.isArray(tour.highlightCards)
+      ? tour.highlightCards
+      : null;
   const difficultyColor = tour.difficulty.includes('Easy') ? 'text-green-400 bg-green-500/20' :
                          tour.difficulty.includes('Moderate') ? 'text-yellow-400 bg-yellow-500/20' :
                          'text-red-400 bg-red-500/20';
@@ -353,18 +523,13 @@ export default async function TourDetailPage({ params }: Params) {
               <h2 className="text-xl text-emerald-400 mb-6">{tour.subtitle}</h2>
               <p className="text-white/80 text-lg leading-relaxed mb-8">{tour.description}</p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-black font-semibold rounded-lg hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 hover:scale-105"
-                >
-                  Book Now
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <button className="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/40 transition-all">
-                  Download Itinerary
-                </button>
-              </div>
+              <Link 
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-black font-semibold rounded-lg hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 hover:scale-105"
+              >
+                Book Now
+                <ArrowRight className="w-5 h-5" />
+              </Link>
               <p className="mt-4 text-sm text-white/55">
                 Refer friends and earn credit on your next trip.{" "}
                 <Link href="/refer" className="text-emerald-400 underline-offset-2 hover:underline">
@@ -384,12 +549,30 @@ export default async function TourDetailPage({ params }: Params) {
                   {tour.image}
                 </span>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-black/80 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-400">{tour.price}</div>
-                  <div className="text-sm text-white/60 line-through">{tour.originalPrice}</div>
-                  <div className="text-xs text-white/80">per person</div>
-                </div>
+              <div className="absolute -bottom-6 -right-6 min-w-[200px] rounded-xl border border-white/10 bg-black/85 p-4 backdrop-blur-sm">
+                <p className="text-center text-xs font-medium uppercase tracking-wide text-white/50">
+                  Starting from
+                </p>
+                <p className="text-center text-2xl font-bold text-emerald-400">{tour.price}</p>
+                {packageVariants ? (
+                  <div className="mt-3 space-y-1.5 border-t border-white/10 pt-3 text-xs text-white/60">
+                    <p className="flex justify-between gap-4">
+                      <span>Full trip</span>
+                      <span className="text-emerald-400/90">₹7,499+</span>
+                    </p>
+                    <p className="flex justify-between gap-4">
+                      <span>Weekend</span>
+                      <span className="text-emerald-400/90">₹6,499+</span>
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-center text-sm text-white/50 line-through">
+                      {tour.originalPrice}
+                    </p>
+                    <p className="text-center text-xs text-white/70">per person</p>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -412,21 +595,34 @@ export default async function TourDetailPage({ params }: Params) {
         </div>
 
         {/* Highlights */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-white mb-8">Tour Highlights</h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            {tour.highlights.map((highlight, i) => (
-              <div key={i} className="flex items-start gap-3 p-4 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-lg">
-                <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white/80">{highlight}</span>
-              </div>
-            ))}
+        {highlightCards && highlightCards.length > 0 ? (
+          <TourHighlights
+            items={[...highlightCards]}
+            eyebrow="Parvati Valley experience"
+            title="What makes this trip special"
+          />
+        ) : tour.highlights.length > 0 ? (
+          <div className="mb-16">
+            <h3 className="mb-8 text-2xl font-semibold text-white">Tour Highlights</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              {tour.highlights.map((highlight, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 rounded-lg border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4"
+                >
+                  <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" />
+                  <span className="text-white/80">{highlight}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : null}
 
-        {/* Itinerary */}
+        {/* Itinerary / packages */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-white mb-8">Detailed Itinerary</h3>
+          {!packageVariants ? (
+            <h3 className="mb-8 text-2xl font-semibold text-white">Detailed Itinerary</h3>
+          ) : null}
 
           {itineraryAvailability !== "open" && itineraryNotice && (
             <div
@@ -440,7 +636,7 @@ export default async function TourDetailPage({ params }: Params) {
             </div>
           )}
 
-          {departures.length > 0 && (
+          {departures.length > 0 && !packageVariants ? (
             <div className="mb-8">
               <h4 className="mb-3 text-lg font-semibold text-white/90">
                 Typical timings & departures
@@ -459,9 +655,16 @@ export default async function TourDetailPage({ params }: Params) {
                 ))}
               </div>
             </div>
-          )}
+          ) : null}
 
           {itineraryAvailability !== "sold_out" ? (
+            packageVariants ? (
+              <TourPackageTabs
+                packages={[...packageVariants]}
+                logistics={departures}
+                excluded={[...tour.excluded]}
+              />
+            ) : (
             <div
               className={`space-y-4 ${
                 itineraryAvailability === "coming_soon" ? "opacity-80" : ""
@@ -480,11 +683,18 @@ export default async function TourDetailPage({ params }: Params) {
                     {"timeHint" in item && item.timeHint ? (
                       <p className="mb-2 text-sm text-emerald-300/90">{item.timeHint}</p>
                     ) : null}
-                    <p className="text-white/70">{item.description}</p>
+                    <p className="text-white/70">
+                      {"summary" in item && item.summary
+                        ? item.summary
+                        : "description" in item
+                          ? item.description
+                          : ""}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
+            )
           ) : (
             <p className="text-white/60 text-sm">
               Day-by-day plan is hidden while this batch is full. Message us for the next
@@ -493,38 +703,38 @@ export default async function TourDetailPage({ params }: Params) {
           )}
         </div>
 
-        {/* Included/Excluded */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-emerald-400" />
-              What&apos;s Included
-            </h3>
-            <div className="space-y-3">
-              {tour.included.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-1" />
-                  <span className="text-white/80 text-sm">{item}</span>
-                </div>
-              ))}
+        {!packageVariants ? (
+          <div className="mb-16 grid gap-8 md:grid-cols-2">
+            <div>
+              <h3 className="mb-6 flex items-center gap-2 text-xl font-semibold text-white">
+                <CheckCircle className="h-6 w-6 text-emerald-400" />
+                What&apos;s Included
+              </h3>
+              <div className="space-y-3">
+                {tour.included.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-emerald-400" />
+                    <span className="text-sm text-white/80">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="mb-6 flex items-center gap-2 text-xl font-semibold text-white">
+                <XCircle className="h-6 w-6 text-red-400" />
+                What&apos;s Not Included
+              </h3>
+              <div className="space-y-3">
+                {tour.excluded.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <XCircle className="mt-1 h-4 w-4 flex-shrink-0 text-red-400" />
+                    <span className="text-sm text-white/80">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-              <XCircle className="w-6 h-6 text-red-400" />
-              What&apos;s Not Included
-            </h3>
-            <div className="space-y-3">
-              {tour.excluded.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <XCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-1" />
-                  <span className="text-white/80 text-sm">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        ) : null}
 
         {/* Fitness Level */}
         <div className="p-6 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-xl mb-16">

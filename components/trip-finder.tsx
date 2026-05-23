@@ -45,7 +45,7 @@ type TourRecommendation = {
 };
 
 const CATALOGUE: TourRecommendation[] = [
-  { slug: "kasol-trip", title: "Kasol\u2013Kheerganga Trek", price: "\u20b96,499", duration: "2N / 3D", emoji: "\ud83c\udfde\ufe0f", tagline: "Hot springs, cafes & pine forests", tags: ["adventure", "nature", "camping", "culture"] },
+  { slug: "kasol-trip", title: "Kasol \u00d7 Kheerganga", price: "From \u20b96,499", duration: "5D / 4N or weekend", emoji: "\ud83c\udfde\ufe0f", tagline: "Caf\u00e9 hops, Siddu, trek & Milky Way stars", tags: ["adventure", "nature", "camping", "culture"] },
   { slug: "bir-billing", title: "Bir Billing Trip", price: "\u20b96,999", duration: "3 Days", emoji: "\ud83e\ude82", tagline: "Paragliding capital of India", tags: ["paragliding", "adventure", "photography", "culture"] },
   { slug: "triund-trek", title: "Triund Trek", price: "\u20b95,999", duration: "2D / 1N", emoji: "\u26f0\ufe0f", tagline: "Classic ridge with Dhauladhar views", tags: ["adventure", "nature", "camping", "photography"] },
   { slug: "bir-rajgundha", title: "Bir, Barot to Rajgundha Trek", price: "\u20b95,999", duration: "3D / 2N", emoji: "\ud83c\udfd5\ufe0f", tagline: "Hidden valley through Bir & Barot", tags: ["nature", "camping", "adventure", "photography"] },

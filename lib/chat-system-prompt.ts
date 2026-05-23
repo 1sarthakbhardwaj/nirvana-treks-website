@@ -33,18 +33,18 @@ MULTI-TURN: Remember what the user asked earlier in the conversation. Stay consi
 
 CATALOGUE (authoritative: all slugs under /tours/[slug])
 
-## kasol-trip: Kasol–Kheerganga Trek & Sightseeing
-- Subtitle: 2 Nights / 3 Days | Delhi Pickup & Drop
-- Price: ₹6,499 (was ₹8,499) per person | Difficulty: Easy to Moderate | Location: Parvati Valley, Himachal Pradesh
-- Max group: 14 | Rating: 4.8 (92 reviews)
-- Summary: Kasol, Chalal, Manikaran Sahib, Kheerganga trek with hot springs.
-- Highlights: Delhi pickup & drop (tempo/bus); riverside Kasol stay; café hopping & market; Chalal mini-trek; Manikaran Sahib & hot springs; guided Kheerganga trek; bonfire & music; all meals (B/L/D).
-- Day 1: Evening Delhi departure, overnight journey, morning Kasol.
-- Day 2: Kasol stay, market/cafés, Chalal or river, Manikaran Sahib & hot springs, bonfire, dinner, overnight Kasol.
-- Day 3: Breakfast, Barshaini, Kheerganga trek, hot springs, descend, return to Delhi overnight; reach Delhi next morning.
-- Included: Delhi transport; camp/Kasol + overnight journey; all meals; guide & first aid; permits/fees; Manikaran; bonfire; local sightseeing help.
-- Excluded: Personal/shopping; unlisted activities; insurance; extra snacks/drinks.
-- Best time: Year-round (best Mar–Jun, Sep–Nov) | Fitness: Basic for Kheerganga.
+## kasol-trip: Kasol & Kheerganga
+- Subtitle: 5 Days / 4 Nights | Delhi or Chandigarh pickup & drop
+- Two routes on same trip page (same price both):
+  1) **Kheerganga Camp** (5D/4N): Quad/Triple ₹7,499 · Double ₹7,999
+  2) **Manali Route** (if trail closed for snow): same pricing
+- Difficulty: Easy to Moderate | Parvati Valley, HP | Max group: 14 | Rating: 4.8 (92 reviews)
+- Vibe: Hot springs under stars, café mornings by the Parvati, pine forest trek to Kheerganga meadow.
+- Kheerganga route: Day 1 9 PM Delhi onboard (intro games, Mafia/Imposter). Day 2 Kasol cafés, market, free Himachali dish. Day 3 Barshaini → Kheerganga camp, hot springs, bonfire, stargazing. Day 4 trek down, gift send-off. Day 5 early Delhi.
+- Manali route (Plan B): Days 1–2 same; Day 3 Manikaran Sahib + hot springs + langar, drive to Manali; Day 4 Hidimba, Solang, Sissu/Atal Tunnel, gift; Day 5 Delhi.
+- Included: Delhi transport; 2 nights (Kasol + camp/Manali); 2 breakfasts + 2 dinners; Kheerganga camping; guide/permits; Siddu; gift.
+- Excluded: Lunches, personal, pony/porter; both routes same price.
+- Best time: Year-round (best Mar–Jun, Sep–Nov) | Fitness: Basic for trek.
 
 ## bir-billing: Bir Billing Trip
 - Subtitle: Paragliding Capital of India
