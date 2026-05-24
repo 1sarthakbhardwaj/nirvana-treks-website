@@ -3,94 +3,16 @@ import HomeHeroBackground from "@/components/home-hero-background";
 import HomeHeroContent from "@/components/home-hero-content";
 import TrailGallery from "@/components/trail-gallery";
 import TripFinder from "@/components/trip-finder";
+import TourListingCardPricing from "@/components/tour-listing-card-pricing";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/animate-on-scroll";
+import { FEATURED_TOURS } from "@/lib/tours-catalog";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Star, Heart, ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const featuredTours = [
-    {
-      title: "Kasol × Kheerganga",
-      href: "/tours/kasol-trip",
-      duration: "5 Days / 4 Nights",
-      difficulty: "Easy to Moderate",
-      location: "Parvati Valley, Himachal Pradesh",
-      price: "From ₹6,499",
-      rating: 4.8,
-      image: "/gallery/kasol-kheerganga.webp",
-      description:
-        "Good people, good food, Kheerganga under the stars — or a weekend Kasol-only escape back Saturday night",
-    },
-    {
-      title: "Triund Trek",
-      href: "/tours/triund-trek",
-      duration: "2 Days / 3 Nights",
-      difficulty: "Easy to Moderate",
-      location: "Dharamshala, Himachal Pradesh",
-      price: "From ₹7,499",
-      rating: 4.7,
-      image:
-        "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1600&auto=format&fit=crop",
-      description:
-        "Weekend ridge camp at 2,875 m. Hotel freshen-up, Bhagsu and McLeod, sunrise on the Dhauladhars.",
-    },
-    {
-      title: "Bir, Barot to Rajgundha Trek",
-      href: "/tours/bir-rajgundha",
-      duration: "3 Days / 2 Nights",
-      difficulty: "Easy to Moderate",
-      location: "Kangra Valley, Himachal Pradesh",
-      price: "₹5,999",
-      rating: 4.8,
-      image: "/gallery/barot-bir-rajgundha.webp",
-      description: "Hidden valley trek through Bir & Barot with lush meadows and starry nights",
-    },
-    {
-      title: "Kareri Lake Trek",
-      href: "/tours/kareri-lake",
-      duration: "2 Days / 3 Nights",
-      difficulty: "Moderate",
-      location: "Dhauladhar, Himachal Pradesh",
-      price: "From ₹7,499",
-      rating: 4.8,
-      image: "/gallery/kareri-lake.webp",
-      description:
-        "Glacial lake at ~3,000 m. Forest trek, lakeside camp, mirror reflections at dawn.",
-    },
-    {
-      title: "Churdhar Peak Trek",
-      href: "/tours/churdhar-trek",
-      duration: "2 Days / 3 Nights",
-      difficulty: "Moderate to Difficult",
-      location: "Sirmaur, Himachal Pradesh",
-      price: "From ₹7,499",
-      rating: 4.9,
-      badge: "New",
-      image:
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
-      description:
-        "3,647 m summit, Shirgul temple darshan, deodar forest camp, and a 360° roof-of-the-outer-Himalayas view.",
-    },
-    {
-      title: "Hampta Pass Trek",
-      href: "/tours/hampta-pass",
-      duration: "5 Nights / 6 Days",
-      difficulty: "Moderate to Difficult",
-      location: "Kullu–Spiti, Himachal Pradesh",
-      price: "₹12,999",
-      rating: 4.9,
-      image:
-        "https://images.unsplash.com/photo-1486911278844-a81c5267e227?q=80&w=1600&auto=format&fit=crop",
-      description: "Epic crossover from green Kullu to barren Spiti + Chandratal",
-    },
-  ];
-
-  // Intentionally left blank: feature cards are defined inline below for clarity
-
   return (
     <main>
-      {/* Refined, Image-led Hero */}
       <section className="relative min-h-[85vh] overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <HomeHeroBackground />
@@ -99,86 +21,96 @@ export default function Home() {
         <HomeHeroContent />
       </section>
 
-      {/* Mountain silhouette divider */}
       <div className="mountain-divider" />
 
-      {/* Featured Tours */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background pt-16 pb-10 md:pt-20 md:pb-12">
         <Container>
           <AnimateOnScroll animation="fade-up" className="mb-10 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Featured Adventures</h2>
-            <p className="mt-3 text-lg text-gray-400">Handpicked journeys across the Himalayan ranges</p>
+            <p className="mt-3 text-lg text-gray-400">
+              Weekend treks from{" "}
+              <span className="font-semibold text-emerald-400">₹7,499</span> quad/triple ·{" "}
+              <span className="font-semibold text-emerald-400/90">₹7,999</span> double (per person)
+            </p>
           </AnimateOnScroll>
 
-          <StaggerContainer className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.12}>
-            {featuredTours.map((tour) => (
-              <StaggerItem key={tour.href}>
-              <Link
-                href={tour.href}
-                className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-emerald-500/50 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 block"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={tour.image}
-                    alt={tour.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                  {"soldOut" in tour && tour.soldOut ? (
-                    <div className="sold-out-scrim absolute inset-0" aria-hidden />
-                  ) : null}
-                  <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
-                      <Star className="w-3 h-3" /> {tour.rating}
-                    </span>
-                    {"badge" in tour && tour.badge ? (
-                      <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
-                        {tour.badge}
+          <StaggerContainer
+            className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3"
+            staggerDelay={0.12}
+          >
+            {FEATURED_TOURS.map((tour) => (
+              <StaggerItem key={tour.slug}>
+                <Link
+                  href={`/tours/${tour.slug}`}
+                  className="group relative block overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={tour.coverSrc}
+                      alt={tour.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    {tour.soldOut ? (
+                      <div className="sold-out-scrim absolute inset-0" aria-hidden />
+                    ) : null}
+                    <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
+                        <Star className="h-3 w-3" /> {tour.rating}
                       </span>
+                      {tour.badge ? (
+                        <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
+                          {tour.badge}
+                        </span>
+                      ) : null}
+                    </div>
+                    {tour.soldOut ? (
+                      <div className="absolute right-3 top-3">
+                        <span className="sold-out-badge">
+                          <span className="sold-out-badge__text">Sold out</span>
+                        </span>
+                      </div>
                     ) : null}
                   </div>
-                  {"soldOut" in tour && tour.soldOut ? (
-                    <div className="absolute top-3 right-3">
-                      <span className="sold-out-badge">
-                        <span className="sold-out-badge__text">Sold out</span>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <h3 className="text-lg font-semibold text-white">{tour.title}</h3>
+                        <p className="mt-0.5 text-xs text-gray-500">{tour.subtitle}</p>
+                      </div>
+                      <TourListingCardPricing tour={tour} className="shrink-0" />
+                    </div>
+                    <p className="mt-2 text-sm text-gray-400">{tour.description}</p>
+                    <div className="mt-4 flex items-center justify-between text-sm text-gray-400">
+                      <span className="inline-flex items-center gap-1">
+                        <MapPin className="h-4 w-4 shrink-0" /> {tour.location}
+                      </span>
+                      <span className="inline-flex items-center gap-1">
+                        <Clock className="h-4 w-4 shrink-0" /> {tour.duration}
                       </span>
                     </div>
-                  ) : null}
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-white">{tour.title}</h3>
-                    <span className="text-emerald-400 font-bold">{tour.price}</span>
+                    <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+                      <span
+                        className={`rounded-full px-2.5 py-1 text-xs font-medium ${
+                          tour.difficulty === "Easy"
+                            ? "bg-emerald-500/15 text-emerald-300"
+                            : tour.difficulty.includes("Difficult")
+                              ? "bg-red-500/15 text-red-300"
+                              : tour.difficulty.includes("Moderate")
+                                ? "bg-yellow-500/15 text-yellow-300"
+                                : "bg-emerald-500/15 text-emerald-300"
+                        }`}
+                      >
+                        {tour.difficulty}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-emerald-400 transition-all group-hover:gap-2">
+                        View Tour <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
                   </div>
-                  <p className="mt-2 text-sm text-gray-400">{tour.description}</p>
-                  <div className="mt-4 flex items-center justify-between text-sm text-gray-400">
-                    <span className="inline-flex items-center gap-1">
-                      <MapPin className="w-4 h-4" /> {tour.location}
-                    </span>
-                    <span className="inline-flex items-center gap-1">
-                      <Clock className="w-4 h-4" /> {tour.duration}
-                    </span>
-                  </div>
-                  <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
-                      tour.difficulty === "Easy"
-                        ? "bg-emerald-500/15 text-emerald-300"
-                        : tour.difficulty.includes("Difficult")
-                        ? "bg-red-500/15 text-red-300"
-                        : tour.difficulty.includes("Moderate")
-                        ? "bg-yellow-500/15 text-yellow-300"
-                        : "bg-emerald-500/15 text-emerald-300"
-                    }`}>
-                      {tour.difficulty}
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-emerald-400 group-hover:gap-2 transition-all">
-                      View Tour <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -186,10 +118,10 @@ export default function Home() {
           <AnimateOnScroll animation="fade-up" delay={0.3} className="mt-8 text-center">
             <Link
               href="/tours"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg forest-gradient text-white font-semibold shadow-lg hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-white forest-gradient shadow-lg transition-all hover:scale-105"
             >
               View All Adventures
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="h-5 w-5" />
             </Link>
           </AnimateOnScroll>
         </Container>
@@ -199,29 +131,26 @@ export default function Home() {
 
       <TripFinder />
 
-      {/* Why Choose Us */}
       <section className="relative overflow-hidden bg-gradient-to-br from-muted/30 via-background to-secondary/30 py-16 md:py-20">
         <Container>
           <AnimateOnScroll animation="fade-up" className="mb-10 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Why Choose Nirvana?</h2>
             <p className="mt-3 text-lg text-gray-400">Thoughtful details that make your trip seamless</p>
           </AnimateOnScroll>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.15}>
+          <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3" staggerDelay={0.15}>
             {[
               { icon: MapPin, title: "Local Guides", desc: "Led by experts who belong to the mountains" },
               { icon: Heart, title: "Small Groups", desc: "Personal attention, authentic connections" },
               { icon: Star, title: "Safety First", desc: "Reliable logistics and well-planned itineraries" },
             ].map((f, i) => (
               <StaggerItem key={i} animation="fade-left">
-              <div
-                className="relative rounded-2xl border border-border bg-card/60 backdrop-blur p-6 hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
-              >
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-300 flex items-center justify-center mb-4">
-                  <f.icon className="w-6 h-6" />
+                <div className="relative rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-300">
+                    <f.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{f.title}</h3>
+                  <p className="mt-2 text-gray-400">{f.desc}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-white">{f.title}</h3>
-                <p className="mt-2 text-gray-400">{f.desc}</p>
-              </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

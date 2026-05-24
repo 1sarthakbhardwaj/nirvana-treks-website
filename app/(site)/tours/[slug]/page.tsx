@@ -98,7 +98,7 @@ const tours = {
     description:
       "A Parvati Valley escape built around good people, good food, and a night under the stars at Kheerganga. Come solo or bring your crew. You will leave with new friends. Choose the full five day trek or a Kasol weekend that gets you home Saturday night.",
     image: "🏞️",
-    price: "From ₹6,499",
+    price: "From ₹7,499",
     originalPrice: "₹8,999",
     duration: "5 Days / 4 Nights (or Weekend)",
     difficulty: "Easy to Moderate",

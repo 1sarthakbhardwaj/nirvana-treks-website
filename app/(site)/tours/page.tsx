@@ -1,5 +1,7 @@
 import Container from "@/components/ui/container";
 import ToursPageHero from "@/components/tours-page-hero";
+import TourListingCardPricing from "@/components/tour-listing-card-pricing";
+import { TOURS_CATALOG } from "@/lib/tours-catalog";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Star, ArrowRight, Filter, Search } from "lucide-react";
@@ -9,115 +11,23 @@ export const metadata = {
   description: "Discover our curated collection of treks, tours, and adventures across the incredible Himalayan ranges.",
 };
 
-const tours = [
-  {
-    slug: "kasol-trip",
-    title: "Kasol × Kheerganga",
-    subtitle: "5D/4N full trip · Weekend Kasol from ₹6,499",
-    days: 5,
-    region: "Parvati Valley, Himachal Pradesh",
-    difficulty: "Easy to Moderate",
-    price: "From ₹6,499",
-    rating: 4.8,
-    image: "🏞️",
-    coverSrc: "/gallery/kasol-kheerganga.webp",
-    description:
-      "Parvati Valley with café hops, Siddu on us, Kheerganga trek & stargazing — or a one-weekend Kasol escape, back Saturday night",
-  },
-  {
-    slug: "bir-billing",
-    title: "Bir Billing",
-    subtitle: "Paragliding Capital of India",
-    days: 4,
-    region: "Kangra Valley, Himachal Pradesh",
-    difficulty: "Easy",
-    price: "From ₹7,499",
-    rating: 4.9,
-    image: "🪂",
-    coverSrc:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
-    description: "Cafe hopping in Bir, paragliding from Billing to Bir, monasteries and sunsets"
-  },
-  {
-    slug: "triund-trek",
-    title: "Triund Trek",
-    subtitle: "Weekend ridge camp | From ₹7,499",
-    days: 3,
-    region: "Dharamshala, Himachal Pradesh",
-    difficulty: "Easy to Moderate",
-    price: "From ₹7,499",
-    rating: 4.7,
-    image: "⛰️",
-    coverSrc:
-      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1200&auto=format&fit=crop",
-    description:
-      "Fri night bus, hotel freshen-up, trek to the ridge, sunrise on the Dhauladhar wall, back Monday AM"
-  },
-  {
-    slug: "bir-rajgundha",
-    title: "Bir, Barot to Rajgundha Trek",
-    subtitle: "3 Days / 2 Nights | From ₹5,999",
-    days: 3,
-    region: "Kangra Valley, Himachal Pradesh",
-    difficulty: "Easy to Moderate",
-    price: "₹5,999",
-    rating: 4.8,
-    image: "🏕️",
-    coverSrc: "/gallery/barot-bir-rajgundha.webp",
-    description: "Hidden valley trek through Bir & Barot with lush meadows, Dhauladhar views, and nights under the stars"
-  },
-  {
-    slug: "kareri-lake",
-    title: "Kareri Lake Trek",
-    subtitle: "Glacial lake weekend | From ₹7,499",
-    days: 3,
-    region: "Dhauladhar, Himachal Pradesh",
-    difficulty: "Moderate",
-    price: "From ₹7,499",
-    rating: 4.8,
-    image: "💎",
-    coverSrc: "/gallery/kareri-lake.webp",
-    description:
-      "Forest climb to lakeside camp, Kareri Lake at dawn with peak reflections, back Monday AM"
-  },
-  {
-    slug: "churdhar-trek",
-    title: "Churdhar Peak Trek",
-    subtitle: "Summit weekend | From ₹7,499",
-    days: 3,
-    region: "Sirmaur, Himachal Pradesh",
-    difficulty: "Moderate to Difficult",
-    price: "From ₹7,499",
-    rating: 4.9,
-    image: "🛕",
-    badge: "New",
-    coverSrc:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
-    description:
-      "3,647 m summit, Shirgul Maharaj temple, deodar camp, pre-dawn push and 360° panorama"
-  },
-  {
-    slug: "hampta-pass",
-    title: "Hampta Pass Trek",
-    subtitle: "5 Nights / 6 Days | From ₹12,999",
-    days: 6,
-    region: "Kullu–Spiti, Himachal Pradesh",
-    difficulty: "Moderate to Difficult",
-    price: "₹12,999",
-    rating: 4.9,
-    image: "🏔️",
-    coverSrc:
-      "https://images.unsplash.com/photo-1486911278844-a81c5267e227?q=80&w=1200&auto=format&fit=crop",
-    description: "Dramatic crossover trek from green Kullu valley to barren Spiti, with Chandratal Lake visit"
-  },
-];
+const tours = TOURS_CATALOG;
 
 const categories = [
   { name: "All Adventures", count: tours.length },
-  { name: "Trekking", count: 5 },
-  { name: "Paragliding", count: 1 },
-  { name: "Weekend", count: 4 },
-  { name: "Multi-day", count: 2 },
+  {
+    name: "Trekking",
+    count: tours.filter((t) => t.slug !== "bir-billing").length,
+  },
+  { name: "Paragliding", count: tours.filter((t) => t.slug === "bir-billing").length },
+  {
+    name: "Weekend",
+    count: tours.filter((t) => t.days <= 4).length,
+  },
+  {
+    name: "Multi-day",
+    count: tours.filter((t) => t.days >= 5).length,
+  },
 ];
 
 export default function ToursPage() {
@@ -182,17 +92,17 @@ export default function ToursPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    {"soldOut" in tour && tour.soldOut ? (
+                    {tour.soldOut ? (
                       <div className="sold-out-scrim absolute inset-0" aria-hidden />
                     ) : null}
-                    {"soldOut" in tour && tour.soldOut ? (
+                    {tour.soldOut ? (
                       <div className="absolute left-3 top-3">
                         <span className="sold-out-badge">
                           <span className="sold-out-badge__text">Sold out</span>
                         </span>
                       </div>
                     ) : null}
-                    {"badge" in tour && tour.badge ? (
+                    {tour.badge ? (
                       <div className="absolute left-3 top-3">
                         <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
                           {tour.badge}
@@ -203,19 +113,18 @@ export default function ToursPage() {
                       className="absolute bottom-2 right-2 text-4xl drop-shadow-md opacity-90"
                       aria-hidden
                     >
-                      {tour.image}
+                      {tour.emoji}
                     </span>
                   </div>
                   
                   {/* Tour Info */}
                   <div className="space-y-4">
-                    {/* Rating and Price */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-white font-medium">{tour.rating}</span>
+                        <Star className="h-4 w-4 fill-current text-yellow-400" />
+                        <span className="font-medium text-white">{tour.rating}</span>
                       </div>
-                      <span className="text-2xl font-bold text-emerald-400">{tour.price}</span>
+                      <TourListingCardPricing tour={tour} size="large" />
                     </div>
                     
                     {/* Title and Subtitle */}
@@ -235,11 +144,11 @@ export default function ToursPage() {
                     <div className="grid grid-cols-2 gap-4 text-sm text-white/60">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-4 h-4 flex-shrink-0" />
-                        <span className="truncate">{tour.region}</span>
+                        <span className="truncate">{tour.location}</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-4 h-4 flex-shrink-0" />
-                        <span>{tour.days} days</span>
+                        <span>{tour.duration}</span>
                       </div>
                     </div>
                     

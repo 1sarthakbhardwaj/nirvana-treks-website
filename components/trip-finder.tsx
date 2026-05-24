@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
+import { TRIP_FINDER_CATALOG } from "@/lib/tours-catalog";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Compass, ArrowRight, ArrowLeft, Sparkles, MapPin, Mountain,
@@ -44,19 +45,11 @@ type TourRecommendation = {
   tags: string[];
 };
 
-const CATALOGUE: TourRecommendation[] = [
-  { slug: "kasol-trip", title: "Kasol \u00d7 Kheerganga", price: "From \u20b96,499", duration: "5D / 4N or weekend", emoji: "\ud83c\udfde\ufe0f", tagline: "Caf\u00e9 hops, Siddu, trek & Milky Way stars", tags: ["adventure", "nature", "camping", "culture"] },
-  { slug: "bir-billing", title: "Bir Billing Trip", price: "\u20b96,999", duration: "3 Days", emoji: "\ud83e\ude82", tagline: "Paragliding capital of India", tags: ["paragliding", "adventure", "photography", "culture"] },
-  { slug: "triund-trek", title: "Triund Trek", price: "\u20b97,499", duration: "2D / 3N", emoji: "\u26f0\ufe0f", tagline: "Ridge camp, sunrise on the Dhauladhars", tags: ["adventure", "nature", "camping", "photography"] },
-  { slug: "bir-rajgundha", title: "Bir, Barot to Rajgundha Trek", price: "\u20b95,999", duration: "3D / 2N", emoji: "\ud83c\udfd5\ufe0f", tagline: "Hidden valley through Bir & Barot", tags: ["nature", "camping", "adventure", "photography"] },
-  { slug: "kareri-lake", title: "Kareri Lake Trek", price: "\u20b97,499", duration: "2D / 3N", emoji: "\ud83d\udc8e", tagline: "Glacial lake, mirror reflections at dawn", tags: ["nature", "adventure", "camping", "photography"] },
-  { slug: "churdhar-trek", title: "Churdhar Peak Trek", price: "\u20b97,499", duration: "2D / 3N", emoji: "\ud83d\udd4b", tagline: "3,647 m summit + Shirgul temple", tags: ["adventure", "spiritual", "nature", "camping", "photography"] },
-  { slug: "hampta-pass", title: "Hampta Pass Trek", price: "\u20b912,999", duration: "5N / 6D", emoji: "\ud83c\udfd4\ufe0f", tagline: "Kullu to Spiti crossover + Chandratal", tags: ["adventure", "snow", "nature", "camping", "photography"] },
-];
+const CATALOGUE: TourRecommendation[] = TRIP_FINDER_CATALOG;
 
 const AI_PHASES = [
   "Reading your preferences...",
-  "Scanning 7 Himalayan treks...",
+  `Scanning ${TRIP_FINDER_CATALOG.length} Himalayan treks...`,
   "Matching terrain & difficulty...",
   "Comparing seasonal availability...",
   "Ranking by your interests...",

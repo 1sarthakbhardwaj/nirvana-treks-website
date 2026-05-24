@@ -46,9 +46,9 @@ CATALOGUE (authoritative: all slugs under /tours/[slug])
 - Excluded: Lunches, personal, pony/porter; both routes same price.
 - Best time: Year-round (best Mar–Jun, Sep–Nov) | Fitness: Basic for trek.
 
-## bir-billing: Bir Billing Trip
-- Subtitle: Paragliding Capital of India
-- Price: ₹6,999 (was ₹8,499) | Duration: 3 Days / 2 Nights | Difficulty: Easy | Kangra Valley, HP
+## bir-billing: Bir Billing
+- Subtitle: Paragliding & valley weekends | From ₹7,499
+- Price: Weekend quad/triple ₹7,499 · double ₹7,999 · Extended Rajgundha ₹7,999 all sharing | 4D/3N or 5D/4N | Easy | Kangra Valley, HP
 - Max group: 12 | Rating: 4.9 (76 reviews)
 - Highlights: Optional tandem paragliding; monasteries & village walks; sunset & cafés; comfortable stays.
 - Day 1: Bir arrival, cafés & monasteries.
