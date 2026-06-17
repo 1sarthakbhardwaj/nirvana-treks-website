@@ -18,6 +18,15 @@ import LenisProvider from "@/components/lenis-provider";
 import SiteHeader from "@/components/site-header";
 import Footer from "@/components/footer";
 import Chatbot from "@/components/chatbot";
+import StructuredData from "@/components/structured-data";
+import {
+  SITE_NAME,
+  SITE_URL,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  organizationJsonLd,
+  absoluteUrl,
+} from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,17 +89,50 @@ const mulish = Mulish({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nirvanatreks.com"),
-  title: "Nirvana Treks & Tours | Authentic Himalayan Adventures & Cultural Tours",
-  description: "Government authorized travel company specializing in bespoke treks, tours, and cultural journeys across the incredible Himalayan ranges. Expert guides, safe adventures, unforgettable experiences.",
-  keywords: "himalayan treks, himalayan ranges, himachal treks, bir billing, hampta pass, triund trek, adventure travel, cultural tours, government authorized",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Himalayan Treks & Tours from Delhi`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DEFAULT_DESCRIPTION,
+  keywords: [
+    "himalayan treks",
+    "himachal treks",
+    "weekend trek from delhi",
+    "triund trek",
+    "kasol kheerganga",
+    "bir billing",
+    "kareri lake trek",
+    "churdhar trek",
+    "hampta pass",
+    "adventure travel india",
+  ],
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Nirvana Treks & Tours",
-    description: "Authentic Adventures across the Incredible Himalayan Ranges",
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
     type: "website",
-    url: "https://nirvanatreks.com",
-    siteName: "Nirvana Treks & Tours",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -104,6 +146,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${instrumentSerif.variable} ${newsreader.variable} ${figtree.variable} ${dmSerif.variable} ${manrope.variable} ${cormorant.variable} ${mulish.variable} antialiased bg-background text-foreground transition-colors duration-300`}
       >
+        <StructuredData data={organizationJsonLd()} />
         <LenisProvider>
           <ThemeProvider>
             <SiteHeader />

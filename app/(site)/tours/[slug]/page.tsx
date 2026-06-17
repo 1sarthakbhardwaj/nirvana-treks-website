@@ -7,6 +7,9 @@ import KasolKheergangaTour from "@/components/kasol-kheerganga/kasol-kheerganga-
 import TriundTour from "@/components/triund-trek/triund-tour";
 import KareriTour from "@/components/kareri-lake/kareri-tour";
 import ChurdharTour from "@/components/churdhar-trek/churdhar-tour";
+import TourSeoJsonLd from "@/components/tour-seo-json-ld";
+import { getTourBySlug } from "@/lib/tours-catalog";
+import { buildTourMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { 
@@ -341,6 +344,9 @@ const tours = {
     ],
     bestTime: "Mar–Jun, Sep–Nov",
     fitnessLevel: "Basic fitness sufficient; regular walks recommended",
+    itineraryAvailability: "coming_soon",
+    itineraryNotice:
+      "Coming soon. We are opening new batches for this route. Message us on WhatsApp or call to join the waitlist.",
   },
   "kareri-lake": {
     title: "Kareri Lake Trek",
@@ -510,13 +516,10 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Params) {
   const { slug } = await params;
-  const tour = tours[slug];
-  if (!tour) return {};
-  
-  return {
-    title: `${tour.title} | Nirvana Treks & Tours`,
-    description: tour.description,
-  };
+  const entry = getTourBySlug(slug);
+  if (!entry) return {};
+
+  return buildTourMetadata(entry);
 }
 
 type ItineraryAvailability = "open" | "coming_soon" | "sold_out";
@@ -538,23 +541,48 @@ export default async function TourDetailPage({ params }: Params) {
   if (!tour) return notFound();
 
   if (slug === "bir-billing") {
-    return <BirBillingTour />;
+    return (
+      <>
+        <TourSeoJsonLd slug={slug} />
+        <BirBillingTour />
+      </>
+    );
   }
 
   if (slug === "kasol-trip") {
-    return <KasolKheergangaTour />;
+    return (
+      <>
+        <TourSeoJsonLd slug={slug} />
+        <KasolKheergangaTour />
+      </>
+    );
   }
 
   if (slug === "triund-trek") {
-    return <TriundTour />;
+    return (
+      <>
+        <TourSeoJsonLd slug={slug} />
+        <TriundTour />
+      </>
+    );
   }
 
   if (slug === "kareri-lake") {
-    return <KareriTour />;
+    return (
+      <>
+        <TourSeoJsonLd slug={slug} />
+        <KareriTour />
+      </>
+    );
   }
 
   if (slug === "churdhar-trek") {
-    return <ChurdharTour />;
+    return (
+      <>
+        <TourSeoJsonLd slug={slug} />
+        <ChurdharTour />
+      </>
+    );
   }
 
   const itineraryAvailability = itineraryAvailabilityOf(tour);
@@ -578,7 +606,9 @@ export default async function TourDetailPage({ params }: Params) {
                          'text-red-400 bg-red-500/20';
 
   return (
-    <main className="py-16">
+    <>
+      <TourSeoJsonLd slug={slug} />
+      <main className="py-16">
       <Container>
         {/* Hero Section */}
         <div className="mb-16">
@@ -845,6 +875,7 @@ export default async function TourDetailPage({ params }: Params) {
         </div>
       </Container>
     </main>
+    </>
   );
 }
 

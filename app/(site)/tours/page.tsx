@@ -1,15 +1,25 @@
 import Container from "@/components/ui/container";
 import ToursPageHero from "@/components/tours-page-hero";
 import TourListingCardPricing from "@/components/tour-listing-card-pricing";
+import TourCatalogBadge from "@/components/tour-catalog-badge";
 import { TOURS_CATALOG } from "@/lib/tours-catalog";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Star, ArrowRight, Filter, Search } from "lucide-react";
 
-export const metadata = {
-  title: "Tours & Adventures | Nirvana Treks & Tours",
-  description: "Discover our curated collection of treks, tours, and adventures across the incredible Himalayan ranges.",
-};
+export const metadata = buildPageMetadata({
+  title: "Tours & Adventures",
+  description:
+    "Browse Himalayan treks and weekend getaways: Triund, Kasol, Bir Billing, Kareri Lake, Churdhar Peak, Hampta Pass, and more. From ₹7,499 per person.",
+  path: "/tours",
+  keywords: [
+    "himalayan tours",
+    "himachal treks",
+    "weekend treks delhi",
+    "group trekking india",
+  ],
+});
 
 const tours = TOURS_CATALOG;
 
@@ -104,9 +114,7 @@ export default function ToursPage() {
                     ) : null}
                     {tour.badge ? (
                       <div className="absolute left-3 top-3">
-                        <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
-                          {tour.badge}
-                        </span>
+                        <TourCatalogBadge label={tour.badge} />
                       </div>
                     ) : null}
                     <span

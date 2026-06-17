@@ -1,12 +1,14 @@
 import Container from "@/components/ui/container";
 import Link from "next/link";
 import { ArrowRight, Award, Globe2, Mountain, Users } from "lucide-react";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "About | Nirvana Treks & Tours",
+export const metadata = buildPageMetadata({
+  title: "About Us",
   description:
-    "Government-authorized Himalayan travel company. Registered in 2024, serving 1000+ travellers across India.",
-};
+    "Government-authorized Himalayan travel company based in Manali. Founded in 2024, serving 1000+ travellers across India with expert guides and safe adventures.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

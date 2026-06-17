@@ -27,7 +27,18 @@ export type TourCatalogEntry = {
   featured?: boolean;
   badge?: string;
   soldOut?: boolean;
+  /** Blocks booking on the generic tour detail page */
+  comingSoon?: boolean;
 };
+
+export function tourBadgeClassName(label: string): string {
+  const base =
+    "rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg";
+  if (/coming/i.test(label)) {
+    return `${base} border border-sky-400/35 bg-slate-700/95 text-sky-100 shadow-sky-900/25`;
+  }
+  return `${base} border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 shadow-amber-500/20`;
+}
 
 export function formatInr(amount: number): string {
   return `₹${amount.toLocaleString("en-IN")}`;
@@ -150,7 +161,7 @@ export const TOURS_CATALOG: TourCatalogEntry[] = [
   {
     slug: "bir-rajgundha",
     title: "Bir, Barot to Rajgundha Trek",
-    subtitle: "Hidden valley trek",
+    subtitle: "Hidden valley trek · coming soon",
     duration: "3 Days / 2 Nights",
     durationShort: "3D / 2N",
     days: 3,
@@ -165,6 +176,8 @@ export const TOURS_CATALOG: TourCatalogEntry[] = [
       "Trek through Bir and Barot into Rajgundha meadow with Dhauladhar views.",
     tagline: "Hidden valley through Bir & Barot",
     tags: ["nature", "camping", "adventure", "photography"],
+    badge: "Coming soon",
+    comingSoon: true,
   },
   {
     slug: "hampta-pass",

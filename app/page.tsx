@@ -4,11 +4,20 @@ import HomeHeroContent from "@/components/home-hero-content";
 import TrailGallery from "@/components/trail-gallery";
 import TripFinder from "@/components/trip-finder";
 import TourListingCardPricing from "@/components/tour-listing-card-pricing";
+import TourCatalogBadge from "@/components/tour-catalog-badge";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "@/components/animate-on-scroll";
 import { FEATURED_TOURS } from "@/lib/tours-catalog";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Star, Heart, ArrowRight } from "lucide-react";
+
+export const metadata = buildPageMetadata({
+  title: "Himalayan Treks & Weekend Tours from Delhi",
+  description:
+    "Book Triund, Kasol Kheerganga, Bir Billing, Kareri Lake, Churdhar, and Hampta Pass with Nirvana Treks. Government-authorized group trips from Delhi and Chandigarh.",
+  path: "/",
+});
 
 export default function Home() {
   return (
@@ -60,11 +69,7 @@ export default function Home() {
                       <span className="inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
                         <Star className="h-3 w-3" /> {tour.rating}
                       </span>
-                      {tour.badge ? (
-                        <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
-                          {tour.badge}
-                        </span>
-                      ) : null}
+                      {tour.badge ? <TourCatalogBadge label={tour.badge} /> : null}
                     </div>
                     {tour.soldOut ? (
                       <div className="absolute right-3 top-3">

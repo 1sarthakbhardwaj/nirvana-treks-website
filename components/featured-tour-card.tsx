@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Clock, Star, ArrowRight } from "lucide-react";
 import type { TourCatalogEntry } from "@/lib/tours-catalog";
 import TourListingCardPricing from "@/components/tour-listing-card-pricing";
+import TourCatalogBadge from "@/components/tour-catalog-badge";
 
 type Props = {
   tour: TourCatalogEntry;
@@ -37,11 +38,7 @@ export default function FeaturedTourCard({ tour }: Props) {
           <span className="inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs text-white/90">
             <Star className="h-3 w-3" /> {tour.rating}
           </span>
-          {tour.badge ? (
-            <span className="rounded-full border border-amber-400/40 bg-gradient-to-r from-amber-500/90 to-violet-600/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-amber-500/20">
-              {tour.badge}
-            </span>
-          ) : null}
+          {tour.badge ? <TourCatalogBadge label={tour.badge} /> : null}
         </div>
         {tour.soldOut ? (
           <div className="absolute right-3 top-3">
