@@ -160,3 +160,139 @@ export function tourBreadcrumbJsonLd(entry: TourCatalogEntry) {
     { name: entry.title, path: `/tours/${entry.slug}` },
   ]);
 }
+
+type BlogMetadataInput = {
+  title: string;
+  description: string;
+  slug: string;
+  image?: string;
+  keywords?: string[];
+  publishedAt: string;
+  updatedAt: string;
+  section: string;
+  tags: string[];
+};
+
+export function buildBlogMetadata({
+  title,
+  description,
+  slug,
+  image = DEFAULT_OG_IMAGE,
+  keywords,
+  publishedAt,
+  updatedAt,
+  section,
+  tags,
+}: BlogMetadataInput): Metadata {
+  const path = `/blog/${slug}`;
+  const url = absoluteUrl(path);
+  const imageUrl = image.startsWith("http") ? image : absoluteUrl(image);
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      locale: "en_IN",
+      type: "article",
+      publishedTime: publishedAt,
+      modifiedTime: updatedAt,
+      section,
+      tags,
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    },
+  };
+}
+
+export function blogPostingJsonLd(input: {
+  headline: string;
+  description: string;
+  slug: string;
+  image: string;
+  publishedAt: string;
+  updatedAt: string;
+}) {
+  const imageUrl = input.image.startsWith("http")
+    ? input.image
+    : absoluteUrl(input.image);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.headline,
+    description: input.description,
+    image: imageUrl,
+    datePublished: input.publishedAt,
+    dateModified: input.updatedAt,
+    author: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: { "@type": "ImageObject", url: absoluteUrl("/icon-512.png") },
+      sameAs: ["https://www.instagram.com/nirvana.treks"],
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(`/blog/${input.slug}`),
+    },
+  };
+}
+
+export function blogBreadcrumbJsonLd(slug: string, title: string) {
+  return breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Journal", path: "/blog" },
+    { name: title, path: `/blog/${slug}` },
+  ]);
+}
+
+export function faqJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+}
+
+export function howToJsonLd(input: {
+  name: string;
+  totalTime: string;
+  steps: { position: number; name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: input.name,
+    totalTime: input.totalTime,
+    step: input.steps.map((step) => ({
+      "@type": "HowToStep",
+      position: step.position,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}

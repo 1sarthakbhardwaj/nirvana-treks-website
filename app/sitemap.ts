@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/lib/blog/posts";
 import { TOURS_CATALOG } from "@/lib/tours-catalog";
 import { SITE_URL } from "@/lib/seo";
 
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }[] = [
     { path: "", priority: 1, changeFrequency: "weekly" },
     { path: "/tours", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/blog", priority: 0.85, changeFrequency: "weekly" },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" },
     { path: "/refer", priority: 0.6, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
@@ -29,5 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: tour.featured ? 0.85 : 0.8,
   }));
 
-  return [...staticEntries, ...tourEntries];
+  const blogEntries = BLOG_POSTS.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...tourEntries, ...blogEntries];
 }
