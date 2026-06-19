@@ -446,16 +446,6 @@ export default function OvernightVolvoToHimachalArticle() {
         </ul>
       </section>
 
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">N</div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from Delhi
-            NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

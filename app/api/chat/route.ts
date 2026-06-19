@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { SYSTEM_PROMPT } from "@/lib/chat-system-prompt";
+import { getBlogKnowledge } from "@/lib/blog/knowledge";
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
@@ -95,8 +96,17 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  const systemContent = `${SYSTEM_PROMPT}
+
+---
+
+BLOG / JOURNAL KNOWLEDGE (articles on nirvanatreks.com/blog)
+Use this to answer planning questions about seasons, weather, difficulty, routes and travel. When a blog post directly helps the user, recommend it and share its /blog/<slug> path (e.g. /blog/best-time-to-trek-himachal). Do not invent blog posts or facts beyond what is listed here and in the catalogue above.
+
+${getBlogKnowledge()}`;
+
   const payloadBase = {
-    messages: [{ role: "system" as const, content: SYSTEM_PROMPT }, ...messages],
+    messages: [{ role: "system" as const, content: systemContent }, ...messages],
     max_tokens: 512,
     temperature: 0.7,
     stream: true,

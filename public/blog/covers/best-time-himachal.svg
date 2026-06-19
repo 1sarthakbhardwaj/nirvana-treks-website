@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Himachal mountains across spring summer autumn and winter">
+  <defs>
+    <linearGradient id="ysky" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9CCBE0"/>
+      <stop offset="0.5" stop-color="#BBDEE0"/>
+      <stop offset="1" stop-color="#D7E6EC"/>
+    </linearGradient>
+    <linearGradient id="grnd" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5e2b"/>
+      <stop offset="0.55" stop-color="#6e4a20"/>
+      <stop offset="0.78" stop-color="#9DBBA6"/>
+      <stop offset="1" stop-color="#EAF2EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ysky)"/>
+  <circle cx="190" cy="130" r="50" fill="#FCFFFE" opacity="0.85"/>
+  <path d="M0 360 L140 250 L280 320 L420 240 L560 330 L700 250 L840 330 L980 260 L1200 300 L1200 440 L0 440 Z" fill="#C5D7D1" opacity="0.85"/>
+  <path d="M260 270 L120 460 L480 460 Z" fill="#6F8B7F"/>
+  <path d="M660 250 L520 460 L880 460 Z" fill="#6F8B7F"/>
+  <path d="M0 400 Q200 380 400 400 Q600 420 800 400 Q1000 385 1200 400 L1200 480 L0 480 Z" fill="#357A4E"/>
+  <rect x="840" y="390" width="360" height="90" fill="#EAF2EE" opacity="0.55"/>
+  <path d="M0 470 Q300 450 600 480 Q900 510 1200 470 L1200 630 L0 630 Z" fill="url(#grnd)"/>
+  <g font-family="Georgia,serif" font-size="22" font-weight="700" letter-spacing="3" text-anchor="middle" fill="#EAF3EC">
+    <text x="150" y="590">SPRING</text>
+    <text x="450" y="590">SUMMER</text>
+    <text x="750" y="590">AUTUMN</text>
+    <text x="1050" y="590" fill="#5E6B62">WINTER</text>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triund versus Kheerganga trek comparison">
+  <defs>
+    <linearGradient id="ts" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FC1DA"/>
+      <stop offset="1" stop-color="#DCEDE6"/>
+    </linearGradient>
+    <linearGradient id="ks" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FC1DA"/>
+      <stop offset="1" stop-color="#DCEDE6"/>
+    </linearGradient>
+    <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6F8B7F"/>
+      <stop offset="1" stop-color="#43655A"/>
+    </linearGradient>
+    <linearGradient id="pool" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#79B5B0"/>
+      <stop offset="1" stop-color="#3E7E78"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="630" fill="url(#ts)"/>
+  <rect x="600" width="600" height="630" fill="url(#ks)"/>
+  <path d="M0 300 L100 220 L200 280 L350 200 L500 290 L600 250 L600 400 L0 400 Z" fill="#C5D7D1" opacity="0.8"/>
+  <path d="M200 180 L60 420 L420 420 Z" fill="url(#rock)"/>
+  <path d="M0 390 Q150 370 300 390 Q450 410 600 385 L600 500 L0 500 Z" fill="#357A4E"/>
+  <path d="M0 470 Q200 450 400 480 L600 460 L600 630 L0 630 Z" fill="#143A28"/>
+  <g transform="translate(200 420)"><path d="M0 30 L20 0 L40 30 Z" fill="#C0633A"/></g>
+  <g transform="translate(320 420)"><path d="M0 30 L20 0 L40 30 Z" fill="#C0633A"/></g>
+  <path d="M600 300 L700 220 L800 280 L950 200 L1100 290 L1200 250 L1200 400 L600 400 Z" fill="#C5D7D1" opacity="0.5"/>
+  <path d="M800 180 L660 420 L1020 420 Z" fill="url(#rock)"/>
+  <path d="M600 390 Q750 370 900 390 Q1050 410 1200 385 L1200 500 L600 500 Z" fill="#357A4E"/>
+  <path d="M600 470 Q800 450 1000 480 L1200 460 L1200 630 L600 630 Z" fill="#143A28"/>
+  <ellipse cx="840" cy="490" rx="140" ry="24" fill="url(#pool)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.55">
+    <path d="M790 478 q-10 -20 5 -36 q10 -14 0 -30"/>
+    <path d="M840 475 q-10 -20 5 -36 q10 -14 0 -30"/>
+    <path d="M890 478 q-10 -20 5 -36 q10 -14 0 -30"/>
+  </g>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#fff" stroke-width="4"/>
+  <circle cx="600" cy="315" r="52" fill="#2a1d10" stroke="#fff" stroke-width="5"/>
+  <text x="600" y="328" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#f4ede2">VS</text>
+  <text x="300" y="580" text-anchor="middle" font-family="Georgia,serif" font-size="36" font-weight="700" fill="#fff">Triund</text>
+  <text x="900" y="580" text-anchor="middle" font-family="Georgia,serif" font-size="36" font-weight="700" fill="#fff">Kheerganga</text>
+</svg>

@@ -47,7 +47,12 @@ export default function BlogIndexPage() {
         </header>
 
         <div className="blog-card-grid">
-          {BLOG_POSTS.map((post) => (
+          {[...BLOG_POSTS]
+            .sort(
+              (a, b) =>
+                new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+            )
+            .map((post) => (
             <article key={post.slug} className="blog-card">
               <Link href={`/blog/${post.slug}`}>
                 <div className="blog-card-media">
@@ -57,6 +62,7 @@ export default function BlogIndexPage() {
                     fill
                     sizes="(max-width: 640px) 100vw, 540px"
                     className="object-cover"
+                    unoptimized={post.image.endsWith(".svg")}
                   />
                 </div>
                 <div className="blog-card-body">
@@ -69,7 +75,7 @@ export default function BlogIndexPage() {
                 </div>
               </Link>
             </article>
-          ))}
+            ))}
         </div>
       </main>
     </div>

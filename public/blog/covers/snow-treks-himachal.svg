@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snow-covered Himachal peaks and frozen lake in winter">
+  <defs>
+    <linearGradient id="snsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9C9DC"/>
+      <stop offset="0.6" stop-color="#D2E2E8"/>
+      <stop offset="1" stop-color="#EEF4F4"/>
+    </linearGradient>
+    <linearGradient id="ice" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CFE2EA"/>
+      <stop offset="1" stop-color="#A9C6D2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#snsky)"/>
+  <circle cx="980" cy="120" r="55" fill="#FBFEFF" opacity="0.7"/>
+  <path d="M0 330 L140 200 L280 280 L420 180 L560 290 L700 180 L840 290 L980 200 L1200 250 L1200 420 L0 420 Z" fill="#DCE8EC" opacity="0.9"/>
+  <path d="M240 240 L100 420 L460 420 Z" fill="#E9F1F2"/>
+  <path d="M620 200 L480 420 L820 420 Z" fill="#E9F1F2"/>
+  <path d="M0 380 Q200 360 400 380 Q600 400 800 380 Q1000 365 1200 380 L1200 460 L0 460 Z" fill="#2C6044"/>
+  <ellipse cx="520" cy="530" rx="360" ry="28" fill="url(#ice)"/>
+  <path d="M0 520 Q300 500 600 530 Q900 560 1200 520 L1200 630 L0 630 Z" fill="#E4EEEF"/>
+  <g fill="#FFFFFF" opacity="0.9">
+    <circle cx="150" cy="100" r="3"/>
+    <circle cx="320" cy="70" r="2.5"/>
+    <circle cx="480" cy="140" r="3"/>
+    <circle cx="640" cy="90" r="2.5"/>
+    <circle cx="800" cy="60" r="3"/>
+    <circle cx="960" cy="110" r="2.5"/>
+    <circle cx="220" cy="200" r="2.5"/>
+    <circle cx="540" cy="220" r="3"/>
+    <circle cx="880" cy="180" r="2.5"/>
+  </g>
+</svg>

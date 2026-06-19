@@ -140,6 +140,15 @@ export default function ChurdharTrekGuideArticle() {
           people make the effort.
         </p>
 
+        <p>
+          The lower half of the climb is all forest: tall deodar and oak that keep the
+          trail shaded and cool even in early summer, with the chance of spotting a
+          monal pheasant breaking cover if you walk quietly. Higher up the trees thin
+          out and the world opens, until you are on bare ridge with nothing between you
+          and the wind. That contrast, deep forest to exposed summit in a single climb,
+          is part of what makes Churdhar feel bigger than its altitude suggests.
+        </p>
+
         <blockquote className="blog-pull">
           From the top, the plains, the Sutlej basin and the great Himalaya all line
           up at once. Few outer-range peaks give you that.
@@ -157,9 +166,9 @@ export default function ChurdharTrekGuideArticle() {
         </p>
 
         <BlogPhotoFigure
-          src="/blog/churdhar.webp"
-          alt="Churdhar peak with snow on the summit and forested ridges below"
-          caption="Churdhar summit, the high point of the outer Himalayas."
+          src="/blog/churdhar-2.webp"
+          alt="Prayer flags and the Shirgul temple near the Churdhar summit with the Himalaya beyond"
+          caption="Prayer flags at the top, with the range laid out below."
         />
 
         <h2 id="route">The route from Nohradhar</h2>
@@ -296,17 +305,6 @@ export default function ChurdharTrekGuideArticle() {
           </li>
         </ul>
       </section>
-
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">N</div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from Delhi
-            NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

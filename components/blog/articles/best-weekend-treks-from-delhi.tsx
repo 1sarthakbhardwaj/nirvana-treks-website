@@ -136,7 +136,17 @@ export default function BestWeekendTreksFromDelhiArticle() {
         <p>
           It works because the climbs themselves are short. None of the treks
           below needs more than one night on the mountain. The long part is the
-          road, and you spend that asleep. For transport and itinerary details
+          road, and you spend that asleep.
+        </p>
+
+        <BlogPhotoFigure
+          src="/blog/trekkers.jpg"
+          alt="A small group of trekkers on a Himalayan trail on a weekend trip from Delhi"
+          caption="Friday night bus, Saturday on the trail. A weekend is all it takes."
+        />
+
+        <p>
+          For transport and itinerary details
           on the Parvati Valley side, see our{" "}
           <Link href="/blog/how-to-reach-kasol-from-delhi">
             guide on how to reach Kasol from Delhi
@@ -267,7 +277,7 @@ export default function BestWeekendTreksFromDelhiArticle() {
         </BlogTrekCard>
 
         <BlogPhotoFigure
-          src="/blog/nagtibba.webp"
+          src="/blog/nagtibba-trek.jpeg"
           alt="The Nag Tibba summit ridge with views of the Bandarpoonch and Swargarohini peaks"
           caption="Nag Tibba, the closest real summit to Delhi."
         />
@@ -490,18 +500,6 @@ export default function BestWeekendTreksFromDelhiArticle() {
         </ul>
       </section>
 
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">
-          N
-        </div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from
-            Delhi NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

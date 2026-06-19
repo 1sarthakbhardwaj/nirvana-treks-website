@@ -166,11 +166,19 @@ export default function KareriLakeTrekArticle() {
           flocks to the meadows around it in summer. It is the kind of place that
           rewards an early start, before the wind ruffles the water.
         </p>
+        <p>
+          The walk up is half the appeal. Because the trail traces the Nyund almost the
+          whole way, you climb to the sound of running water, crossing it on log bridges
+          and stone, with shaded forest stretches breaking into sudden open meadows. By
+          the time the lake appears you have earned it, and the camp on the grass beside
+          the water, under a sky thick with stars, is the quiet reward Triund&apos;s busy
+          ridge can no longer offer.
+        </p>
 
         <BlogPhotoFigure
-          src="/blog/kareri.webp"
-          alt="Still glacial Kareri Lake with the Dhauladhar peaks reflected on the water"
-          caption="Kareri Lake on a clear morning, peaks mirrored in the water."
+          src="/blog/kareri-2.jpeg"
+          alt="The Kareri Lake meadow and shoreline below the Dhauladhar wall"
+          caption="The meadows by Kareri Lake, where you camp for the night."
         />
 
         <h2 id="route">The route from Kareri village</h2>
@@ -313,17 +321,6 @@ export default function KareriLakeTrekArticle() {
           </li>
         </ul>
       </section>
-
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">N</div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from Delhi
-            NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

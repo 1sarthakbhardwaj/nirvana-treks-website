@@ -127,9 +127,9 @@ export default function KheergangaTrekFromKasolArticle() {
         </p>
 
         <BlogPhotoFigure
-          src="/blog/kheerganga.jpg"
-          alt="The natural hot spring at the top of the Kheerganga trek with snow peaks behind"
-          caption="The natural hot spring at the top of the Kheerganga trek."
+          src="/blog/kheerganga-2.jpg"
+          alt="The Parvati Valley trail to Kheerganga, climbing past pine forest and waterfalls"
+          caption="The climb up the Parvati Valley to the Kheerganga hot spring."
         />
 
         <h2 id="route">The route from Barshaini</h2>
@@ -362,17 +362,6 @@ export default function KheergangaTrekFromKasolArticle() {
           </li>
         </ul>
       </section>
-
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">N</div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from Delhi
-            NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

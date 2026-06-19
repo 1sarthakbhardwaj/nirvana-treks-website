@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bir Billing hills with paraglider">
+  <defs>
+    <linearGradient id="bs" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#84BBD8"/>
+      <stop offset="0.6" stop-color="#BEDEE2"/>
+      <stop offset="1" stop-color="#E6F1EC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bs)"/>
+  <circle cx="180" cy="120" r="50" fill="#FCFFFE" opacity="0.85"/>
+  <path d="M0 330 Q240 300 480 330 Q720 360 960 320 Q1080 305 1200 325 L1200 440 L0 440 Z" fill="#4E9E6B"/>
+  <path d="M0 400 Q260 375 520 400 Q780 425 1040 395 Q1120 388 1200 398 L1200 520 L0 520 Z" fill="#357A4E"/>
+  <path d="M0 520 Q200 505 420 525 Q680 545 1000 520 L1200 530 L1200 630 L0 630 Z" fill="#143A28"/>
+  <g transform="translate(900 340)">
+    <rect x="-18" y="18" width="36" height="12" fill="#F4FAF3"/>
+    <path d="M-20 18 Q0 -14 20 18 Z" fill="#F4FAF3"/>
+    <rect x="-5" y="-8" width="10" height="12" fill="#C0633A"/>
+  </g>
+  <g transform="translate(520 180)">
+    <path d="M-50 0 Q0 -28 50 0 Q0 -12 -50 0 Z" fill="#C0633A"/>
+    <g stroke="#16241C" stroke-width="1.5">
+      <line x1="-44" y1="2" x2="-3" y2="38"/>
+      <line x1="44" y1="2" x2="3" y2="38"/>
+    </g>
+    <circle cx="0" cy="42" r="6" fill="#16241C"/>
+  </g>
+</svg>

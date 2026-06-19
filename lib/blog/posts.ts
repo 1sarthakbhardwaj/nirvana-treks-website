@@ -19,7 +19,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     readMinutes: 9,
     section: "Trekking Guides",
     tags: ["Weekend Treks"],
-    image: "/blog/triund.webp",
+    image: "/blog/trekkers.jpg",
     excerpt:
       "Leave Delhi Friday night, be back by Sunday. The Himachal weekend treks worth the overnight bus, sorted by distance, difficulty and season.",
   },
@@ -42,7 +42,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     readMinutes: 8,
     section: "Travel Guides",
     tags: ["Kasol"],
-    image: "/blog/kheerganga.jpg",
+    image: "/blog/trek-aesthetics-2.jpg",
     excerpt:
       "Buses from Kashmiri Gate, the Bhuntar connection, cab routes, air options and the overnight trick that saves you a day.",
   },
@@ -64,7 +64,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     readMinutes: 9,
     section: "Trekking Guides",
     tags: ["Beginner Treks"],
-    image: "/blog/nagtibba.webp",
+    image: "/blog/trek-aesthetics.jpg",
     excerpt:
       "Never trekked before? These beginner-friendly 2-day treks from Delhi NCR are the easiest way to start, with everything sorted for a first weekend in the hills.",
   },
@@ -87,7 +87,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     readMinutes: 9,
     section: "Travel Guides",
     tags: ["Volvo Bus"],
-    image: "/blog/churdhar.webp",
+    image: "/blog/trek-aesthetics-5.jpg",
     excerpt:
       "The route, the real timeline, the cold AC, the winding last stretch and how to pick a seat. Everything about the overnight Volvo, told straight.",
   },
@@ -203,9 +203,141 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     readMinutes: 10,
     section: "Trek Guides",
     tags: ["Yulla Kanda"],
-    image: "/blog/prashar-lake.jpg",
+    image: "/blog/yulla-kanda.webp",
     excerpt:
       "A sacred lake, the world's highest Krishna temple, and a Kinnaur valley almost nobody treks. The complete offbeat guide.",
+  },
+  {
+    slug: "triund-vs-kheerganga",
+    title: "Triund vs Kheerganga: Which Trek Should You Pick?",
+    headline: "Triund vs Kheerganga: Which Trek Should You Pick?",
+    description:
+      "Triund vs Kheerganga compared on difficulty, crowds, scenery, time and access. A clear, honest pick for your first Himachal trek from Delhi.",
+    keywords: [
+      "Triund vs Kheerganga",
+      "Triund or Kheerganga",
+      "which trek to pick",
+      "Triund Kheerganga comparison",
+      "best beginner trek Himachal",
+    ],
+    publishedAt: "2026-06-19",
+    updatedAt: "2026-06-19",
+    readMinutes: 8,
+    section: "Decision Guides",
+    tags: ["Triund", "Kheerganga"],
+    image: "/blog/covers/triund-vs-kheerganga.svg",
+    excerpt:
+      "Two classic beginner treks, one ridge and one hot spring. Compared on difficulty, crowds, scenery and access so you can pick the right one.",
+  },
+  {
+    slug: "bir-billing-trekking-paragliding",
+    title: "Bir Billing: Is Trekking Plus Paragliding Worth It?",
+    headline: "Bir Billing: Is Trekking Plus Paragliding Worth It?",
+    description:
+      "Bir Billing for trekking and paragliding, is it worth the trip from Delhi? An honest verdict on the flying, the gentle treks, the cost and who should go.",
+    keywords: [
+      "Bir Billing paragliding",
+      "Bir Billing trekking",
+      "is Bir Billing worth it",
+      "Bir Billing from Delhi",
+      "Bir Billing tandem flight",
+    ],
+    publishedAt: "2026-06-19",
+    updatedAt: "2026-06-19",
+    readMinutes: 8,
+    section: "Decision Guides",
+    tags: ["Bir Billing"],
+    image: "/blog/covers/bir-billing-paragliding.svg",
+    excerpt:
+      "Tandem flights off one of the world's top sites, gentle treks and Tibetan culture in one trip. An honest verdict on who Bir Billing is for.",
+  },
+  {
+    slug: "easy-vs-moderate-himachal-treks",
+    title: "Easy vs Moderate Himachal Treks: Pick by Fitness",
+    headline: "Easy vs Moderate Himachal Treks: Pick by Fitness",
+    description:
+      "Easy vs moderate Himachal treks compared by what they actually demand. Pick by your fitness, not by photos, with a quick self-check and trek suggestions.",
+    keywords: [
+      "easy vs moderate treks Himachal",
+      "beginner trek difficulty",
+      "Himachal trek fitness",
+      "easy Himachal treks",
+      "moderate Himachal treks",
+    ],
+    publishedAt: "2026-06-19",
+    updatedAt: "2026-06-19",
+    readMinutes: 7,
+    section: "Decision Guides",
+    tags: ["Beginner Treks"],
+    image: "/blog/covers/easy-vs-moderate.svg",
+    excerpt:
+      "A pretty reel does not tell you how hour five feels. Pick easy or moderate by distance, ascent and hours on your feet, not by photos.",
+  },
+  {
+    slug: "best-time-to-trek-himachal",
+    title: "Best Time to Trek in Himachal Pradesh: Month by Month",
+    headline: "Best Time to Trek in Himachal Pradesh: Month by Month",
+    description:
+      "Best time to trek in Himachal Pradesh, month by month. Prime seasons, monsoon and winter, a trekkability heatmap and the best season for every trek.",
+    keywords: [
+      "best time to trek Himachal",
+      "best month to trek Himachal Pradesh",
+      "Himachal trekking season",
+      "when to trek Himachal",
+      "Himachal weather trekking",
+    ],
+    publishedAt: "2026-06-20",
+    updatedAt: "2026-06-20",
+    readMinutes: 11,
+    section: "Seasonal Guides",
+    tags: ["Planning"],
+    image: "/blog/covers/best-time-himachal.svg",
+    excerpt:
+      "Two prime windows, one monsoon no-go, and a winter snow season. Month-by-month trekkability with an interactive heatmap and trek matrix.",
+  },
+  {
+    slug: "snow-treks-himachal-winter",
+    title: "Snow Treks in Himachal: Where to See Snow in Winter",
+    headline: "Snow Treks in Himachal: Where to See Snow in Winter",
+    description:
+      "Snow treks in Himachal Pradesh and where snow is actually reliable in winter. The best routes by altitude and month, plus winter safety and gear.",
+    keywords: [
+      "snow treks Himachal",
+      "winter treks Himachal",
+      "snow trek Himachal Pradesh",
+      "Triund snow trek",
+      "where to see snow Himachal",
+    ],
+    publishedAt: "2026-06-20",
+    updatedAt: "2026-06-20",
+    readMinutes: 9,
+    section: "Seasonal Guides",
+    tags: ["Winter"],
+    image: "/blog/covers/snow-treks-himachal.svg",
+    excerpt:
+      "Snow is not guaranteed just because a trek is called a snow trek. Altitude, month, and where to actually find reliable winter snow in Himachal.",
+  },
+  {
+    slug: "monsoon-trekking-himachal",
+    title: "Monsoon Trekking in Himachal: What's Safe, What's Not",
+    headline: "Monsoon Trekking in Himachal: What's Safe, What's Not",
+    description:
+      "Monsoon trekking in Himachal Pradesh, what is safe and what is not. Which valleys to avoid, the rain-shadow regions that stay dry, and monsoon safety rules.",
+    keywords: [
+      "monsoon trekking Himachal",
+      "Himachal monsoon trek",
+      "is it safe to trek Himachal monsoon",
+      "Spiti monsoon",
+      "rain shadow Himachal treks",
+    ],
+    publishedAt: "2026-06-20",
+    updatedAt: "2026-06-20",
+    readMinutes: 9,
+    section: "Seasonal Guides",
+    tags: ["Monsoon"],
+    image: "/blog/covers/monsoon-trekking.svg",
+    excerpt:
+      "Peak monsoon is a no for Parvati and the Dhauladhar. The rain-shadow north, led by Spiti, stays dry and becomes the best version of itself.",
   },
 ];
 

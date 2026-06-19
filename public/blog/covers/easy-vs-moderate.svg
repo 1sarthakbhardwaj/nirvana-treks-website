@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trail forking into easy and moderate paths">
+  <defs>
+    <linearGradient id="fs" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#84BBD8"/>
+      <stop offset="0.6" stop-color="#BEDEE2"/>
+      <stop offset="1" stop-color="#E7F2EC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#fs)"/>
+  <path d="M0 440 Q200 400 400 430 Q600 460 700 440 L700 630 L0 630 Z" fill="#357A4E"/>
+  <path d="M620 630 L900 280 L1200 440 L1200 630 Z" fill="#235C3E"/>
+  <path d="M160 600 Q320 560 440 540 Q560 520 700 440" fill="none" stroke="#7FE0A0" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 14"/>
+  <path d="M700 440 Q800 410 880 360 Q940 325 900 290" fill="none" stroke="#E89A6F" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 14"/>
+  <circle cx="700" cy="440" r="12" fill="#2a1d10" stroke="#fff" stroke-width="3"/>
+  <g transform="translate(700 440)">
+    <line x1="0" y1="0" x2="0" y2="-60" stroke="#5A4632" stroke-width="5"/>
+    <g transform="translate(3 -56)">
+      <path d="M0 0 L90 0 L100 12 L90 24 L0 24 Z" fill="#8b5e2b"/>
+      <text x="16" y="17" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">EASY</text>
+    </g>
+    <g transform="translate(3 -28)">
+      <path d="M0 0 L108 0 L118 12 L108 24 L0 24 Z" fill="#6e4a20"/>
+      <text x="12" y="17" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">MODERATE</text>
+    </g>
+  </g>
+</svg>

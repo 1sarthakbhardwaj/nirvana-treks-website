@@ -67,8 +67,8 @@ export default function YullaKandaTrekArticle() {
       </div>
 
       <BlogHeroImage
-        src="/blog/prashar-lake.jpg"
-        alt="High-altitude sacred lake with a small temple and snow peaks in the Kinnaur Himalayas"
+        src="/blog/yulla-kanda.webp"
+        alt="The Yulla Kanda meadow and sacred lake high in the Kinnaur Himalayas, with the Kinner Kailash peaks behind"
         priority
         caption={
           <>
@@ -154,11 +154,20 @@ export default function YullaKandaTrekArticle() {
           experience that has as much to do with the place&apos;s faith as its altitude.
           This is a destination people come to as much for the feeling as the view.
         </p>
+        <p>
+          The lake itself is small and shallow, the kind that barely registers on a map
+          but anchors a whole valley&apos;s devotion. Local belief holds that the deity
+          watches over the grazing meadows and the villages below, and through the
+          season shepherds and pilgrims make the climb to pay their respects. Come early
+          and you may have the shoreline to yourself, the water dead still, the only
+          sound the wind moving across the grass. It is worth lingering before you start
+          down.
+        </p>
 
         <BlogPhotoFigure
-          src="/blog/prashar-lake.jpg"
-          alt="High-altitude lake with a pagoda-style temple beside still water and peaks beyond"
-          caption="A sacred high lake and temple, the kind of reward Yulla Kanda offers at the summit."
+          src="/blog/yulla-kanda-2.jpeg"
+          alt="The sacred Yulla Kanda lake and Krishna temple at altitude in Kinnaur"
+          caption="The sacred lake and Krishna temple at the top of the Yulla Kanda trek."
         />
 
         <h2 id="route">The route, day by day</h2>
@@ -306,17 +315,6 @@ export default function YullaKandaTrekArticle() {
           </li>
         </ul>
       </section>
-
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">N</div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from Delhi
-            NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

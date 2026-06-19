@@ -220,6 +220,12 @@ export default function TwoDayTreksFirstTimersArticle() {
           first snow trek near Delhi.
         </BlogTrekCard>
 
+        <BlogPhotoFigure
+          src="/blog/nagtibba-2.webp"
+          alt="The Nag Tibba forest trail and summit, the closest beginner summit to Delhi"
+          caption="Nag Tibba, the shortest drive and a real summit at the end."
+        />
+
         <BlogTrekCard
           rank="Pick 03 · Easy"
           title="Prashar Lake, Mandi"
@@ -274,6 +280,12 @@ export default function TwoDayTreksFirstTimersArticle() {
           spend a weekend in the hills, and the flight makes it memorable for anyone
           nervous about a big trek.
         </BlogTrekCard>
+
+        <BlogPhotoFigure
+          src="/blog/bir-billing-2.jpeg"
+          alt="The green Bir Billing valley in Kangra, an easy first weekend in the hills"
+          caption="Bir Billing, the lowest-effort way into the mountains."
+        />
 
         <BlogTrekCard
           rank="Pick 05 · A small step up"
@@ -528,17 +540,6 @@ export default function TwoDayTreksFirstTimersArticle() {
           </li>
         </ul>
       </section>
-
-      <div className="blog-endcap">
-        <div className="ava" aria-hidden="true">N</div>
-        <div>
-          <b>Nirvana Treks &amp; Tours</b>
-          <p>
-            We run small group treks across Himachal Pradesh for travellers from Delhi
-            NCR. Real captains, light footprints, no rushing.
-          </p>
-        </div>
-      </div>
     </>
   );
 }

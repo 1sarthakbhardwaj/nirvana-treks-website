@@ -87,8 +87,7 @@ export const TOURS_CATALOG: TourCatalogEntry[] = [
     priceDouble: 7999,
     rating: 4.9,
     emoji: "🪂",
-    coverSrc:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
+    coverSrc: "/gallery/bir-billing.jpg",
     description:
       "Café hopping, optional paragliding, monasteries and sunsets. Extended Rajgundha route from ₹7,999.",
     tagline: "Paragliding capital of India",
@@ -108,8 +107,7 @@ export const TOURS_CATALOG: TourCatalogEntry[] = [
     priceDouble: 7999,
     rating: 4.7,
     emoji: "⛰️",
-    coverSrc:
-      "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=80&w=1200&auto=format&fit=crop",
+    coverSrc: "/gallery/triund.webp",
     description:
       "Fri night bus, hotel freshen-up, Bhagsu and McLeod, sunrise on the Dhauladhar wall.",
     tagline: "Ridge camp, sunrise on the Dhauladhars",
