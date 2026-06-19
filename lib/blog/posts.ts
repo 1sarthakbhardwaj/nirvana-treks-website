@@ -138,6 +138,75 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     excerpt:
       "Climb the Parvati Valley from Barshaini to a natural hot spring at the top. The route, the springs, camping and how to reach.",
   },
+  {
+    slug: "kareri-lake-trek",
+    title: "Kareri Lake Trek: The Underrated Alternative to Triund",
+    headline: "Kareri Lake Trek: The Underrated Alternative to Triund",
+    description:
+      "Kareri Lake trek guide: a quieter, more pristine alternative to Triund in the same Dhauladhar range. Route, difficulty, timing, camping and how to reach.",
+    keywords: [
+      "Kareri Lake trek",
+      "Kareri Lake trek guide",
+      "Kareri vs Triund",
+      "Dhauladhar trek",
+      "weekend trek Dharamshala",
+      "Kareri Lake camping",
+    ],
+    publishedAt: "2026-06-18",
+    updatedAt: "2026-06-18",
+    readMinutes: 10,
+    section: "Trek Guides",
+    tags: ["Kareri Lake"],
+    image: "/blog/kareri.webp",
+    excerpt:
+      "Same Dhauladhar wall as Triund, a fraction of the crowds, and a glacial lake at the end. The quieter alternative worth the extra kilometres.",
+  },
+  {
+    slug: "churdhar-trek-guide",
+    title: "Churdhar Trek Guide: Highest Peak in the Outer Himalayas",
+    headline: "Churdhar Trek Guide: Highest Peak in the Outer Himalayas",
+    description:
+      "Churdhar trek guide to the highest peak in the outer Himalayas (~3,647 m). Route from Nohradhar, difficulty, the Shirgul temple, best season, permits and cost.",
+    keywords: [
+      "Churdhar trek",
+      "Churdhar trek guide",
+      "Churdhar peak height",
+      "Churdhar Nohradhar",
+      "outer Himalayas trek",
+      "Sirmaur trek",
+    ],
+    publishedAt: "2026-06-18",
+    updatedAt: "2026-06-18",
+    readMinutes: 11,
+    section: "Trek Guides",
+    tags: ["Churdhar"],
+    image: "/blog/churdhar.webp",
+    excerpt:
+      "The highest peak in the outer Himalayas, with a temple at the top and views from the plains to the great range. Route, difficulty, permits and season.",
+  },
+  {
+    slug: "yulla-kanda-trek",
+    title: "Yulla Kanda Trek: The Offbeat Kinnaur Trek Most Miss",
+    headline: "Yulla Kanda Trek: The Offbeat Kinnaur Trek Most People Miss",
+    description:
+      "Yulla Kanda trek guide: an offbeat Kinnaur trek to the world's highest Krishna temple beside a sacred lake at ~12,778 ft. Route, difficulty, season and how to reach.",
+    keywords: [
+      "Yulla Kanda trek",
+      "Yulla Kanda Kinnaur",
+      "Yulla Kanda lake",
+      "offbeat treks Himachal",
+      "Kinnaur trek",
+      "world's highest Krishna temple",
+    ],
+    publishedAt: "2026-06-18",
+    updatedAt: "2026-06-18",
+    readMinutes: 10,
+    section: "Trek Guides",
+    tags: ["Yulla Kanda"],
+    image: "/blog/prashar-lake.jpg",
+    excerpt:
+      "A sacred lake, the world's highest Krishna temple, and a Kinnaur valley almost nobody treks. The complete offbeat guide.",
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPostMeta | undefined {

@@ -7,13 +7,19 @@ import TwoDayTreksFirstTimersArticle from "@/components/blog/articles/2-day-trek
 import OvernightVolvoToHimachalArticle from "@/components/blog/articles/overnight-volvo-to-himachal";
 import TriundTrekGuideArticle from "@/components/blog/articles/triund-trek-guide";
 import KheergangaTrekFromKasolArticle from "@/components/blog/articles/kheerganga-trek-from-kasol";
+import KareriLakeTrekArticle from "@/components/blog/articles/kareri-lake-trek";
+import ChurdharTrekGuideArticle from "@/components/blog/articles/churdhar-trek-guide";
+import YullaKandaTrekArticle from "@/components/blog/articles/yulla-kanda-trek";
 import StructuredData from "@/components/structured-data";
+import { CHURDHAR_FAQ, CHURDHAR_HOWTO } from "@/lib/blog/faq-churdhar";
 import { FIRST_TIMERS_FAQ } from "@/lib/blog/faq-first-timers";
+import { KARERI_FAQ, KARERI_HOWTO } from "@/lib/blog/faq-kareri";
 import { KASOL_OVERNIGHT_HOWTO, KASOL_TRAVEL_FAQ } from "@/lib/blog/faq-kasol";
 import { KHEERGANGA_FAQ } from "@/lib/blog/faq-kheerganga";
 import { TRIUND_FAQ, TRIUND_HOWTO } from "@/lib/blog/faq-triund";
 import { VOLVO_HIMACHAL_FAQ } from "@/lib/blog/faq-volvo";
 import { WEEKEND_TREKS_FAQ } from "@/lib/blog/faq-weekend-treks";
+import { YULLA_KANDA_FAQ, YULLA_KANDA_HOWTO } from "@/lib/blog/faq-yulla-kanda";
 import { getAllBlogSlugs, getBlogPost } from "@/lib/blog/posts";
 import {
   blogBreadcrumbJsonLd,
@@ -63,6 +69,12 @@ function BlogArticleContent({ slug }: { slug: string }) {
       return <TriundTrekGuideArticle />;
     case "kheerganga-trek-from-kasol":
       return <KheergangaTrekFromKasolArticle />;
+    case "kareri-lake-trek":
+      return <KareriLakeTrekArticle />;
+    case "churdhar-trek-guide":
+      return <ChurdharTrekGuideArticle />;
+    case "yulla-kanda-trek":
+      return <YullaKandaTrekArticle />;
     default:
       return null;
   }
@@ -109,6 +121,21 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (slug === "kheerganga-trek-from-kasol") {
     jsonLd.push(faqJsonLd(KHEERGANGA_FAQ));
+  }
+
+  if (slug === "kareri-lake-trek") {
+    jsonLd.push(howToJsonLd(KARERI_HOWTO));
+    jsonLd.push(faqJsonLd(KARERI_FAQ));
+  }
+
+  if (slug === "churdhar-trek-guide") {
+    jsonLd.push(howToJsonLd(CHURDHAR_HOWTO));
+    jsonLd.push(faqJsonLd(CHURDHAR_FAQ));
+  }
+
+  if (slug === "yulla-kanda-trek") {
+    jsonLd.push(howToJsonLd(YULLA_KANDA_HOWTO));
+    jsonLd.push(faqJsonLd(YULLA_KANDA_FAQ));
   }
 
   return (
