@@ -1,37 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import BlogArticleShell from "@/components/blog/blog-article-shell";
-import BestWeekendTreksFromDelhiArticle from "@/components/blog/articles/best-weekend-treks-from-delhi";
-import HowToReachKasolFromDelhiArticle from "@/components/blog/articles/how-to-reach-kasol-from-delhi";
-import TwoDayTreksFirstTimersArticle from "@/components/blog/articles/2-day-treks-near-delhi-for-first-timers";
-import OvernightVolvoToHimachalArticle from "@/components/blog/articles/overnight-volvo-to-himachal";
-import TriundTrekGuideArticle from "@/components/blog/articles/triund-trek-guide";
-import KheergangaTrekFromKasolArticle from "@/components/blog/articles/kheerganga-trek-from-kasol";
-import KareriLakeTrekArticle from "@/components/blog/articles/kareri-lake-trek";
-import ChurdharTrekGuideArticle from "@/components/blog/articles/churdhar-trek-guide";
-import YullaKandaTrekArticle from "@/components/blog/articles/yulla-kanda-trek";
-import TriundVsKheergangaArticle from "@/components/blog/articles/triund-vs-kheerganga";
-import BirBillingTrekkingParaglidingArticle from "@/components/blog/articles/bir-billing-trekking-paragliding";
-import EasyVsModerateHimachalTreksArticle from "@/components/blog/articles/easy-vs-moderate-himachal-treks";
-import BestTimeToTrekHimachalArticle from "@/components/blog/articles/best-time-to-trek-himachal";
-import SnowTreksHimachalWinterArticle from "@/components/blog/articles/snow-treks-himachal-winter";
-import MonsoonTrekkingHimachalArticle from "@/components/blog/articles/monsoon-trekking-himachal";
 import StructuredData from "@/components/structured-data";
-import { CHURDHAR_FAQ, CHURDHAR_HOWTO } from "@/lib/blog/faq-churdhar";
-import { FIRST_TIMERS_FAQ } from "@/lib/blog/faq-first-timers";
-import { KARERI_FAQ, KARERI_HOWTO } from "@/lib/blog/faq-kareri";
-import { KASOL_OVERNIGHT_HOWTO, KASOL_TRAVEL_FAQ } from "@/lib/blog/faq-kasol";
-import { KHEERGANGA_FAQ } from "@/lib/blog/faq-kheerganga";
-import { TRIUND_FAQ, TRIUND_HOWTO } from "@/lib/blog/faq-triund";
-import { VOLVO_HIMACHAL_FAQ } from "@/lib/blog/faq-volvo";
-import { WEEKEND_TREKS_FAQ } from "@/lib/blog/faq-weekend-treks";
-import { YULLA_KANDA_FAQ, YULLA_KANDA_HOWTO } from "@/lib/blog/faq-yulla-kanda";
-import { TRIUND_VS_KHEERGANGA_FAQ } from "@/lib/blog/faq-triund-vs-kheerganga";
-import { BIR_BILLING_FAQ } from "@/lib/blog/faq-bir-billing";
-import { EASY_VS_MODERATE_FAQ } from "@/lib/blog/faq-easy-vs-moderate";
-import { BEST_TIME_HIMACHAL_FAQ } from "@/lib/blog/faq-best-time-himachal";
-import { SNOW_TREKS_FAQ } from "@/lib/blog/faq-snow-treks";
-import { MONSOON_TREKKING_FAQ } from "@/lib/blog/faq-monsoon-trekking";
+import { getBlogEntry } from "@/lib/blog/registry";
 import { getAllBlogSlugs, getBlogPost } from "@/lib/blog/posts";
 import {
   blogBreadcrumbJsonLd,
@@ -67,47 +38,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-function BlogArticleContent({ slug }: { slug: string }) {
-  switch (slug) {
-    case "best-weekend-treks-from-delhi":
-      return <BestWeekendTreksFromDelhiArticle />;
-    case "how-to-reach-kasol-from-delhi":
-      return <HowToReachKasolFromDelhiArticle />;
-    case "2-day-treks-near-delhi-for-first-timers":
-      return <TwoDayTreksFirstTimersArticle />;
-    case "overnight-volvo-to-himachal":
-      return <OvernightVolvoToHimachalArticle />;
-    case "triund-trek-guide":
-      return <TriundTrekGuideArticle />;
-    case "kheerganga-trek-from-kasol":
-      return <KheergangaTrekFromKasolArticle />;
-    case "kareri-lake-trek":
-      return <KareriLakeTrekArticle />;
-    case "churdhar-trek-guide":
-      return <ChurdharTrekGuideArticle />;
-    case "yulla-kanda-trek":
-      return <YullaKandaTrekArticle />;
-    case "triund-vs-kheerganga":
-      return <TriundVsKheergangaArticle />;
-    case "bir-billing-trekking-paragliding":
-      return <BirBillingTrekkingParaglidingArticle />;
-    case "easy-vs-moderate-himachal-treks":
-      return <EasyVsModerateHimachalTreksArticle />;
-    case "best-time-to-trek-himachal":
-      return <BestTimeToTrekHimachalArticle />;
-    case "snow-treks-himachal-winter":
-      return <SnowTreksHimachalWinterArticle />;
-    case "monsoon-trekking-himachal":
-      return <MonsoonTrekkingHimachalArticle />;
-    default:
-      return null;
-  }
-}
-
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  if (!post) notFound();
+  const entry = getBlogEntry(slug);
+  if (!post || !entry) notFound();
+
+  const { Component, faq, howTo } = entry;
 
   const jsonLd: Record<string, unknown>[] = [
     blogPostingJsonLd({
@@ -121,76 +58,14 @@ export default async function BlogPostPage({ params }: Props) {
     blogBreadcrumbJsonLd(post.slug, post.title),
   ];
 
-  if (slug === "best-weekend-treks-from-delhi") {
-    jsonLd.push(faqJsonLd(WEEKEND_TREKS_FAQ));
-  }
-
-  if (slug === "how-to-reach-kasol-from-delhi") {
-    jsonLd.push(howToJsonLd(KASOL_OVERNIGHT_HOWTO));
-    jsonLd.push(faqJsonLd(KASOL_TRAVEL_FAQ));
-  }
-
-  if (slug === "2-day-treks-near-delhi-for-first-timers") {
-    jsonLd.push(faqJsonLd(FIRST_TIMERS_FAQ));
-  }
-
-  if (slug === "overnight-volvo-to-himachal") {
-    jsonLd.push(faqJsonLd(VOLVO_HIMACHAL_FAQ));
-  }
-
-  if (slug === "triund-trek-guide") {
-    jsonLd.push(howToJsonLd(TRIUND_HOWTO));
-    jsonLd.push(faqJsonLd(TRIUND_FAQ));
-  }
-
-  if (slug === "kheerganga-trek-from-kasol") {
-    jsonLd.push(faqJsonLd(KHEERGANGA_FAQ));
-  }
-
-  if (slug === "kareri-lake-trek") {
-    jsonLd.push(howToJsonLd(KARERI_HOWTO));
-    jsonLd.push(faqJsonLd(KARERI_FAQ));
-  }
-
-  if (slug === "churdhar-trek-guide") {
-    jsonLd.push(howToJsonLd(CHURDHAR_HOWTO));
-    jsonLd.push(faqJsonLd(CHURDHAR_FAQ));
-  }
-
-  if (slug === "yulla-kanda-trek") {
-    jsonLd.push(howToJsonLd(YULLA_KANDA_HOWTO));
-    jsonLd.push(faqJsonLd(YULLA_KANDA_FAQ));
-  }
-
-  if (slug === "triund-vs-kheerganga") {
-    jsonLd.push(faqJsonLd(TRIUND_VS_KHEERGANGA_FAQ));
-  }
-
-  if (slug === "bir-billing-trekking-paragliding") {
-    jsonLd.push(faqJsonLd(BIR_BILLING_FAQ));
-  }
-
-  if (slug === "easy-vs-moderate-himachal-treks") {
-    jsonLd.push(faqJsonLd(EASY_VS_MODERATE_FAQ));
-  }
-
-  if (slug === "best-time-to-trek-himachal") {
-    jsonLd.push(faqJsonLd(BEST_TIME_HIMACHAL_FAQ));
-  }
-
-  if (slug === "snow-treks-himachal-winter") {
-    jsonLd.push(faqJsonLd(SNOW_TREKS_FAQ));
-  }
-
-  if (slug === "monsoon-trekking-himachal") {
-    jsonLd.push(faqJsonLd(MONSOON_TREKKING_FAQ));
-  }
+  if (howTo) jsonLd.push(howToJsonLd(howTo));
+  if (faq && faq.length > 0) jsonLd.push(faqJsonLd(faq));
 
   return (
     <>
       <StructuredData data={jsonLd} />
       <BlogArticleShell breadcrumbTitle={post.title}>
-        <BlogArticleContent slug={slug} />
+        <Component />
       </BlogArticleShell>
     </>
   );

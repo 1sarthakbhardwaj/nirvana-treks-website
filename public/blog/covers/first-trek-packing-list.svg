@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trekking gear flat-lay: backpack, boots, jacket and essentials">
+  <rect width="1200" height="630" fill="#EAF1EA"/>
+  <g transform="translate(180 180)">
+    <rect x="0" y="30" width="200" height="250" rx="32" fill="#2E7D4F"/>
+    <rect x="30" y="70" width="140" height="160" rx="20" fill="#256743"/>
+    <rect x="55" y="0" width="90" height="56" rx="22" fill="#215C3A"/>
+  </g>
+  <g transform="translate(720 140)">
+    <path d="M0 50 L12 0 L60 0 L70 38 L130 58 L136 84 L0 84 Z" fill="#143A28"/>
+    <rect x="-4" y="82" width="140" height="16" rx="6" fill="#C0633A"/>
+    <g transform="translate(50 -10)">
+      <path d="M0 60 L12 10 L60 10 L70 48 L130 68 L136 94 L0 94 Z" fill="#235C3E"/>
+      <rect x="-4" y="92" width="140" height="16" rx="6" fill="#C0633A"/>
+    </g>
+  </g>
+  <g transform="translate(900 260)">
+    <path d="M40 0 L90 0 L130 32 L112 74 L96 60 L96 200 L34 200 L34 60 L18 74 L0 32 Z" fill="#6FB23F"/>
+  </g>
+  <g transform="translate(520 360)">
+    <rect x="0" y="0" width="90" height="70" rx="12" fill="#FAFCF8" stroke="#C0633A" stroke-width="3"/>
+    <rect x="38" y="16" width="14" height="38" fill="#C0633A"/>
+    <rect x="26" y="28" width="38" height="14" fill="#C0633A"/>
+  </g>
+  <text x="600" y="580" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#143A28" text-anchor="middle">First Trek Packing List</text>
+</svg>

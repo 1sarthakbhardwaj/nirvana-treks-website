@@ -5,6 +5,7 @@ import Container from "@/components/ui/container";
 import { Menu, X, Mountain } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import LocalBroBanner from "@/components/local-bro-banner";
 
 const nav = [
   { href: "/tours", label: "Tours" },
@@ -20,7 +21,9 @@ export default function SiteHeader() {
   const isBlog = pathname.startsWith("/blog");
 
   return (
-    <header
+    <>
+      <LocalBroBanner isBlog={isBlog} />
+      <header
       className={
         isBlog
           ? "sticky top-0 z-50 w-full border-b border-[rgba(17,17,17,0.14)] bg-[#F4EDE2]/95 backdrop-blur-md shadow-sm"
@@ -43,8 +46,19 @@ export default function SiteHeader() {
                 : "h-8 w-8 text-green-400 drop-shadow-lg animate-mountain-breeze"
             }
           />
-          <span className="hidden sm:block text-xl">Nirvana Treks & Tours</span>
-          <span className="sm:hidden text-xl">Nirvana</span>
+          <span className="flex flex-col leading-tight">
+            <span className="hidden sm:block text-xl">Nirvana Treks & Tours</span>
+            <span className="sm:hidden text-xl">Nirvana</span>
+            <span
+              className={
+                isBlog
+                  ? "hidden text-[11px] font-medium uppercase tracking-wider text-[#8B5E2B]/80 sm:block"
+                  : "hidden text-[11px] font-medium uppercase tracking-wider text-emerald-300/80 sm:block"
+              }
+            >
+              Run by local Himachalis
+            </span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -131,7 +145,8 @@ export default function SiteHeader() {
           </Container>
         </div>
       )}
-    </header>
+      </header>
+    </>
   );
 }
 

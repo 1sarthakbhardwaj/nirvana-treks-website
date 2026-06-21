@@ -339,6 +339,75 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     excerpt:
       "Peak monsoon is a no for Parvati and the Dhauladhar. The rain-shadow north, led by Spiti, stays dry and becomes the best version of itself.",
   },
+  {
+    slug: "first-trek-packing-list",
+    title: "First Trek Ever: A Delhi Person's Honest Packing List",
+    headline: "First Trek Ever: A Delhi Person's Honest Packing List",
+    description:
+      "An honest, complete first-trek packing list for Himachal, with a tickable checklist. What to actually carry, what to skip, and what to rent not buy.",
+    keywords: [
+      "trekking packing list",
+      "first trek packing list",
+      "Himachal trek packing",
+      "what to pack for trekking",
+      "beginner trek checklist",
+      "trekking essentials India",
+    ],
+    publishedAt: "2026-06-21",
+    updatedAt: "2026-06-21",
+    readMinutes: 10,
+    section: "Practical Guides",
+    tags: ["Packing", "Beginner"],
+    image: "/blog/covers/first-trek-packing-list.svg",
+    excerpt:
+      "Pack light, pack in layers, and do not buy everything. A tickable checklist for Delhi first-timers, with what to buy, rent, and skip.",
+  },
+  {
+    slug: "how-to-get-trek-fit-3-weeks",
+    title: "How to Get Trek-Fit in 3 Weeks If You Sit at a Desk",
+    headline: "How to Get Trek-Fit in 3 Weeks If You Sit at a Desk",
+    description:
+      "A realistic 3-week trek-fitness plan for desk workers, with a day-by-day tracker. Walking, stairs and leg strength to get ready for a Himachal trek.",
+    keywords: [
+      "trek fitness",
+      "how to get fit for trekking",
+      "trek training plan",
+      "trekking fitness for beginners",
+      "get trek fit",
+      "desk worker trek training",
+    ],
+    publishedAt: "2026-06-21",
+    updatedAt: "2026-06-21",
+    readMinutes: 9,
+    section: "Practical Guides",
+    tags: ["Fitness", "Beginner"],
+    image: "/blog/covers/trek-fit-3-weeks.svg",
+    excerpt:
+      "Three weeks of walking, stairs and leg strength is enough to turn a hard slog into a good day out. A desk-worker's plan with a tap-to-track schedule.",
+  },
+  {
+    slug: "what-to-wear-trekking-himachal",
+    title: "What to Wear Trekking in Himachal Across the Seasons",
+    headline: "What to Wear Trekking in Himachal Across the Seasons",
+    description:
+      "What to wear trekking in Himachal, season by season. The layering system explained, plus exact clothing for spring, summer, monsoon, autumn and winter.",
+    keywords: [
+      "what to wear trekking Himachal",
+      "trekking clothes",
+      "trekking layers",
+      "what to wear hiking",
+      "trekking clothing seasons",
+      "layering for trekking",
+    ],
+    publishedAt: "2026-06-21",
+    updatedAt: "2026-06-21",
+    readMinutes: 9,
+    section: "Practical Guides",
+    tags: ["Clothing", "Planning"],
+    image: "/blog/covers/what-to-wear-trekking.svg",
+    excerpt:
+      "Dress in layers, not one big jacket. Base, mid, insulation and shell, with season-by-season outfit picks for Himachal treks.",
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPostMeta | undefined {

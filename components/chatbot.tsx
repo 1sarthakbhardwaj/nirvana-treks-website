@@ -183,9 +183,9 @@ export default function Chatbot() {
               >
                 <SwaroopAvatar size="md" priority />
                 <div className="min-w-0 pt-0.5">
-                  <p className="text-sm font-semibold text-white">How can I help you?</p>
+                  <p className="text-sm font-semibold text-white">Bro knows a spot.</p>
                   <p className="mt-0.5 text-xs text-emerald-200/80">
-                    Treks, pricing, packing. Tap to chat with Swaroop Bhai.
+                    Tap to chat with Swaroop Bhai, your local pahadi buddy.
                   </p>
                 </div>
               </button>
@@ -258,7 +258,8 @@ export default function Chatbot() {
                   </div>
                   <p className="text-sm font-medium text-white mb-1">Namaste! 👋</p>
                   <p className="text-xs text-gray-400 mb-5 max-w-[260px]">
-                    Main hoon Swaroop Bhai, your trip captain & buddy. Treks, pricing, packing!
+                    Main hoon Swaroop Bhai, ekdum local pahadi. Bro knows a spot. Ask me treks,
+                    pricing, packing!
                   </p>
                   <div className="w-full space-y-2">
                     {SUGGESTIONS.map((s) => (

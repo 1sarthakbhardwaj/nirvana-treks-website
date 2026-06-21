@@ -2,7 +2,6 @@
 
 import Container from "@/components/ui/container";
 import GoogleReviewsSection from "@/components/google-reviews-section";
-import { BLOG_POSTS } from "@/lib/blog/posts";
 import { TOURS_CATALOG } from "@/lib/tours-catalog";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -51,25 +50,19 @@ export default function Footer() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Journal
             </p>
-            <nav className="flex flex-col gap-2 text-sm">
-              <Link
-                href="/blog"
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                All guides
-              </Link>
-              {BLOG_POSTS.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {post.title}
-                </Link>
-              ))}
-            </nav>
+            <Link
+              href="/blog"
+              className="inline-flex items-center rounded-lg border border-border bg-card/60 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              Browse the journal
+            </Link>
           </div>
         </div>
+
+        <p className="mb-6 max-w-2xl text-sm text-muted-foreground">
+          Nirvana Treks &amp; Tours, run by local Himachalis. The bros who know the spot, the
+          season, and the shortcut.
+        </p>
 
         <div className="flex flex-col items-center justify-between gap-6 text-muted-foreground md:flex-row">
           <p className="text-sm">

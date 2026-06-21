@@ -144,9 +144,9 @@ export default function Home() {
           </AnimateOnScroll>
           <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-3" staggerDelay={0.15}>
             {[
-              { icon: MapPin, title: "Local Guides", desc: "Led by experts who belong to the mountains" },
-              { icon: Heart, title: "Small Groups", desc: "Personal attention, authentic connections" },
-              { icon: Star, title: "Safety First", desc: "Reliable logistics and well-planned itineraries" },
+              { icon: MapPin, title: "Actual Locals", desc: "Led by pahadis who grew up on these trails" },
+              { icon: Heart, title: "Small Crews", desc: "You travel like family, not a tour number" },
+              { icon: Star, title: "Home Turf", desc: "We know which trail, which season, which dhaba" },
             ].map((f, i) => (
               <StaggerItem key={i} animation="fade-left">
                 <div className="relative rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10">

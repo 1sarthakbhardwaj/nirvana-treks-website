@@ -51,7 +51,7 @@ export default function HomeHeroContent() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-2.5 text-sm text-emerald-300 backdrop-blur-sm"
           >
             <Star className="h-4 w-4" aria-hidden />
-            Trusted Mountain Experiences
+            Run by local Himachalis
           </motion.div>
 
           <motion.h1
@@ -65,8 +65,8 @@ export default function HomeHeroContent() {
             variants={motionItem}
             className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300 md:text-xl"
           >
-            Treks, tours and curated journeys across the mighty Himalayan ranges. Crafted with care,
-            led by locals.
+            Born and raised in these mountains, we run the treks we grew up on. Real Himachali
+            locals taking you to the spots the tour buses never find.
           </motion.p>
 
           <motion.div

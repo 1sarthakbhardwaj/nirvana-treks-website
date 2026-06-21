@@ -48,10 +48,13 @@ export default function BlogIndexPage() {
 
         <div className="blog-card-grid">
           {[...BLOG_POSTS]
-            .sort(
-              (a, b) =>
-                new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-            )
+            .sort((a, b) => {
+              const byDate =
+                new Date(b.publishedAt).getTime() -
+                new Date(a.publishedAt).getTime();
+              if (byDate !== 0) return byDate;
+              return a.title.localeCompare(b.title);
+            })
             .map((post) => (
             <article key={post.slug} className="blog-card">
               <Link href={`/blog/${post.slug}`}>

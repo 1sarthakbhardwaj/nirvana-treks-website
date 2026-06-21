@@ -14,8 +14,8 @@ export default function ToursPageHero() {
           Our Adventures
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-white/80 md:text-xl">
-          From scenic ridge treks to dramatic high-altitude crossover passes, discover handpicked
-          journeys across the incredible Himalayan ranges.
+          From scenic ridge treks to dramatic high-altitude crossover passes, handpicked by local
+          pahadis who actually know these trails. The spots we&rsquo;d take our own friends.
         </p>
       </Container>
     </section>
