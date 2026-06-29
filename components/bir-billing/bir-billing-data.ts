@@ -29,10 +29,10 @@ export const birBillingPackages: BirBillingPackage[] = [
   {
     id: "weekend",
     label: "Weekend",
-    short: "4D · 3N · Fri out",
-    priceLabel: "Weekend · 4D / 3N",
+    short: "2D · 3N · Fri out",
+    priceLabel: "Weekend · 2D / 3N",
     meta: [
-      { label: "Duration", value: "4 Days", sub: "3 Nights · Fri departure" },
+      { label: "Duration", value: "2 Days", sub: "3 Nights · Fri 9 PM out · Mon AM back" },
       { label: "Route", value: "Bir", sub: "Delhi to Bir Billing" },
       { label: "Quad / Triple", value: "₹7,499", sub: "per person" },
       { label: "Double", value: "₹7,999", sub: "per person" },
@@ -101,10 +101,10 @@ export const birBillingPackages: BirBillingPackage[] = [
   {
     id: "extended",
     label: "Extended",
-    short: "5D · 4N · Rajgundha",
-    priceLabel: "Extended · 5D / 4N · Rajgundha",
+    short: "3D · 4N · Rajgundha",
+    priceLabel: "Extended · 3D / 4N · Rajgundha",
     meta: [
-      { label: "Duration", value: "5 Days", sub: "4 Nights · into Rajgundha" },
+      { label: "Duration", value: "3 Days", sub: "4 Nights · into Rajgundha" },
       { label: "Route", value: "Rajgundha", sub: "Bir + Hanuman Tibba view" },
       { label: "All sharing", value: "₹7,999", sub: "per person" },
       { label: "Stay", value: "Tents", sub: "Camp in the valley" },

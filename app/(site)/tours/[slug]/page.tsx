@@ -225,7 +225,7 @@ const tours = {
     image: "🪂",
     price: "From ₹7,499",
     originalPrice: "₹8,999",
-    duration: "4 to 5 days",
+    duration: "2 Days / 3 Nights (weekend) or 3 Days / 4 Nights (extended)",
     difficulty: "Easy",
     location: "Kangra Valley, Himachal Pradesh",
     maxGroupSize: 14,

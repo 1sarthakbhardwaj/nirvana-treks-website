@@ -49,7 +49,7 @@ CATALOGUE (authoritative: all slugs under /tours/[slug])
 
 ## bir-billing: Bir Billing
 - Subtitle: Paragliding & valley weekends | From ₹7,499
-- Price: Weekend quad/triple ₹7,499 · double ₹7,999 · Extended Rajgundha ₹7,999 all sharing | 4D/3N or 5D/4N | Easy | Kangra Valley, HP
+- Price: Weekend quad/triple ₹7,499 · double ₹7,999 · Extended Rajgundha ₹7,999 all sharing | 2D/3N or 3D/4N | Easy | Kangra Valley, HP
 - Max group: 12 | Rating: 4.9 (76 reviews)
 - Highlights: Optional tandem paragliding; monasteries & village walks; sunset & cafés; comfortable stays.
 - Day 1: Bir arrival, cafés & monasteries.
